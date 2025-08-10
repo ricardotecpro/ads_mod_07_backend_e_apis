@@ -1,32 +1,115 @@
-# Prerequisites
+# ===================================================================
+# Arquivos gerados por IDEs e Editores
+# ===================================================================
+
+### IntelliJ IDEA ###
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+### Visual Studio Code ###
+.vscode/
+
+# ===================================================================
+# Arquivos de Sistema Operacional e Logs
+# ===================================================================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.log
+*.tmp
+*.swp
+
+# ===================================================================
+# Dependências e Ambientes Virtuais
+# ===================================================================
+node_modules/
+/vendor/
+/vendors/
+
+### Python ###
+venv/
+env/
+.venv/
+.env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.tox/
+.ipynb_checkpoints
+
+# =_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=
+# ARQUIVOS GERADOS POR LINGUAGEM E COMPILAÇÃO
+# =_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=
+
+# ===================================================================
+# Java (Maven & Gradle)
+# ===================================================================
+target/
+build/
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# ===================================================================
+# C, C++ & Fortran (Arquivos Compilados)
+# ===================================================================
+# Pré-requisitos
 *.d
 
-# Compiled Object files
+# Arquivos de Objeto
 *.slo
 *.lo
 *.o
 *.obj
 
-# Precompiled Headers
+# Cabeçalhos Pré-compilados
 *.gch
 *.pch
 
-# Compiled Dynamic libraries
+# Bibliotecas Dinâmicas
 *.so
 *.dylib
 *.dll
 
-# Fortran module files
+# Módulos Fortran
 *.mod
 *.smod
 
-# Compiled Static libraries
+# Bibliotecas Estáticas
 *.lai
 *.la
 *.a
 *.lib
 
-# Executables
+# Executáveis
 *.exe
 *.out
 *.app
+
+# Diretórios de Build Comuns
+/build/
+/bin/
+/Debug/
+/Release/
+
+# ===================================================================
+# Python (Build & Distribuição)
+# ===================================================================
+/build/
+/develop-eggs/
+/dist/
+/downloads/
+/eggs/
+*.egg-info/
+/sdist/
+/var/
+*.egg
