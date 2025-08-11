@@ -208,3 +208,6 @@
           * Testes unitários e de integração.
           * CI/CD (Integração Contínua/Entrega Contínua).
 
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

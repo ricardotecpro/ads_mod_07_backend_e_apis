@@ -155,3 +155,7 @@ Para utilizá-lo em um projeto Maven com Spring Boot, as seguintes dependências
     <version>8.0.0.CR2</version>
 </dependency>
 ```
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

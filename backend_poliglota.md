@@ -105,3 +105,7 @@ O curso será dividido em seções. Primeiro, os fundamentos universais. Depois,
 * **Aula 2:** Quando escolher Java? Quando escolher Python? Análise comparativa.
 * **Aula 3:** Construindo seu portfólio e se preparando para entrevistas de backend.
 * **Aula 4:** Explorando o futuro: Microsserviços, GraphQL e Arquiteturas Serverless.
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

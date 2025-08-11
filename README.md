@@ -321,3 +321,7 @@ Agora vamos agir como se fôssemos o frontend, enviando requisições para a nos
 Repita o **Teste 2 (Listar Todas)**. O resultado esperado agora é um status `200 OK` com um array JSON vazio `[]`, confirmando que a exclusão funcionou.
 
 **Parabéns\!** Seus alunos agora têm um backend robusto e funcional, e sabem como verificar cada parte dele. Eles estão prontos para construir os clientes web e desktop.
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

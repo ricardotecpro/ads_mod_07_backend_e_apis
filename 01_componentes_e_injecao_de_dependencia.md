@@ -151,3 +151,7 @@ Depois disso, o framework cuida de todo o trabalho pesado:
   - **Reaproveitar** componentes, gerenciando seu ciclo de vida.
 
 Essa abordagem permite que o desenvolvedor foque no que realmente importa: as regras de negócio da aplicação.
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

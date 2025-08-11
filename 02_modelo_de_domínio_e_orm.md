@@ -237,3 +237,7 @@ public class Produto {
 Para que a aplicação inicie com dados pré-cadastrados (útil para testes e demonstrações), podemos usar a técnica de *database seeding*.
 
 Com o Spring Boot, basta criar um arquivo chamado `import.sql` na pasta `src/main/resources`. O Spring o executará automaticamente na inicialização. É recomendado usar um comando `INSERT` para cada registro a ser inserido.
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

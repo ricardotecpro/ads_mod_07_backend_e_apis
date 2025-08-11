@@ -167,3 +167,7 @@ Muitos exercícios utilizam um modelo de dados similar ao diagrama abaixo, que e
 
 ![Diagrama para exercício URI 2990](https://storage.googleapis.com/assistme-static-mesh-staging-output/images/assistme_2024_08_09_19_30_31_696_170764.png)
 ````
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
