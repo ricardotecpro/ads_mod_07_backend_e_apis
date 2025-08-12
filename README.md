@@ -20,7 +20,7 @@ Vamos usar o **Spring Initializr** para criar a estrutura base do nosso projeto 
           * **Artifact:** `todolist-api`
           * **Name:** `todolist-api`
           * **Description:** API para gerenciamento de tarefas
-          * **Package name:** `br.com.curso.todolistapi`
+          * **Package name:** `br.com.curso.todolist.api`
       * **Packaging:** Jar
       * **Java:** 21 (ou a versão que você instalou)
 
@@ -42,8 +42,8 @@ todolist-api/
 ├── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   └── br/com/curso/todolistapi/
-│   │   │       └── TodolistApiApplication.java
+│   │   │   └── br/com/curso/todolist.api/
+│   │   │       └── todolist.apiApplication.java
 │   │   └── resources/
 │   │       └── application.properties
 │   └── test/
@@ -56,13 +56,13 @@ todolist-api/
 
 O Model representa os dados da nossa aplicação. Vamos criar a classe `Tarefa`.
 
-1.  Dentro do pacote `br.com.curso.todolistapi`, crie um novo pacote chamado `tarefa`.
-2.  Dentro de `br.com.curso.todolistapi.tarefa`, crie um novo arquivo Java chamado `Tarefa.java`.
+1.  Dentro do pacote `br.com.curso.todolist.api`, crie um novo pacote chamado `tarefa`.
+2.  Dentro de `br.com.curso.todolist.api.tarefa`, crie um novo arquivo Java chamado `Tarefa.java`.
 
 **Código para `Tarefa.java`:**
 
 ```java
-package br.com.curso.todolistapi.tarefa;
+package br.com.curso.todolist.api.tarefa;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -101,12 +101,12 @@ public class Tarefa {
 
 O Repository é uma interface que nos dá os métodos para interagir com o banco de dados (salvar, buscar, deletar, etc.) sem precisarmos escrever SQL.
 
-1.  No mesmo pacote `br.com.curso.todolistapi.tarefa`, crie uma nova **interface** Java chamada `TarefaRepository.java`.
+1.  No mesmo pacote `br.com.curso.todolist.api.tarefa`, crie uma nova **interface** Java chamada `TarefaRepository.java`.
 
 **Código para `TarefaRepository.java`:**
 
 ```java
-package br.com.curso.todolistapi.tarefa;
+package br.com.curso.todolist.api.tarefa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -127,12 +127,12 @@ public interface TarefaRepository extends JpaRepository<Tarefa, Long> {
 
 É uma boa prática ter uma camada de Serviço para conter a lógica de negócio, mantendo o Controller "limpo".
 
-1.  No pacote `br.com.curso.todolistapi.tarefa`, crie uma nova classe Java chamada `TarefaService.java`.
+1.  No pacote `br.com.curso.todolist.api.tarefa`, crie uma nova classe Java chamada `TarefaService.java`.
 
 **Código para `TarefaService.java`:**
 
 ```java
-package br.com.curso.todolistapi.tarefa;
+package br.com.curso.todolist.api.tarefa;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -190,12 +190,12 @@ public class TarefaService {
 
 O Controller é a porta de entrada da nossa API. Ele recebe as requisições HTTP e as direciona para a camada de Serviço.
 
-1.  No pacote `br.com.curso.todolistapi.tarefa`, crie uma nova classe Java chamada `TarefaController.java`.
+1.  No pacote `br.com.curso.todolist.api.tarefa`, crie uma nova classe Java chamada `TarefaController.java`.
 
 **Código para `TarefaController.java`:**
 
 ```java
-package br.com.curso.todolistapi.tarefa;
+package br.com.curso.todolist.api.tarefa;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -262,9 +262,9 @@ public class TarefaController {
 
 **Neste ponto, a nossa API está completa\!** Vamos executá-la.
 
-1.  Encontre o arquivo `TodolistApiApplication.java`.
-2.  Clique com o botão direito sobre ele e selecione "Run 'TodolistApiApplication'".
-3.  O console da sua IDE mostrará o log de inicialização do Spring Boot. Se tudo deu certo, você verá uma mensagem como `Started TodolistApiApplication in X.XXX seconds`.
+1.  Encontre o arquivo `todolist.apiApplication.java`.
+2.  Clique com o botão direito sobre ele e selecione "Run 'todolist.apiApplication'".
+3.  O console da sua IDE mostrará o log de inicialização do Spring Boot. Se tudo deu certo, você verá uma mensagem como `Started todolist.apiApplication in X.XXX seconds`.
 
 -----
 
