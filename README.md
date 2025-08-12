@@ -447,19 +447,13 @@ public class SecurityConfig {
 
 Com as configurações acima aplicadas, inicie sua aplicação Spring Boot. Em seguida, abra seu navegador e acesse a URL:
 
-**http://localhost:8080/h2-console**
+**Acesse o site:  [http://localhost:8080/h2-console](http://localhost:8080/h2-console)**
 
 (Lembre-se de substituir `8080` pela porta em que sua aplicação está rodando, se for diferente).
 
 Na tela de login do console do H2, certifique-se de que o campo "JDBC URL" corresponde exatamente ao valor que você definiu em `spring.datasource.url` (`jdbc:h2:mem:testdb`). Preencha o nome de usuário ("sa") e a senha (deixe em branco) e clique em "Connect".
 
 Pronto\! Você agora tem acesso total à interface do banco de dados H2, onde pode visualizar tabelas, executar queries SQL e gerenciar seus dados de desenvolvimento de forma prática e eficiente.
-
-Claro\! Abaixo está o guia original para o H2, seguido por uma nova seção detalhando como configurar seu projeto Spring Boot para se conectar a um banco de dados MySQL. Por fim, mostrarei a abordagem recomendada para gerenciar ambas as configurações usando **Spring Profiles**.
-
------
-
---->>>
 
 ---
 
