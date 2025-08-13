@@ -1,4 +1,4 @@
-### **Guia Prático: Construindo e Testando a API do To-Do List**
+### **Construindo e Testando a API do To-Do List**
 
 **Objetivo:** Criar, passo a passo, o backend completo da nossa aplicação, e aprender a testar cada funcionalidade de forma isolada usando uma ferramenta de cliente HTTP.
 
@@ -268,7 +268,7 @@ public class TarefaController {
 
 -----
 
-### **Etapa 5: Testando a API com Postman ou Insomnia**
+### **Etapa 5: Testando a API com Postman, Insomnia, YARC! **
 
 Agora vamos agir como se fôssemos o frontend, enviando requisições para a nossa API em execução.
 
@@ -452,6 +452,78 @@ Com as configurações acima aplicadas, inicie sua aplicação Spring Boot. Em s
 (Lembre-se de substituir `8080` pela porta em que sua aplicação está rodando, se for diferente).
 
 Na tela de login do console do H2, certifique-se de que o campo "JDBC URL" corresponde exatamente ao valor que você definiu em `spring.datasource.url` (`jdbc:h2:mem:testdb`). Preencha o nome de usuário ("sa") e a senha (deixe em branco) e clique em "Connect".
+
+## Caso Tenha uma mensagem de erro 
+Database "C:/Users/[SEU_USUARIO]/test" not found, either pre-create it or allow remote database creation (not recommended in secure environments) [90149-232] 90149/90149 (Help)
+
+**📌️ SOLUÇÃO RECOMENDADA
+
+```
+jdbc:h2:~/test
+
+mudar para 
+
+jdbc:h2:mem:testdb
+
+```
+
+Esse erro aparece porque sua configuração está apontando para um banco **H2 no disco** (`jdbc:h2:file:` implícito) que não existe, mas no seu `application.properties` você disse que quer usar **em memória** (`jdbc:h2:mem:testdb`).
+
+Se o Spring Boot está reclamando de `C:/Users/[SEU_USUARIO]/test`, significa que em algum ponto do seu projeto (ou dependência) a URL do H2 foi alterada para `jdbc:h2:file:C:/Users/[SEU_USUARIO]/test`.
+
+Você tem três caminhos para corrigir:
+
+---
+
+**1️⃣ Usar banco em memória (não persiste entre execuções)**
+Isso funciona bem para testes. Basta manter assim no `application.properties` e garantir que não tem outro lugar sobrescrevendo:
+
+```properties
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+```
+
+> Dica: verifique se **não existe** outro arquivo `application.properties` ou `application.yml` com configuração diferente.
+
+---
+
+**2️⃣ Usar banco no disco e criar automaticamente**
+Se você quer que o H2 seja salvo no PC e não em memória, configure assim:
+
+```properties
+spring.datasource.url=jdbc:h2:file:~/test;AUTO_SERVER=TRUE;AUTO_CREATE=TRUE
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+```
+
+Isso cria o arquivo `~/test.mv.db` (na pasta do usuário) na primeira execução.
+
+---
+
+**3️⃣ Usar banco no disco em caminho específico**
+Se quiser manter em `C:/Users/[SEU_USUARIO]/test`, pode criar o banco antes ou permitir criação automática:
+
+```properties
+spring.datasource.url=jdbc:h2:file:C:/Users/[SEU_USUARIO]/test;AUTO_SERVER=TRUE;AUTO_CREATE=TRUE
+```
+
+> ⚠ `AUTO_CREATE=TRUE` é útil para desenvolvimento, mas não é recomendado em produção.
+
+---
+
+
+
+
+
 
 Pronto\! Você agora tem acesso total à interface do banco de dados H2, onde pode visualizar tabelas, executar queries SQL e gerenciar seus dados de desenvolvimento de forma prática e eficiente.
 
