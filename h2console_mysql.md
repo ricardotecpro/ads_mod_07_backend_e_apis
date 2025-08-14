@@ -198,3 +198,8 @@ A melhor abordagem é manter as duas configurações e alternar entre elas usand
 
 Agora, ao iniciar a aplicação, o Spring Boot carregará as configurações de `application-dev.properties`. Para usar a configuração de produção, basta alterar `spring.profiles.active` para `prod` e reiniciar. Você também pode ativar perfis através de variáveis de ambiente ou argumentos de linha de comando, o que é ideal para pipelines de CI/CD.
 
+
+
+---
+
+### [ricardotecpro.github.io](https://ricardotecpro.github.io/)

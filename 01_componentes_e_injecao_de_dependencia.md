@@ -155,3 +155,4 @@ Essa abordagem permite que o desenvolvedor foque no que realmente importa: as re
 ---
 
 ### [ricardotecpro.github.io](https://ricardotecpro.github.io/)
+
