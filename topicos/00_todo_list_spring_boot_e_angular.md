@@ -53,25 +53,25 @@ http://localhost:8080/h2-console
 
 ### **Passo 3: Criar a Entidade Tarefa**
 
-Crie a classe `Task.java` em `src/main/java/org/brothers/todolist/model/`:
+Crie a classe `Task.java` em `src/main/java/org/brothers/listatarefas/model/`:
 
 ```
-`package org.brothers.todolist.model;  import jakarta.persistence.*; import lombok.*;  @Entity @Data @NoArgsConstructor @AllArgsConstructor public class Task {     @Id     @GeneratedValue(strategy = GenerationType.IDENTITY)     private Long id;      private String name;     private boolean completed; }`
+`package org.brothers.listatarefas.model;  import jakarta.persistence.*; import lombok.*;  @Entity @Data @NoArgsConstructor @AllArgsConstructor public class Task {     @Id     @GeneratedValue(strategy = GenerationType.IDENTITY)     private Long id;      private String name;     private boolean completed; }`
 ```
 ### **Passo 4: Criar o Repositório**
 
-Crie `TaskRepository.java` em `src/main/java/org/brothers/todolist/repository/
+Crie `TaskRepository.java` em `src/main/java/org/brothers/listatarefas/repository/
 
 ```
-package org.brothers.todolist.repository;  import org.brothers.todolist.model.Task; import org.springframework.data.jpa.repository.JpaRepository;  public interface TaskRepository extends JpaRepository<Task, Long> { }
+package org.brothers.listatarefas.repository;  import org.brothers.listatarefas.model.Task; import org.springframework.data.jpa.repository.JpaRepository;  public interface TaskRepository extends JpaRepository<Task, Long> { }
 ```
 
 ### **Passo 5: Criar o Controller**
 
-Crie `TaskController.java` em `src/main/java/org/brothers/todolist/controller/`:
+Crie `TaskController.java` em `src/main/java/org/brothers/listatarefas/controller/`:
 
 ```
-package org.brothers.todolist.controller;  import org.brothers.todolist.model.Task; import org.brothers.todolist.repository.TaskRepository; import org.springframework.web.bind.annotation.*;  import java.util.List;  @RestController @RequestMapping("/api/tasks") @CrossOrigin(origins = "*") public class TaskController {      private final TaskRepository repository;      public TaskController(TaskRepository repository) {         this.repository = repository;     }      @GetMapping     public List<Task> getAllTasks() {         return repository.findAll();     }      @PostMapping     public Task createTask(@RequestBody Task task) {         return repository.save(task);     }      @PutMapping("/{id}")     public Task updateTask(@PathVariable Long id, @RequestBody Task task) {         task.setId(id);         return repository.save(task);     }      @DeleteMapping("/{id}")     public void deleteTask(@PathVariable Long id) {         repository.deleteById(id);     } }`
+package org.brothers.listatarefas.controller;  import org.brothers.listatarefas.model.Task; import org.brothers.listatarefas.repository.TaskRepository; import org.springframework.web.bind.annotation.*;  import java.util.List;  @RestController @RequestMapping("/api/tasks") @CrossOrigin(origins = "*") public class TaskController {      private final TaskRepository repository;      public TaskController(TaskRepository repository) {         this.repository = repository;     }      @GetMapping     public List<Task> getAllTasks() {         return repository.findAll();     }      @PostMapping     public Task createTask(@RequestBody Task task) {         return repository.save(task);     }      @PutMapping("/{id}")     public Task updateTask(@PathVariable Long id, @RequestBody Task task) {         task.setId(id);         return repository.save(task);     }      @DeleteMapping("/{id}")     public void deleteTask(@PathVariable Long id) {         repository.deleteById(id);     } }`
 ```
 
 ---

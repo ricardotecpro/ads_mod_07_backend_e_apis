@@ -1,4 +1,6 @@
-### Guia para o H2, seguido por uma nova seção detalhando como configurar seu projeto Spring Boot para se conectar a um banco de dados MySQL. Por fim, mostrarei a abordagem recomendada para gerenciar ambas as configurações usando **Spring Profiles**.
+### Guia para o H2 
+
+Seguido por uma nova seção detalhando como configurar seu projeto Spring Boot para se conectar a um banco de dados MySQL. Por fim, mostrarei a abordagem recomendada para gerenciar ambas as configurações usando **Spring Profiles**.
 
 ## **Etapa 7: Guia de Conexão de Banco de Dados no Spring Boot
 

@@ -43,7 +43,7 @@ Use esta configuração quando for subir para produção ou quando quiser persis
 
 ```properties
 # Banco de dados MySQL
-spring.datasource.url=jdbc:mysql://localhost:3306/todolist
+spring.datasource.url=jdbc:mysql://localhost:3306/listatarefas
 spring.datasource.username=root
 spring.datasource.password=1234
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
@@ -53,10 +53,10 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
 spring.jpa.hibernate.ddl-auto=update  # Cria/atualiza as tabelas automaticamente
 ```
 
-📌 **Certifique-se de que o MySQL está rodando e que o banco de dados `todolist` já foi criado**:
+📌 **Certifique-se de que o MySQL está rodando e que o banco de dados `listatarefas` já foi criado**:
 
 ```sql
-CREATE DATABASE todolist;
+CREATE DATABASE listatarefas;
 ```
 
 ---
@@ -94,7 +94,7 @@ spring:
     activate:
       on-profile: prod
   datasource:
-    url: jdbc:mysql://localhost:3306/todolist
+    url: jdbc:mysql://localhost:3306/listatarefas
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 1234
