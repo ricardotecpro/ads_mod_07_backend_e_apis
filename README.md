@@ -4,6 +4,10 @@
 
 **Objetivo:** Criar, passo a passo, o backend completo da nossa aplicação, e aprender a testar cada funcionalidade de forma isolada usando uma ferramenta de cliente HTTP.
 
+Exemplo 01
+Exemplo 02
+Exemplo 03
+
 -----
 
 ### **Etapa 0: Configuração Inicial do Projeto**
