@@ -4,32 +4,32 @@ Pratique o que aprendeu com desafios graduais para cada aula.
 
 <div class="grid cards" markdown>
 
--   :material-numeric-1-box: **Trilha 1: Fundamentos**
+-   :material-numeric-1-box: **Módulo 1: Fundamentos de Backend**
     ---
-    - [Ex 01 - Intro Mobile](exercicio-01.md)
-    - [Ex 02 - Java vs Swift](exercicio-02.md)
-    - [Ex 03 - Intro Kotlin](exercicio-03.md)
-    - [Ex 04 - Estrutura App](exercicio-04.md)
+    - [Ex 01 - Intro a Microsserviços](exercicio-01.md)
+    - [Ex 02 - Arquitetura e Gateway](exercicio-02.md)
+    - [Ex 03 - Modelagem REST](exercicio-03.md)
+    - [Ex 04 - Documentação e Mocks](exercicio-04.md)
 
--   :material-numeric-2-box: **Trilha 2: Core Android**
+-   :material-numeric-2-box: **Módulo 2: Manipulação de Dados**
     ---
-    - [Ex 05 - Interface (UI)](exercicio-05.md)
-    - [Ex 06 - Navegação](exercicio-06.md)
-    - [Ex 07 - MVVM Architecture](exercicio-07.md)
-    - [Ex 08 - Persistência (Room)](exercicio-08.md)
+    - [Ex 05 - Controllers e Rotas](exercicio-05.md)
+    - [Ex 06 - Services e Lógica](exercicio-06.md)
+    - [Ex 07 - Banco de Dados SQL](exercicio-07.md)
+    - [Ex 08 - Validação de Dados](exercicio-08.md)
 
--   :material-numeric-3-box: **Trilha 3: Networking**
+-   :material-numeric-3-box: **Módulo 3: Segurança e Autenticação**
     ---
-    - [Ex 09 - RecyclerView](exercicio-09.md)
-    - [Ex 10 - API REST](exercicio-10.md)
-    - [Ex 11 - Threads/Async](exercicio-11.md)
-    - [Ex 12 - UX/Material](exercicio-12.md)
+    - [Ex 09 - Autenticação JWT](exercicio-09.md)
+    - [Ex 10 - Controle de Acesso (RBAC)](exercicio-10.md)
+    - [Ex 11 - Segurança Avançada](exercicio-11.md)
 
--   :material-numeric-4-box: **Trilha 4: Finalização**
+-   :material-numeric-4-box: **Módulo 4: Aplicações SPA (React)**
     ---
-    - [Ex 13 - Sensores](exercicio-13.md)
-    - [Ex 14 - Testes/Debug](exercicio-14.md)
-    - [Ex 15 - Publicação Store](exercicio-15.md)
-    - [Ex 16 - Planejamento TCC](exercicio-16.md)
+    - [Ex 12 - Introdução ao React](exercicio-12.md)
+    - [Ex 13 - Estado e Hooks](exercicio-13.md)
+    - [Ex 14 - Chamadas de API](exercicio-14.md)
+    - [Ex 15 - Navegação Router](exercicio-15.md)
+    - [Ex 16 - Planejamento Projeto Final](exercicio-16.md)
 
 </div>
