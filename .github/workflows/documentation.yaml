@@ -58,7 +58,7 @@ jobs:
           PID=$!
           sleep 10
           # Roda testes para garantir qualidade
-          poetry run task test || true
+          poetry run task test
           kill $PID
           # Deploy direto para gh-pages (sem Mike)
           poetry run mkdocs gh-deploy --force
