@@ -1,0 +1,13 @@
+
+  run_log.txt:354:deploy	Install Playwright Browsers	2026-03-05T14:41:40.6191528Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+  run_log.txt:355:deploy	Install Playwright Browsers	2026-03-05T14:41:40.6191936Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib
+  run_log.txt:356:deploy	Install Playwright Browsers	2026-03-05T14:41:40.6192260Z   VENV: .venv/bin/activate
+  run_log.txt:357:deploy	Install Playwright Browsers	2026-03-05T14:41:40.6192472Z ##[endgroup]
+  run_log.txt:358:deploy	Install Playwright Browsers	2026-03-05T14:41:41.1168483Z Command not found: playwright
+> run_log.txt:359:deploy	Install Playwright Browsers	2026-03-05T14:41:41.1653347Z ##[error]Process completed with exit code 1.
+  run_log.txt:360:deploy	Post Run actions/checkout@v4	﻿2026-03-05T14:41:41.1762554Z Post job cleanup.
+  run_log.txt:361:deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.2717286Z [command]/usr/bin/git version
+  run_log.txt:362:deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.2754207Z git version 2.53.0
+  run_log.txt:363:deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.2799437Z Temporarily overriding HOME='/home/runner/work/_temp/a0023947-d5fb-4901-9d13-71bab7713114' before making global git config changes
+  run_log.txt:364:deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.2801260Z Adding repository directory to the temporary git global config as a safe directory
+

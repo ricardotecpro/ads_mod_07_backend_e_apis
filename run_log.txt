@@ -1,0 +1,374 @@
+deploy	Set up job	﻿2026-03-05T14:40:58.0021780Z Current runner version: '2.332.0'
+deploy	Set up job	2026-03-05T14:40:58.0044761Z ##[group]Runner Image Provisioner
+deploy	Set up job	2026-03-05T14:40:58.0045646Z Hosted Compute Agent
+deploy	Set up job	2026-03-05T14:40:58.0046283Z Version: 20260213.493
+deploy	Set up job	2026-03-05T14:40:58.0046915Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+deploy	Set up job	2026-03-05T14:40:58.0047627Z Build Date: 2026-02-13T00:28:41Z
+deploy	Set up job	2026-03-05T14:40:58.0048233Z Worker ID: {4f927a0f-20d0-44e7-b446-54c500899341}
+deploy	Set up job	2026-03-05T14:40:58.0049039Z Azure Region: westcentralus
+deploy	Set up job	2026-03-05T14:40:58.0049736Z ##[endgroup]
+deploy	Set up job	2026-03-05T14:40:58.0051159Z ##[group]Operating System
+deploy	Set up job	2026-03-05T14:40:58.0051923Z Ubuntu
+deploy	Set up job	2026-03-05T14:40:58.0052413Z 24.04.3
+deploy	Set up job	2026-03-05T14:40:58.0052839Z LTS
+deploy	Set up job	2026-03-05T14:40:58.0053416Z ##[endgroup]
+deploy	Set up job	2026-03-05T14:40:58.0053920Z ##[group]Runner Image
+deploy	Set up job	2026-03-05T14:40:58.0054437Z Image: ubuntu-24.04
+deploy	Set up job	2026-03-05T14:40:58.0055007Z Version: 20260302.42.1
+deploy	Set up job	2026-03-05T14:40:58.0055955Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260302.42/images/ubuntu/Ubuntu2404-Readme.md
+deploy	Set up job	2026-03-05T14:40:58.0057664Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260302.42
+deploy	Set up job	2026-03-05T14:40:58.0058568Z ##[endgroup]
+deploy	Set up job	2026-03-05T14:40:58.0059583Z ##[group]GITHUB_TOKEN Permissions
+deploy	Set up job	2026-03-05T14:40:58.0061880Z Contents: write
+deploy	Set up job	2026-03-05T14:40:58.0062415Z Metadata: read
+deploy	Set up job	2026-03-05T14:40:58.0063033Z ##[endgroup]
+deploy	Set up job	2026-03-05T14:40:58.0065016Z Secret source: Actions
+deploy	Set up job	2026-03-05T14:40:58.0065732Z Prepare workflow directory
+deploy	Set up job	2026-03-05T14:40:58.0393462Z Prepare all required actions
+deploy	Set up job	2026-03-05T14:40:58.0432724Z Getting action download info
+deploy	Set up job	2026-03-05T14:40:58.5937494Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+deploy	Set up job	2026-03-05T14:40:58.7396799Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+deploy	Set up job	2026-03-05T14:40:58.8240359Z Download action repository 'snok/install-poetry@v1' (SHA:76e04a911780d5b312d89783f7b1cd627778900a)
+deploy	Set up job	2026-03-05T14:40:59.2864490Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+deploy	Set up job	2026-03-05T14:40:59.4971418Z Complete job name: deploy
+deploy	Run actions/checkout@v4	﻿2026-03-05T14:40:59.5716933Z ##[group]Run actions/checkout@v4
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5717795Z with:
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5718208Z   fetch-depth: 0
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5718730Z   repository: ricardotecpro/ads_mod_07_backends_e_apis
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5719516Z   token: ***
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5720082Z   ssh-strict: true
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5720488Z   ssh-user: git
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5720897Z   persist-credentials: true
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5721365Z   clean: true
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5721783Z   sparse-checkout-cone-mode: true
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5722283Z   fetch-tags: false
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5722701Z   show-progress: true
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5723124Z   lfs: false
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5723616Z   submodules: false
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5724046Z   set-safe-directory: true
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.5724776Z ##[endgroup]
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.6795826Z Syncing repository: ricardotecpro/ads_mod_07_backends_e_apis
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.6797791Z ##[group]Getting Git version info
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.6798738Z Working directory is '/home/runner/work/ads_mod_07_backends_e_apis/ads_mod_07_backends_e_apis'
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.6800158Z [command]/usr/bin/git version
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.6865628Z git version 2.53.0
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.6891682Z ##[endgroup]
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.6906362Z Temporarily overriding HOME='/home/runner/work/_temp/9e7c1c3b-b2c5-4813-85d6-c30676200d2a' before making global git config changes
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.6908878Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.6918604Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ads_mod_07_backends_e_apis/ads_mod_07_backends_e_apis
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.6958672Z Deleting the contents of '/home/runner/work/ads_mod_07_backends_e_apis/ads_mod_07_backends_e_apis'
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.6962493Z ##[group]Initializing the repository
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.6966701Z [command]/usr/bin/git init /home/runner/work/ads_mod_07_backends_e_apis/ads_mod_07_backends_e_apis
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7050030Z hint: Using 'master' as the name for the initial branch. This default branch name
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7051494Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7052468Z hint: to use in all of your new repositories, which will suppress this warning,
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7053446Z hint: call:
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7054216Z hint:
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7055368Z hint: 	git config --global init.defaultBranch <name>
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7056102Z hint:
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7056694Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7057649Z hint: 'development'. The just-created branch can be renamed via this command:
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7058390Z hint:
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7058799Z hint: 	git branch -m <name>
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7060022Z hint:
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7061205Z hint: Disable this message with "git config set advice.defaultBranchName false"
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7062500Z Initialized empty Git repository in /home/runner/work/ads_mod_07_backends_e_apis/ads_mod_07_backends_e_apis/.git/
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7065788Z [command]/usr/bin/git remote add origin https://github.com/ricardotecpro/ads_mod_07_backends_e_apis
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7101704Z ##[endgroup]
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7103112Z ##[group]Disabling automatic garbage collection
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7106684Z [command]/usr/bin/git config --local gc.auto 0
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7136804Z ##[endgroup]
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7138252Z ##[group]Setting up auth
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7144838Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7177237Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7495828Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7530367Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7760815Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.7793000Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.8036616Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.8071605Z ##[endgroup]
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.8072864Z ##[group]Fetching the repository
+deploy	Run actions/checkout@v4	2026-03-05T14:40:59.8079496Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.7682819Z From https://github.com/ricardotecpro/ads_mod_07_backends_e_apis
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.7688055Z  * [new branch]      gh-pages   -> origin/gh-pages
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.7689366Z  * [new branch]      main       -> origin/main
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.7726412Z [command]/usr/bin/git branch --list --remote origin/main
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.7751487Z   origin/main
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.7760455Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.7784218Z 82b9d4880703fb73631e1486473641ab59e5acb6
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.7789548Z ##[endgroup]
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.7791257Z ##[group]Determining the checkout info
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.7792733Z ##[endgroup]
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.7794857Z [command]/usr/bin/git sparse-checkout disable
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.7832734Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.7861998Z ##[group]Checking out the ref
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.7866756Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.8192748Z Switched to a new branch 'main'
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.8195576Z branch 'main' set up to track 'origin/main'.
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.8203856Z ##[endgroup]
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.8239875Z [command]/usr/bin/git log -1 --format=%H
+deploy	Run actions/checkout@v4	2026-03-05T14:41:00.8263495Z 82b9d4880703fb73631e1486473641ab59e5acb6
+deploy	Configure Git Credentials	﻿2026-03-05T14:41:00.8477414Z ##[group]Run git config user.name "github-actions[bot]"
+deploy	Configure Git Credentials	2026-03-05T14:41:00.8479055Z [36;1mgit config user.name "github-actions[bot]"[0m
+deploy	Configure Git Credentials	2026-03-05T14:41:00.8481196Z [36;1mgit config user.email "41898282+github-actions[bot]@users.noreply.github.com"[0m
+deploy	Configure Git Credentials	2026-03-05T14:41:00.8538668Z shell: /usr/bin/bash -e {0}
+deploy	Configure Git Credentials	2026-03-05T14:41:00.8539959Z ##[endgroup]
+deploy	Install Python	﻿2026-03-05T14:41:00.8845366Z ##[group]Run actions/setup-python@v5
+deploy	Install Python	2026-03-05T14:41:00.8846442Z with:
+deploy	Install Python	2026-03-05T14:41:00.8847169Z   python-version: 3.11
+deploy	Install Python	2026-03-05T14:41:00.8848023Z   check-latest: false
+deploy	Install Python	2026-03-05T14:41:00.8849126Z   token: ***
+deploy	Install Python	2026-03-05T14:41:00.8850055Z   update-environment: true
+deploy	Install Python	2026-03-05T14:41:00.8850998Z   allow-prereleases: false
+deploy	Install Python	2026-03-05T14:41:00.8851917Z   freethreaded: false
+deploy	Install Python	2026-03-05T14:41:00.8852758Z ##[endgroup]
+deploy	Install Python	2026-03-05T14:41:01.0602786Z ##[group]Installed versions
+deploy	Install Python	2026-03-05T14:41:01.0704376Z Successfully set up CPython (3.11.14)
+deploy	Install Python	2026-03-05T14:41:01.0706957Z ##[endgroup]
+deploy	Install Poetry	﻿2026-03-05T14:41:01.0958468Z ##[group]Run snok/install-poetry@v1
+deploy	Install Poetry	2026-03-05T14:41:01.0959511Z with:
+deploy	Install Poetry	2026-03-05T14:41:01.0960388Z   virtualenvs-create: true
+deploy	Install Poetry	2026-03-05T14:41:01.0961325Z   virtualenvs-in-project: true
+deploy	Install Poetry	2026-03-05T14:41:01.0962244Z   version: latest
+deploy	Install Poetry	2026-03-05T14:41:01.0963092Z   virtualenvs-path: {cache-dir}/virtualenvs
+deploy	Install Poetry	2026-03-05T14:41:01.0964185Z   installer-parallel: true
+deploy	Install Poetry	2026-03-05T14:41:01.0965041Z env:
+deploy	Install Poetry	2026-03-05T14:41:01.0965952Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Poetry	2026-03-05T14:41:01.0967572Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib/pkgconfig
+deploy	Install Poetry	2026-03-05T14:41:01.0969188Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Poetry	2026-03-05T14:41:01.0970820Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Poetry	2026-03-05T14:41:01.0972317Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Poetry	2026-03-05T14:41:01.0973796Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib
+deploy	Install Poetry	2026-03-05T14:41:01.0975034Z ##[endgroup]
+deploy	Install Poetry	2026-03-05T14:41:01.1073081Z ##[group]Run $GITHUB_ACTION_PATH/main.sh
+deploy	Install Poetry	2026-03-05T14:41:01.1074265Z [36;1m$GITHUB_ACTION_PATH/main.sh[0m
+deploy	Install Poetry	2026-03-05T14:41:01.1216434Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+deploy	Install Poetry	2026-03-05T14:41:01.1217684Z env:
+deploy	Install Poetry	2026-03-05T14:41:01.1218606Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Poetry	2026-03-05T14:41:01.1220381Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib/pkgconfig
+deploy	Install Poetry	2026-03-05T14:41:01.1222005Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Poetry	2026-03-05T14:41:01.1223437Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Poetry	2026-03-05T14:41:01.1224894Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Poetry	2026-03-05T14:41:01.1226361Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib
+deploy	Install Poetry	2026-03-05T14:41:01.1227619Z   VERSION: latest
+deploy	Install Poetry	2026-03-05T14:41:01.1228395Z   VIRTUALENVS_CREATE: true
+deploy	Install Poetry	2026-03-05T14:41:01.1229298Z   VIRTUALENVS_IN_PROJECT: true
+deploy	Install Poetry	2026-03-05T14:41:01.1230402Z   VIRTUALENVS_PATH: {cache-dir}/virtualenvs
+deploy	Install Poetry	2026-03-05T14:41:01.1231484Z   INSTALLER_PARALLEL: true
+deploy	Install Poetry	2026-03-05T14:41:01.1232372Z   INSTALLATION_ARGUMENTS: 
+deploy	Install Poetry	2026-03-05T14:41:01.1233236Z   POETRY_PLUGINS: 
+deploy	Install Poetry	2026-03-05T14:41:01.1233982Z ##[endgroup]
+deploy	Install Poetry	2026-03-05T14:41:01.7950857Z 
+deploy	Install Poetry	2026-03-05T14:41:01.7952726Z [33mSetting Poetry installation path as /home/runner/.local[0m
+deploy	Install Poetry	2026-03-05T14:41:01.7954546Z 
+deploy	Install Poetry	2026-03-05T14:41:01.7955343Z [33mInstalling Poetry 👷[0m
+deploy	Install Poetry	2026-03-05T14:41:01.7956438Z 
+deploy	Install Poetry	2026-03-05T14:41:16.6987470Z Retrieving Poetry metadata
+deploy	Install Poetry	2026-03-05T14:41:16.6987922Z 
+deploy	Install Poetry	2026-03-05T14:41:16.6988117Z # Welcome to Poetry!
+deploy	Install Poetry	2026-03-05T14:41:16.6988586Z 
+deploy	Install Poetry	2026-03-05T14:41:16.6988796Z This will download and install the latest version of Poetry,
+deploy	Install Poetry	2026-03-05T14:41:16.6989256Z a dependency and package manager for Python.
+deploy	Install Poetry	2026-03-05T14:41:16.6990047Z 
+deploy	Install Poetry	2026-03-05T14:41:16.6990299Z It will add the `poetry` command to Poetry's bin directory, located at:
+deploy	Install Poetry	2026-03-05T14:41:16.6990662Z 
+deploy	Install Poetry	2026-03-05T14:41:16.6990778Z /home/runner/.local/bin
+deploy	Install Poetry	2026-03-05T14:41:16.6990969Z 
+deploy	Install Poetry	2026-03-05T14:41:16.6991270Z You can uninstall at any time by executing this script with the --uninstall option,
+deploy	Install Poetry	2026-03-05T14:41:16.6991790Z and these changes will be reverted.
+deploy	Install Poetry	2026-03-05T14:41:16.6992008Z 
+deploy	Install Poetry	2026-03-05T14:41:16.6992122Z Installing Poetry (2.3.2)
+deploy	Install Poetry	2026-03-05T14:41:16.6992460Z Installing Poetry (2.3.2): Creating environment
+deploy	Install Poetry	2026-03-05T14:41:16.6992843Z Installing Poetry (2.3.2): Installing Poetry
+deploy	Install Poetry	2026-03-05T14:41:16.6993190Z Installing Poetry (2.3.2): Creating script
+deploy	Install Poetry	2026-03-05T14:41:16.6993527Z Installing Poetry (2.3.2): Done
+deploy	Install Poetry	2026-03-05T14:41:16.6993723Z 
+deploy	Install Poetry	2026-03-05T14:41:16.6993838Z Poetry (2.3.2) is installed now. Great!
+deploy	Install Poetry	2026-03-05T14:41:16.6994062Z 
+deploy	Install Poetry	2026-03-05T14:41:16.6994248Z You can test that everything is set up by executing:
+deploy	Install Poetry	2026-03-05T14:41:16.6994524Z 
+deploy	Install Poetry	2026-03-05T14:41:16.6994635Z `poetry --version`
+deploy	Install Poetry	2026-03-05T14:41:16.6994788Z 
+deploy	Install Poetry	2026-03-05T14:41:19.2378972Z 
+deploy	Install Poetry	2026-03-05T14:41:19.2380080Z [33mInstallation completed. Configuring settings 🛠[0m
+deploy	Install Poetry	2026-03-05T14:41:19.2381670Z 
+deploy	Install Poetry	2026-03-05T14:41:19.2381964Z [33mDone ✅[0m
+deploy	Install Poetry	2026-03-05T14:41:19.2382741Z 
+deploy	Install Poetry	2026-03-05T14:41:19.2384095Z [33mIf you are creating a venv in your project, you can activate it by running 'source .venv/bin/activate'. If you're running this in an OS matrix, you can use 'source $VENV' instead, as an OS agnostic option[0m
+deploy	Install Dependencies	﻿2026-03-05T14:41:19.2431787Z ##[group]Run poetry install --no-interaction --no-root
+deploy	Install Dependencies	2026-03-05T14:41:19.2432188Z [36;1mpoetry install --no-interaction --no-root[0m
+deploy	Install Dependencies	2026-03-05T14:41:19.2481280Z shell: /usr/bin/bash -e {0}
+deploy	Install Dependencies	2026-03-05T14:41:19.2481510Z env:
+deploy	Install Dependencies	2026-03-05T14:41:19.2481754Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Dependencies	2026-03-05T14:41:19.2482164Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib/pkgconfig
+deploy	Install Dependencies	2026-03-05T14:41:19.2482580Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Dependencies	2026-03-05T14:41:19.2482970Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Dependencies	2026-03-05T14:41:19.2483343Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Dependencies	2026-03-05T14:41:19.2483709Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib
+deploy	Install Dependencies	2026-03-05T14:41:19.2484014Z   VENV: .venv/bin/activate
+deploy	Install Dependencies	2026-03-05T14:41:19.2484252Z ##[endgroup]
+deploy	Install Dependencies	2026-03-05T14:41:19.7317275Z Creating virtualenv ads-mod-07-backends-e-apis in /home/runner/work/ads_mod_07_backends_e_apis/ads_mod_07_backends_e_apis/.venv
+deploy	Install Dependencies	2026-03-05T14:41:20.1920080Z Updating dependencies
+deploy	Install Dependencies	2026-03-05T14:41:20.1921288Z Resolving dependencies...
+deploy	Install Dependencies	2026-03-05T14:41:30.5640170Z 
+deploy	Install Dependencies	2026-03-05T14:41:30.5641217Z Package operations: 107 installs, 0 updates, 0 removals
+deploy	Install Dependencies	2026-03-05T14:41:30.5642024Z 
+deploy	Install Dependencies	2026-03-05T14:41:30.5643559Z   - Installing attrs (25.4.0)
+deploy	Install Dependencies	2026-03-05T14:41:30.5653209Z   - Installing rpds-py (0.30.0)
+deploy	Install Dependencies	2026-03-05T14:41:30.5662756Z   - Installing typing-extensions (4.15.0)
+deploy	Install Dependencies	2026-03-05T14:41:30.7627777Z   - Installing referencing (0.37.0)
+deploy	Install Dependencies	2026-03-05T14:41:30.7898432Z   - Installing jsonschema-specifications (2025.9.1)
+deploy	Install Dependencies	2026-03-05T14:41:30.7907255Z   - Installing platformdirs (4.9.2)
+deploy	Install Dependencies	2026-03-05T14:41:30.7925040Z   - Installing six (1.17.0)
+deploy	Install Dependencies	2026-03-05T14:41:30.7949260Z   - Installing traitlets (5.14.3)
+deploy	Install Dependencies	2026-03-05T14:41:30.9223071Z   - Installing asttokens (3.0.1)
+deploy	Install Dependencies	2026-03-05T14:41:30.9231734Z   - Installing colorama (0.4.6)
+deploy	Install Dependencies	2026-03-05T14:41:30.9243916Z   - Installing executing (2.2.1)
+deploy	Install Dependencies	2026-03-05T14:41:30.9255323Z   - Installing fastjsonschema (2.21.2)
+deploy	Install Dependencies	2026-03-05T14:41:30.9278117Z   - Installing jsonschema (4.26.0)
+deploy	Install Dependencies	2026-03-05T14:41:30.9294026Z   - Installing jupyter-core (5.9.1)
+deploy	Install Dependencies	2026-03-05T14:41:30.9334645Z   - Installing markupsafe (3.0.3)
+deploy	Install Dependencies	2026-03-05T14:41:30.9362019Z   - Installing mdurl (0.1.2)
+deploy	Install Dependencies	2026-03-05T14:41:30.9700768Z   - Installing mergedeep (1.3.4)
+deploy	Install Dependencies	2026-03-05T14:41:30.9885909Z   - Installing parso (0.8.6)
+deploy	Install Dependencies	2026-03-05T14:41:30.9917265Z   - Installing ptyprocess (0.7.0)
+deploy	Install Dependencies	2026-03-05T14:41:30.9945800Z   - Installing pure-eval (0.2.3)
+deploy	Install Dependencies	2026-03-05T14:41:31.0086533Z   - Installing pygments (2.19.2)
+deploy	Install Dependencies	2026-03-05T14:41:31.0394918Z   - Installing python-dateutil (2.9.0.post0)
+deploy	Install Dependencies	2026-03-05T14:41:31.0549465Z   - Installing pyyaml (6.0.3)
+deploy	Install Dependencies	2026-03-05T14:41:31.1281248Z   - Installing pyzmq (27.1.0)
+deploy	Install Dependencies	2026-03-05T14:41:31.1550924Z   - Installing tornado (6.5.4)
+deploy	Install Dependencies	2026-03-05T14:41:31.1627278Z   - Installing wcwidth (0.6.0)
+deploy	Install Dependencies	2026-03-05T14:41:31.1923399Z   - Installing webencodings (0.5.1)
+deploy	Install Dependencies	2026-03-05T14:41:31.4325017Z   - Installing certifi (2026.2.25)
+deploy	Install Dependencies	2026-03-05T14:41:31.4333475Z   - Installing charset-normalizer (3.4.4)
+deploy	Install Dependencies	2026-03-05T14:41:31.4342309Z   - Installing click (8.3.1)
+deploy	Install Dependencies	2026-03-05T14:41:31.4350248Z   - Installing decorator (5.2.1)
+deploy	Install Dependencies	2026-03-05T14:41:31.4360996Z   - Installing ghp-import (2.1.0)
+deploy	Install Dependencies	2026-03-05T14:41:31.4373629Z   - Installing idna (3.11)
+deploy	Install Dependencies	2026-03-05T14:41:31.4382435Z   - Installing ipython-pygments-lexers (1.1.1)
+deploy	Install Dependencies	2026-03-05T14:41:31.4390089Z   - Installing jedi (0.19.2)
+deploy	Install Dependencies	2026-03-05T14:41:31.4786445Z   - Installing jinja2 (3.1.6)
+deploy	Install Dependencies	2026-03-05T14:41:31.4823508Z   - Installing jupyter-client (8.8.0)
+deploy	Install Dependencies	2026-03-05T14:41:31.5223092Z   - Installing markdown (3.10.2)
+deploy	Install Dependencies	2026-03-05T14:41:31.5311446Z   - Installing markdown-it-py (4.0.0)
+deploy	Install Dependencies	2026-03-05T14:41:31.5922640Z   - Installing matplotlib-inline (0.2.1)
+deploy	Install Dependencies	2026-03-05T14:41:31.5942569Z   - Installing mkdocs-get-deps (0.2.0)
+deploy	Install Dependencies	2026-03-05T14:41:31.6282481Z   - Installing nbformat (5.10.4)
+deploy	Install Dependencies	2026-03-05T14:41:31.6587735Z   - Installing packaging (26.0)
+deploy	Install Dependencies	2026-03-05T14:41:31.6811640Z   - Installing pathspec (1.0.4)
+deploy	Install Dependencies	2026-03-05T14:41:31.6824963Z   - Installing pexpect (4.9.0)
+deploy	Install Dependencies	2026-03-05T14:41:31.6870033Z   - Installing prompt-toolkit (3.0.52)
+deploy	Install Dependencies	2026-03-05T14:41:31.7072115Z   - Installing pyyaml-env-tag (1.1)
+deploy	Install Dependencies	2026-03-05T14:41:31.7706121Z   - Installing smmap (5.0.2)
+deploy	Install Dependencies	2026-03-05T14:41:31.7825086Z   - Installing soupsieve (2.8.3)
+deploy	Install Dependencies	2026-03-05T14:41:31.7935163Z   - Installing stack-data (0.6.3)
+deploy	Install Dependencies	2026-03-05T14:41:31.8414295Z   - Installing tinycss2 (1.4.0)
+deploy	Install Dependencies	2026-03-05T14:41:31.8566408Z   - Installing urllib3 (2.6.3)
+deploy	Install Dependencies	2026-03-05T14:41:31.8617505Z   - Installing watchdog (6.0.0)
+deploy	Install Dependencies	2026-03-05T14:41:32.2591473Z   - Installing babel (2.18.0)
+deploy	Install Dependencies	2026-03-05T14:41:32.2601656Z   - Installing backrefs (6.2)
+deploy	Install Dependencies	2026-03-05T14:41:32.2609105Z   - Installing beautifulsoup4 (4.14.3)
+deploy	Install Dependencies	2026-03-05T14:41:32.2618896Z   - Installing bleach (6.3.0)
+deploy	Install Dependencies	2026-03-05T14:41:32.2635442Z   - Installing bracex (2.6)
+deploy	Install Dependencies	2026-03-05T14:41:32.2650548Z   - Installing comm (0.2.3)
+deploy	Install Dependencies	2026-03-05T14:41:32.2680081Z   - Installing debugpy (1.8.20)
+deploy	Install Dependencies	2026-03-05T14:41:32.2688264Z   - Installing defusedxml (0.7.1)
+deploy	Install Dependencies	2026-03-05T14:41:32.3467678Z   - Installing filelock (3.25.0)
+deploy	Install Dependencies	2026-03-05T14:41:32.3524365Z   - Installing gitdb (4.0.12)
+deploy	Install Dependencies	2026-03-05T14:41:32.3723290Z   - Installing hjson (3.1.0)
+deploy	Install Dependencies	2026-03-05T14:41:32.4266859Z   - Installing ipython (9.10.0)
+deploy	Install Dependencies	2026-03-05T14:41:32.4444891Z   - Installing jupyterlab-pygments (0.3.0)
+deploy	Install Dependencies	2026-03-05T14:41:32.4525466Z   - Installing mdit-py-plugins (0.5.0)
+deploy	Install Dependencies	2026-03-05T14:41:32.4972560Z   - Installing mistune (3.2.0)
+deploy	Install Dependencies	2026-03-05T14:41:32.5454763Z   - Installing mkdocs (1.6.1)
+deploy	Install Dependencies	2026-03-05T14:41:32.5467443Z   - Installing mkdocs-material-extensions (1.3.1)
+deploy	Install Dependencies	2026-03-05T14:41:32.5489850Z   - Installing msgpack (1.1.2)
+deploy	Install Dependencies	2026-03-05T14:41:32.6177703Z   - Installing nbclient (0.10.4)
+deploy	Install Dependencies	2026-03-05T14:41:32.6713639Z   - Installing nest-asyncio (1.6.0)
+deploy	Install Dependencies	2026-03-05T14:41:32.6867315Z   - Installing paginate (0.5.7)
+deploy	Install Dependencies	2026-03-05T14:41:32.7221429Z   - Installing pandocfilters (1.5.1)
+deploy	Install Dependencies	2026-03-05T14:41:32.7373868Z   - Installing psutil (7.2.2)
+deploy	Install Dependencies	2026-03-05T14:41:32.7556645Z   - Installing pymdown-extensions (10.21)
+deploy	Install Dependencies	2026-03-05T14:41:32.7814863Z   - Installing requests (2.32.5)
+deploy	Install Dependencies	2026-03-05T14:41:33.5568760Z   - Installing cachecontrol (0.14.4)
+deploy	Install Dependencies	2026-03-05T14:41:33.5579838Z   - Installing csscompressor (0.9.5)
+deploy	Install Dependencies	2026-03-05T14:41:33.5587476Z   - Installing gitpython (3.1.46)
+deploy	Install Dependencies	2026-03-05T14:41:33.5595929Z   - Installing htmlmin2 (0.1.13)
+deploy	Install Dependencies	2026-03-05T14:41:33.5603374Z   - Installing ipykernel (6.31.0)
+deploy	Install Dependencies	2026-03-05T14:41:33.5614465Z   - Installing jsmin (3.0.1)
+deploy	Install Dependencies	2026-03-05T14:41:33.5622104Z   - Installing jupytext (1.19.1)
+deploy	Install Dependencies	2026-03-05T14:41:33.5630654Z   - Installing lxml (6.0.2)
+deploy	Install Dependencies	2026-03-05T14:41:33.6663336Z   - Installing mkdocs-material (9.7.4)
+deploy	Install Dependencies	2026-03-05T14:41:33.6989930Z   - Installing natsort (8.4.0)
+deploy	Install Dependencies	2026-03-05T14:41:33.7810625Z   - Installing nbconvert (7.17.0)
+deploy	Install Dependencies	2026-03-05T14:41:33.8109856Z   - Installing selectolax (0.4.1)
+deploy	Install Dependencies	2026-03-05T14:41:33.8269760Z   - Installing super-collections (0.6.2)
+deploy	Install Dependencies	2026-03-05T14:41:33.8387883Z   - Installing termcolor (3.3.0)
+deploy	Install Dependencies	2026-03-05T14:41:34.0275777Z   - Installing wcmatch (10.1)
+deploy	Install Dependencies	2026-03-05T14:41:37.6182264Z   - Installing mkdocs-awesome-pages-plugin (2.10.1)
+deploy	Install Dependencies	2026-03-05T14:41:37.6191737Z   - Installing mkdocs-git-authors-plugin (0.10.0)
+deploy	Install Dependencies	2026-03-05T14:41:37.6201319Z   - Installing mkdocs-git-revision-date-localized-plugin (1.5.1)
+deploy	Install Dependencies	2026-03-05T14:41:37.6208398Z   - Installing mkdocs-glightbox (0.5.2)
+deploy	Install Dependencies	2026-03-05T14:41:37.6216738Z   - Installing mkdocs-jupyter (0.25.1)
+deploy	Install Dependencies	2026-03-05T14:41:37.6227708Z   - Installing mkdocs-macros-plugin (1.5.0)
+deploy	Install Dependencies	2026-03-05T14:41:37.6247822Z   - Installing mkdocs-minify-plugin (0.8.0)
+deploy	Install Dependencies	2026-03-05T14:41:37.6287605Z   - Installing mkdocs-print-site-plugin (2.8)
+deploy	Install Dependencies	2026-03-05T14:41:37.7064626Z   - Installing mkdocs-quiz (0.0.41)
+deploy	Install Dependencies	2026-03-05T14:41:37.7092196Z   - Installing mkdocs-revealjs (0.0.6)
+deploy	Install Dependencies	2026-03-05T14:41:37.7191803Z   - Installing mkdocs-rss-plugin (1.17.9)
+deploy	Install Dependencies	2026-03-05T14:41:37.7270133Z   - Installing mkdocs-video (1.5.0)
+deploy	Install Dependencies	2026-03-05T14:41:37.7427985Z   - Installing pillow (11.3.0)
+deploy	Install Dependencies	2026-03-05T14:41:37.7448014Z   - Installing termynal (0.13.1)
+deploy	Install Dependencies	2026-03-05T14:41:38.2548557Z 
+deploy	Install Dependencies	2026-03-05T14:41:38.2549913Z Writing lock file
+deploy	Setup Node.js	﻿2026-03-05T14:41:38.5696541Z ##[group]Run actions/setup-node@v4
+deploy	Setup Node.js	2026-03-05T14:41:38.5696831Z with:
+deploy	Setup Node.js	2026-03-05T14:41:38.5696997Z   node-version: 20
+deploy	Setup Node.js	2026-03-05T14:41:38.5697195Z   always-auth: false
+deploy	Setup Node.js	2026-03-05T14:41:38.5697390Z   check-latest: false
+deploy	Setup Node.js	2026-03-05T14:41:38.5697706Z   token: ***
+deploy	Setup Node.js	2026-03-05T14:41:38.5697881Z env:
+deploy	Setup Node.js	2026-03-05T14:41:38.5698113Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Setup Node.js	2026-03-05T14:41:38.5698524Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib/pkgconfig
+deploy	Setup Node.js	2026-03-05T14:41:38.5698942Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Setup Node.js	2026-03-05T14:41:38.5699307Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Setup Node.js	2026-03-05T14:41:38.5699989Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Setup Node.js	2026-03-05T14:41:38.5700372Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib
+deploy	Setup Node.js	2026-03-05T14:41:38.5700679Z   VENV: .venv/bin/activate
+deploy	Setup Node.js	2026-03-05T14:41:38.5700876Z ##[endgroup]
+deploy	Setup Node.js	2026-03-05T14:41:38.7456863Z Found in cache @ /opt/hostedtoolcache/node/20.20.0/x64
+deploy	Setup Node.js	2026-03-05T14:41:38.7463944Z ##[group]Environment details
+deploy	Setup Node.js	2026-03-05T14:41:40.6002412Z node: v20.20.0
+deploy	Setup Node.js	2026-03-05T14:41:40.6002807Z npm: 10.8.2
+deploy	Setup Node.js	2026-03-05T14:41:40.6003086Z yarn: 1.22.22
+deploy	Setup Node.js	2026-03-05T14:41:40.6003788Z ##[endgroup]
+deploy	Install Playwright Browsers	﻿2026-03-05T14:41:40.6132892Z ##[group]Run poetry run playwright install --with-deps chromium
+deploy	Install Playwright Browsers	2026-03-05T14:41:40.6133346Z [36;1mpoetry run playwright install --with-deps chromium[0m
+deploy	Install Playwright Browsers	2026-03-05T14:41:40.6189170Z shell: /usr/bin/bash -e {0}
+deploy	Install Playwright Browsers	2026-03-05T14:41:40.6189406Z env:
+deploy	Install Playwright Browsers	2026-03-05T14:41:40.6189865Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Playwright Browsers	2026-03-05T14:41:40.6190319Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib/pkgconfig
+deploy	Install Playwright Browsers	2026-03-05T14:41:40.6190761Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Playwright Browsers	2026-03-05T14:41:40.6191146Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Playwright Browsers	2026-03-05T14:41:40.6191528Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+deploy	Install Playwright Browsers	2026-03-05T14:41:40.6191936Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib
+deploy	Install Playwright Browsers	2026-03-05T14:41:40.6192260Z   VENV: .venv/bin/activate
+deploy	Install Playwright Browsers	2026-03-05T14:41:40.6192472Z ##[endgroup]
+deploy	Install Playwright Browsers	2026-03-05T14:41:41.1168483Z Command not found: playwright
+deploy	Install Playwright Browsers	2026-03-05T14:41:41.1653347Z ##[error]Process completed with exit code 1.
+deploy	Post Run actions/checkout@v4	﻿2026-03-05T14:41:41.1762554Z Post job cleanup.
+deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.2717286Z [command]/usr/bin/git version
+deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.2754207Z git version 2.53.0
+deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.2799437Z Temporarily overriding HOME='/home/runner/work/_temp/a0023947-d5fb-4901-9d13-71bab7713114' before making global git config changes
+deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.2801260Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.2814589Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ads_mod_07_backends_e_apis/ads_mod_07_backends_e_apis
+deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.2851520Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.2885845Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.3130467Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.3153151Z http.https://github.com/.extraheader
+deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.3165796Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.3198445Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.3437360Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+deploy	Post Run actions/checkout@v4	2026-03-05T14:41:41.3468834Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+deploy	Complete job	﻿2026-03-05T14:41:41.3812273Z Cleaning up orphan processes
