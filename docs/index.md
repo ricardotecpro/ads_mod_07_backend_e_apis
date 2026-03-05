@@ -11,34 +11,34 @@
 
 - :material-presentation: **Slides Interativos**
   --- 
-  Apresentações ricas e visuais.
+  Apresentações ricas e visuais otimizadas para Reveal.js.
   [:octicons-arrow-right-24: Ver Slides](./slides/index.md)
 
 - :material-help-circle: **Quizzes**
   --- 
-  Autodiagnóstico contínuo.
-  [:octicons-arrow-right-24: Testar](./quizzes/index.md)
+  Autodiagnóstico contínuo com feedback interativo.
+  [:octicons-arrow-right-24: Testar Conhecimento](./quizzes/index.md)
 
 - :material-briefcase-outline: **Projetos**
   --- 
-  PoCs práticas de mercado.
+  Laboratórios práticos e PoCs de mercado.
   [:octicons-arrow-right-24: Ver Projetos](./projetos/index.md)
 
-- :fontawesome-solid-pencil: **Exercícios e Soluções**
+- :fontawesome-solid-pencil: **Exercícios Progressivos**
   --- 
-  Fixação do conteúdo abordado.
-  [:octicons-arrow-right-24: Praticar](./exercicios/index.md)
+  Fixação do conteúdo abordado do básico ao desafio.
+  [:octicons-arrow-right-24: Praticar Agora](./exercicios/index.md)
 
-- :material-cog: **Setups**
+- :material-cog: **Setup e Ferramentas**
   --- 
-  Prepare sua máquina.
-  [:octicons-arrow-right-24: Configurar](./setups/index.md)
+  Configurações essenciais para VS Code e Ecossistema MkDocs.
+  [:octicons-arrow-right-24: Configurar Ambiente](./setups/index.md)
 
 </div>
 
-## 💡 3 Dicas Táticas
-1. Entenda os conceitos agnósticos antes do código.
-2. Pratique os projetos e refatore.
-3. Entenda HTTP a fundo.
+## 💡 Dicas de Sucesso
+1. **Entenda os Protocolos**: Domine HTTP, REST e gRPC antes de codificar.
+2. **Arquitetura Primeiro**: Planeje a persistência e a escalabilidade antes da implementação.
+3. **Mantenha a Semântica**: APIs de qualidade exigem nomes de recursos claros e consistentes.
 
 [➡️ Ir para a Aula 01](./aulas/aula-01.md){ .md-button .md-button--primary }
