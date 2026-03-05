@@ -38,10 +38,11 @@ jobs:
 
       - name: Run Tests
         run: |
+          git config --global --add safe.directory '*'
           poetry run task slides
           poetry run task quizzes
           poetry run mkdocs build
-          poetry run mkdocs serve &
+          poetry run mkdocs serve -a 127.0.0.1:8766 &
           PID=$!
           sleep 10
           poetry run task test
