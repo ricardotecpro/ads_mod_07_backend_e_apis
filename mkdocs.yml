@@ -164,7 +164,7 @@ nav:
     - Sobre: sobre.md
     - Plano: plano.md
   - Aulas:
-    - aulas/index.md
+    - Introdução: aulas/index.md
     - 'Módulo 1 – Fundamentos e Arquitetura':
       - 'Aula 01 - Fundamentos da Web e Sistemas Distribuídos': aulas/aula-01.md
       - 'Aula 02 - Arquitetura de Software Backend': aulas/aula-02.md
