@@ -54,7 +54,7 @@ jobs:
           # Build do site (dispara hooks de cópia)
           poetry run mkdocs build
           # Servidor em background para testes
-          poetry run mkdocs serve &
+          poetry run mkdocs serve -a 127.0.0.1:8766 &
           PID=$!
           sleep 10
           # Roda testes para garantir qualidade
