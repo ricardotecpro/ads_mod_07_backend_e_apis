@@ -41,4 +41,4 @@
 2. Pratique os projetos e refatore.
 3. Entenda HTTP a fundo.
 
-[➡️ Ir para a Aula 01](./aulas/aula-01.md){{ .md-button .md-button--primary }}
+[➡️ Ir para a Aula 01](./aulas/aula-01.md){ .md-button .md-button--primary }
