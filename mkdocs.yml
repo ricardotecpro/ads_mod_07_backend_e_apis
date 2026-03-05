@@ -18,12 +18,9 @@ theme:
     - navigation.expand
     - navigation.top
     - navigation.footer
-    - navigation.sections
-    - navigation.path
-    - navigation.expand
-    - navigation.top
-    - navigation.footer
+    - navigation.indexes
     - navigation.instant
+    - navigation.prune
     - toc.follow
     - content.code.copy
     - content.code.annotate
