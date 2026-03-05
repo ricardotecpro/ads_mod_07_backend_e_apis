@@ -5,7 +5,7 @@
       
       
       
-        <link rel="canonical" href="https://ricardotecpro.github.io/ads_spec_mobile_nativo_kotlin_swift/estavel/aulas/aula-02/">
+        <link rel="canonical" href="https://ricardotecpro.github.io/ads_mod_07_backends_e_apis/estavel/aulas/aula-02/">
       
       
         <link rel="prev" href="../aula-01/">
@@ -21,11 +21,11 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/images/logic_logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Aula 02 - Arquitetura e Gateway - Desenvolvimento Mobile Nativo - Curso</title>
+        <title>Aula 02 - Arquitetura Backend - Engenharia de Backends e APIs Modernas</title>
       
     
     
@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aula-02-arquitetura-de-microsservicos-e-api-gateway" class="md-skip">
+        <a href="#aula-02-arquitetura-de-software-backend" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -118,7 +118,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href="../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
+    <a href="../.." title="Engenharia de Backends e APIs Modernas" class="md-header__button md-logo" aria-label="Engenharia de Backends e APIs Modernas" data-md-component="logo">
       
   <img src="../../assets/images/logic_logo.svg" alt="logo">
 
@@ -131,13 +131,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Desenvolvimento Mobile Nativo - Curso
+            Engenharia de Backends e APIs Modernas
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Aula 02 - Arquitetura e Gateway
+              Aula 02 - Arquitetura Backend
             
           </span>
         </div>
@@ -219,13 +219,13 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/ricardotecpro/ads_spec_mobile_nativo_kotlin_swift" title="Ir para repositório" class="md-source" data-md-component="source">
+        <a href="https://github.com/ricardotecpro/ads_mod_07_backends_e_apis" title="Ir para repositório" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
   </div>
   <div class="md-source__repository">
-    ricardotecpro/ads_spec_mobile_nativo_kotlin_swift
+    ricardotecpro/ads_mod_07_backends_e_apis
   </div>
 </a>
       </div>
@@ -479,22 +479,22 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
+    <a href="../.." title="Engenharia de Backends e APIs Modernas" class="md-nav__button md-logo" aria-label="Engenharia de Backends e APIs Modernas" data-md-component="logo">
       
   <img src="../../assets/images/logic_logo.svg" alt="logo">
 
     </a>
-    Desenvolvimento Mobile Nativo - Curso
+    Engenharia de Backends e APIs Modernas
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/ricardotecpro/ads_spec_mobile_nativo_kotlin_swift" title="Ir para repositório" class="md-source" data-md-component="source">
+      <a href="https://github.com/ricardotecpro/ads_mod_07_backends_e_apis" title="Ir para repositório" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
   </div>
   <div class="md-source__repository">
-    ricardotecpro/ads_spec_mobile_nativo_kotlin_swift
+    ricardotecpro/ads_mod_07_backends_e_apis
   </div>
 </a>
     </div>
@@ -658,7 +658,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 01 - Intro Microsserviços
+    Aula 01 - Fundamentos da Web
   
 
     
@@ -695,7 +695,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 02 - Arquitetura e Gateway
+    Aula 02 - Arquitetura Backend
   
 
     
@@ -713,7 +713,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 02 - Arquitetura e Gateway
+    Aula 02 - Arquitetura Backend
   
 
     
@@ -739,116 +739,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-comunicacao-entre-servicos" class="md-nav__link">
+  <a href="#ementa-do-modulo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Comunicação entre Serviços 💬
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Comunicação entre Serviços 💬">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#comunicacao-sincrona-sync" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔄 Comunicação Síncrona (Sync)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#comunicacao-assincrona-async" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📬 Comunicação Assíncrona (Async)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-o-papel-do-api-gateway" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. O Papel do API Gateway 🚪
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. O Papel do API Gateway 🚪">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#responsabilidades-do-gateway" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Responsabilidades do Gateway:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-service-discovery-e-load-balancing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Service Discovery e Load Balancing 🔍⚖️
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Service Discovery e Load Balancing 🔍⚖️">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#service-discovery" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔎 Service Discovery
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#load-balancing-balanceamento-de-carga" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ⚖️ Load Balancing (Balanceamento de Carga)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-padroes-de-resiliencia-circuit-breaker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Padrões de Resiliência: Circuit Breaker 🔌
+        Ementa do Módulo
       
     </span>
   </a>
@@ -856,21 +750,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-mini-projeto-simulando-um-gateway" class="md-nav__link">
+  <a href="#introducao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Mini-Projeto: Simulando um Gateway 🚀
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-exercicio-de-fixacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Exercício de Fixação 🧠
+        Introdução
       
     </span>
   </a>
@@ -900,7 +783,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 03 - Modelagem REST
+    Aula 03 - Design de APIs
   
 
     
@@ -928,7 +811,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 04 - Documentação (Swagger)
+    Aula 04 - Protocolos e Comunicação
   
 
     
@@ -956,7 +839,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 05 - Implementação de APIs
+    Aula 05 - Sec e Autenticação
   
 
     
@@ -984,7 +867,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 06 - Persistência e Banco
+    Aula 06 - Persistência e Dados
   
 
     
@@ -1012,7 +895,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 07 - Testes Unitários
+    Aula 07 - Cache e Performance
   
 
     
@@ -1040,7 +923,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 08 - Testes Integrados
+    Aula 08 - Event Driven e Mensageria
   
 
     
@@ -1068,7 +951,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 09 - Estratégias Web
+    Aula 09 - Infra. Cloud Native
   
 
     
@@ -1096,7 +979,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 10 - JWT e Segurança
+    Aula 10 - Observabilidade
   
 
     
@@ -1124,7 +1007,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 11 - Autorização (RBAC)
+    Aula 11 - Testes de Backend
   
 
     
@@ -1152,7 +1035,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 12 - Conceito de SPA
+    Aula 12 - Deploy e DevOps
   
 
     
@@ -1180,7 +1063,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 13 - Componentes e Templates
+    Aula 13 - Serverless e Edge
   
 
     
@@ -1208,7 +1091,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 14 - Estados e Eventos
+    Aula 14 - API Gateways
   
 
     
@@ -1236,7 +1119,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 15 - Roteamento
+    Aula 15 - Ecossistemas (Visão Geral)
   
 
     
@@ -1264,7 +1147,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 16 - Integração e Projeto Final
+    Aula 16 - Tópicos Avançados
   
 
     
@@ -3840,116 +3723,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-comunicacao-entre-servicos" class="md-nav__link">
+  <a href="#ementa-do-modulo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Comunicação entre Serviços 💬
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Comunicação entre Serviços 💬">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#comunicacao-sincrona-sync" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔄 Comunicação Síncrona (Sync)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#comunicacao-assincrona-async" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📬 Comunicação Assíncrona (Async)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-o-papel-do-api-gateway" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. O Papel do API Gateway 🚪
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. O Papel do API Gateway 🚪">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#responsabilidades-do-gateway" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Responsabilidades do Gateway:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-service-discovery-e-load-balancing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Service Discovery e Load Balancing 🔍⚖️
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Service Discovery e Load Balancing 🔍⚖️">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#service-discovery" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔎 Service Discovery
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#load-balancing-balanceamento-de-carga" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ⚖️ Load Balancing (Balanceamento de Carga)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-padroes-de-resiliencia-circuit-breaker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Padrões de Resiliência: Circuit Breaker 🔌
+        Ementa do Módulo
       
     </span>
   </a>
@@ -3957,21 +3734,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-mini-projeto-simulando-um-gateway" class="md-nav__link">
+  <a href="#introducao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Mini-Projeto: Simulando um Gateway 🚀
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-exercicio-de-fixacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Exercício de Fixação 🧠
+        Introdução
       
     </span>
   </a>
@@ -3998,74 +3764,29 @@
   
 
 
-<h1 id="aula-02-arquitetura-de-microsservicos-e-api-gateway">Aula 02 - Arquitetura de Microsserviços e API Gateway 🏗️</h1>
+<h1 id="aula-02-arquitetura-de-software-backend">Aula 02 - Arquitetura de Software Backend 🌐</h1>
 <div class="admonition tip">
 <p class="admonition-title">Objetivo</p>
-<p><strong>Objetivo</strong>: Entender como múltiplos serviços independentes conversam entre si, o papel vital do API Gateway como porta de entrada e as estratégias de comunicação síncrona e assíncrona.</p>
+<p><strong>Objetivo</strong>: Compreender os conceitos de Arquitetura Backend abordando as principais estratégias e ferramentas mercado.</p>
 </div>
 <hr>
-<h2 id="1-comunicacao-entre-servicos">1. Comunicação entre Serviços 💬</h2>
-<p>Em um sistema distribuído, os serviços precisam trocar informações. Existem dois modelos principais:</p>
-<h3 id="comunicacao-sincrona-sync">🔄 Comunicação Síncrona (Sync)</h3>
-<p>O serviço chamador envia uma requisição e <strong>espera</strong> pela resposta imediata.
-*   <strong>Protocolo</strong>: Geralmente HTTP/REST ou gRPC.
-*   <strong>Exemplo</strong>: O serviço de Pedidos chama o serviço de Pagamentos e aguarda a confirmação para finalizar o carrinho.
-*   <strong>Pró</strong>: Simples de entender e implementar.
-*   <strong>Contra</strong>: Se o serviço destino estiver lento, todo o sistema fica lento (cascateamento).</p>
-<h3 id="comunicacao-assincrona-async">📬 Comunicação Assíncrona (Async)</h3>
-<p>O serviço envia uma mensagem e <strong>não espera</strong> pela resposta. Ele continua seu trabalho.
-*   <strong>Protocolo</strong>: Mensageria (RabbitMQ, Kafka, SQS).
-*   <strong>Exemplo</strong>: O serviço de Pedidos envia um evento "Pedido Criado" para uma fila. O serviço de Logística lê essa fila quando puder.
-*   <strong>Pró</strong>: Maior resiliência e desacoplamento.
-*   <strong>Contra</strong>: Complexidade maior (consistência eventual).</p>
+<h2 id="ementa-do-modulo">Ementa do Módulo</h2>
+<ul>
+<li>Arquiteturas modernas (Clean</li>
+<li>Hexagonal</li>
+<li>Onion</li>
+<li>Layered)</li>
+<li>Domain Driven Design (DDD)</li>
+<li>Padrões arquiteturais (CQRS</li>
+<li>Event Sourcing</li>
+<li>Saga</li>
+<li>BFF).</li>
+</ul>
 <hr>
-<h2 id="2-o-papel-do-api-gateway">2. O Papel do API Gateway 🚪</h2>
-<p>Em vez de expor todos os microsserviços diretamente para a internet, usamos um <strong>API Gateway</strong>. Ele atua como uma única porta de entrada para os clientes.</p>
-<h3 id="responsabilidades-do-gateway">Responsabilidades do Gateway:</h3>
-<ol>
-<li><strong>Roteamento</strong>: Encaminha a requisição para o serviço correto (ex: <code>/users</code> vai para <code>User-Service</code>).</li>
-<li><strong>Autenticação</strong>: Verifica se o usuário está logado antes de passar a bola para os serviços internos.</li>
-<li><strong>Rate Limiting</strong>: Impede que um cliente faça requisições demais e derrube o sistema.</li>
-<li><strong>Agregação</strong>: Pode combinar dados de vários serviços em uma única resposta para o frontend.</li>
-</ol>
+<h2 id="introducao">Introdução</h2>
+<p>Conteúdo detalhado da aula em desenvolvimento...</p>
 <hr>
-<h2 id="3-service-discovery-e-load-balancing">3. Service Discovery e Load Balancing 🔍⚖️</h2>
-<p>Como o Gateway sabe o endereço de cada serviço se eles mudam de IP o tempo todo em containers?</p>
-<h3 id="service-discovery">🔎 Service Discovery</h3>
-<p>É uma agenda dinâmica (ex: Consul, Eureka) onde cada serviço se "registra" ao subir. O Gateway consulta essa agenda para achar o serviço.</p>
-<h3 id="load-balancing-balanceamento-de-carga">⚖️ Load Balancing (Balanceamento de Carga)</h3>
-<p>Distribui as requisições entre várias instâncias do mesmo serviço para evitar sobrecarga.</p>
-<pre class="mermaid"><code>graph TD
-    Client[Cliente/Mobile] --&gt; Gateway[API Gateway]
-    Gateway --&gt; SD{Service Discovery}
-    Gateway --&gt; S1[Instância 1 - Pagamento]
-    Gateway --&gt; S2[Instância 2 - Pagamento]
-    Gateway --&gt; S3[Instância 3 - Pagamento]
-    style SD fill:#f9f,stroke:#333,stroke-width:4px</code></pre>
-<hr>
-<h2 id="4-padroes-de-resiliencia-circuit-breaker">4. Padrões de Resiliência: Circuit Breaker 🔌</h2>
-<p>Se um serviço está falhando, não adianta continuar mandando requisições para ele. O <strong>Circuit Breaker</strong> (Disjuntor) "abre o circuito" e retorna um erro imediato ou um dado em cache, evitando que o erro se espalhe.</p>
-<hr>
-<h2 id="5-mini-projeto-simulando-um-gateway">5. Mini-Projeto: Simulando um Gateway 🚀</h2>
-<p>Vamos simular o comportamento de um Gateway usando o Postman:</p>
-<ol>
-<li>Crie uma Collection chamada "API Gateway Simulation".</li>
-<li>Configure variáveis de ambiente para <code>base_url</code>.</li>
-<li>Crie rotas que "apontam" para diferentes APIs públicas (ex: JSONPlaceholder para posts e ReqRes para usuários).</li>
-<li>Teste como se fosse um único sistema centralizado.</li>
-</ol>
-<blockquote>
-<p>Veja os detalhes práticos em <a href="../../exercicios/exercicio-02/">Exercícios &gt; Ex 02</a>.</p>
-</blockquote>
-<hr>
-<h2 id="6-exercicio-de-fixacao">6. Exercício de Fixação 🧠</h2>
-<ol>
-<li>Qual a diferença entre um API Gateway e um Load Balancer?</li>
-<li>Explique o problema do "Cascateamento de Falhas" em comunicações síncronas.</li>
-<li>Em que situação você usaria Kafka ao invés de HTTP para comunicar dois serviços?</li>
-</ol>
-<hr>
-<p><strong>Próxima Aula</strong>: Vamos colocar a mão na massa com a <a href="../aula-03/">Modelagem de APIs RESTful</a>! 📡</p>
+<p><strong>Próxima Aula</strong>: Avançaremos para os próximos tópicos do currículo! 🚀</p>
 
 
 
@@ -4088,7 +3809,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 23:33:09 UTC">19 de fevereiro de 2026 23:33:09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="5 de março de 2026 05:11:09 UTC">5 de março de 2026 05:11:09</span>
   </span>
 
     
@@ -4148,7 +3869,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé">
         
           
-          <a href="../aula-01/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Aula 01 - Intro Microsserviços">
+          <a href="../aula-01/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Aula 01 - Fundamentos da Web">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -4158,20 +3879,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Aula 01 - Intro Microsserviços
+                Aula 01 - Fundamentos da Web
               </div>
             </div>
           </a>
         
         
           
-          <a href="../aula-03/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Aula 03 - Modelagem REST">
+          <a href="../aula-03/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Aula 03 - Design de APIs">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Aula 03 - Modelagem REST
+                Aula 03 - Design de APIs
               </div>
             </div>
             <div class="md-footer__button md-icon">

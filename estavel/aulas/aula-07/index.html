@@ -5,7 +5,7 @@
       
       
       
-        <link rel="canonical" href="https://ricardotecpro.github.io/ads_spec_mobile_nativo_kotlin_swift/estavel/aulas/aula-07/">
+        <link rel="canonical" href="https://ricardotecpro.github.io/ads_mod_07_backends_e_apis/estavel/aulas/aula-07/">
       
       
         <link rel="prev" href="../aula-06/">
@@ -21,11 +21,11 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/images/logic_logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Aula 07 - Testes Unitários - Desenvolvimento Mobile Nativo - Curso</title>
+        <title>Aula 07 - Cache e Performance - Engenharia de Backends e APIs Modernas</title>
       
     
     
@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aula-07-repositories-e-banco-de-dados-postgresql" class="md-skip">
+        <a href="#aula-07-cache-e-performance" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -118,7 +118,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href="../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
+    <a href="../.." title="Engenharia de Backends e APIs Modernas" class="md-header__button md-logo" aria-label="Engenharia de Backends e APIs Modernas" data-md-component="logo">
       
   <img src="../../assets/images/logic_logo.svg" alt="logo">
 
@@ -131,13 +131,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Desenvolvimento Mobile Nativo - Curso
+            Engenharia de Backends e APIs Modernas
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Aula 07 - Testes Unitários
+              Aula 07 - Cache e Performance
             
           </span>
         </div>
@@ -219,13 +219,13 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/ricardotecpro/ads_spec_mobile_nativo_kotlin_swift" title="Ir para repositório" class="md-source" data-md-component="source">
+        <a href="https://github.com/ricardotecpro/ads_mod_07_backends_e_apis" title="Ir para repositório" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
   </div>
   <div class="md-source__repository">
-    ricardotecpro/ads_spec_mobile_nativo_kotlin_swift
+    ricardotecpro/ads_mod_07_backends_e_apis
   </div>
 </a>
       </div>
@@ -479,22 +479,22 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
+    <a href="../.." title="Engenharia de Backends e APIs Modernas" class="md-nav__button md-logo" aria-label="Engenharia de Backends e APIs Modernas" data-md-component="logo">
       
   <img src="../../assets/images/logic_logo.svg" alt="logo">
 
     </a>
-    Desenvolvimento Mobile Nativo - Curso
+    Engenharia de Backends e APIs Modernas
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/ricardotecpro/ads_spec_mobile_nativo_kotlin_swift" title="Ir para repositório" class="md-source" data-md-component="source">
+      <a href="https://github.com/ricardotecpro/ads_mod_07_backends_e_apis" title="Ir para repositório" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
   </div>
   <div class="md-source__repository">
-    ricardotecpro/ads_spec_mobile_nativo_kotlin_swift
+    ricardotecpro/ads_mod_07_backends_e_apis
   </div>
 </a>
     </div>
@@ -658,7 +658,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 01 - Intro Microsserviços
+    Aula 01 - Fundamentos da Web
   
 
     
@@ -686,7 +686,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 02 - Arquitetura e Gateway
+    Aula 02 - Arquitetura Backend
   
 
     
@@ -714,7 +714,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 03 - Modelagem REST
+    Aula 03 - Design de APIs
   
 
     
@@ -742,7 +742,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 04 - Documentação (Swagger)
+    Aula 04 - Protocolos e Comunicação
   
 
     
@@ -770,7 +770,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 05 - Implementação de APIs
+    Aula 05 - Sec e Autenticação
   
 
     
@@ -798,7 +798,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 06 - Persistência e Banco
+    Aula 06 - Persistência e Dados
   
 
     
@@ -835,7 +835,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 07 - Testes Unitários
+    Aula 07 - Cache e Performance
   
 
     
@@ -853,7 +853,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 07 - Testes Unitários
+    Aula 07 - Cache e Performance
   
 
     
@@ -879,10 +879,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-onde-os-dados-moram" class="md-nav__link">
+  <a href="#ementa-do-modulo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Onde os dados moram? 🏠
+        Ementa do Módulo
       
     </span>
   </a>
@@ -890,82 +890,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-bancos-relacionais-vs-sql" class="md-nav__link">
+  <a href="#introducao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Bancos Relacionais vs SQL 📊
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Bancos Relacionais vs SQL 📊">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#comandos-essenciais-crud" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Comandos Essenciais (CRUD):
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-relacionamentos-o-relacional" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Relacionamentos (O "Relacional") 🔗
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-o-padrao-repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. O Padrão Repository 📥
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-migrations-o-historico-do-banco" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Migrations: O Histórico do Banco 📜
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-mini-projeto-modelando-o-banco" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Mini-Projeto: Modelando o Banco 🏗️
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-exercicio-de-fixacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Exercício de Fixação 🧠
+        Introdução
       
     </span>
   </a>
@@ -995,7 +923,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 08 - Testes Integrados
+    Aula 08 - Event Driven e Mensageria
   
 
     
@@ -1023,7 +951,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 09 - Estratégias Web
+    Aula 09 - Infra. Cloud Native
   
 
     
@@ -1051,7 +979,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 10 - JWT e Segurança
+    Aula 10 - Observabilidade
   
 
     
@@ -1079,7 +1007,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 11 - Autorização (RBAC)
+    Aula 11 - Testes de Backend
   
 
     
@@ -1107,7 +1035,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 12 - Conceito de SPA
+    Aula 12 - Deploy e DevOps
   
 
     
@@ -1135,7 +1063,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 13 - Componentes e Templates
+    Aula 13 - Serverless e Edge
   
 
     
@@ -1163,7 +1091,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 14 - Estados e Eventos
+    Aula 14 - API Gateways
   
 
     
@@ -1191,7 +1119,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 15 - Roteamento
+    Aula 15 - Ecossistemas (Visão Geral)
   
 
     
@@ -1219,7 +1147,7 @@
   <span class="md-ellipsis">
     
   
-    Aula 16 - Integração e Projeto Final
+    Aula 16 - Tópicos Avançados
   
 
     
@@ -3795,10 +3723,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-onde-os-dados-moram" class="md-nav__link">
+  <a href="#ementa-do-modulo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Onde os dados moram? 🏠
+        Ementa do Módulo
       
     </span>
   </a>
@@ -3806,82 +3734,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-bancos-relacionais-vs-sql" class="md-nav__link">
+  <a href="#introducao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Bancos Relacionais vs SQL 📊
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Bancos Relacionais vs SQL 📊">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#comandos-essenciais-crud" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Comandos Essenciais (CRUD):
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-relacionamentos-o-relacional" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Relacionamentos (O "Relacional") 🔗
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-o-padrao-repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. O Padrão Repository 📥
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-migrations-o-historico-do-banco" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Migrations: O Histórico do Banco 📜
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-mini-projeto-modelando-o-banco" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Mini-Projeto: Modelando o Banco 🏗️
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-exercicio-de-fixacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        7. Exercício de Fixação 🧠
+        Introdução
       
     </span>
   </a>
@@ -3908,63 +3764,27 @@
   
 
 
-<h1 id="aula-07-repositories-e-banco-de-dados-postgresql">Aula 07 - Repositories e Banco de Dados (PostgreSQL) 🗄️</h1>
+<h1 id="aula-07-cache-e-performance">Aula 07 - Cache e Performance 🌐</h1>
 <div class="admonition tip">
 <p class="admonition-title">Objetivo</p>
-<p><strong>Objetivo</strong>: Entender a camada de persistência, aprender os fundamentos de Bancos de Dados Relacionais (SQL) e como o padrão Repository isola o acesso aos dados da lógica de negócio.</p>
+<p><strong>Objetivo</strong>: Compreender os conceitos de Cache e Performance abordando as principais estratégias e ferramentas mercado.</p>
 </div>
 <hr>
-<h2 id="1-onde-os-dados-moram">1. Onde os dados moram? 🏠</h2>
-<p>Até agora, se reiniciarmos nosso servidor, todos os dados (usuários, produtos, etc) somem. Para que a informação sobreviva, precisamos de um <strong>Banco de Dados</strong>.</p>
-<p>Neste curso, usaremos o <strong>PostgreSQL</strong>, um dos bancos relacionais mais robustos e utilizados no mundo backend.</p>
-<hr>
-<h2 id="2-bancos-relacionais-vs-sql">2. Bancos Relacionais vs SQL 📊</h2>
-<p>Um banco relacional organiza os dados em <strong>Tabelas</strong> (linhas e colunas), como uma planilha de Excel gigante, mas com "superpoderes" de relacionamento.</p>
-<p>O <strong>SQL</strong> (Structured Query Language) é a linguagem que usamos para falar com o banco.</p>
-<h3 id="comandos-essenciais-crud">Comandos Essenciais (CRUD):</h3>
+<h2 id="ementa-do-modulo">Ementa do Módulo</h2>
 <ul>
-<li><strong>CREATE</strong>: <code>INSERT INTO tabela (campos) VALUES (valores);</code></li>
-<li><strong>READ</strong>: <code>SELECT * FROM tabela WHERE condicao;</code></li>
-<li><strong>UPDATE</strong>: <code>UPDATE tabela SET campo = valor WHERE id = 1;</code></li>
-<li><strong>DELETE</strong>: <code>DELETE FROM tabela WHERE id = 1;</code></li>
+<li>Estratégias de cache (Cache aside</li>
+<li>Write-through</li>
+<li>CDN)</li>
+<li>Ferramentas (Redis)</li>
+<li>Otimização de APIs (Pagination</li>
+<li>Filtering</li>
+<li>Compression).</li>
 </ul>
 <hr>
-<h2 id="3-relacionamentos-o-relacional">3. Relacionamentos (O "Relacional") 🔗</h2>
-<p>O grande poder do SQL é ligar tabelas:
-*   <strong>1:N (Um para Muitos)</strong>: Um <em>Usuário</em> tem muitos <em>Pedidos</em>.
-*   <strong>N:N (Muitos para Muitos)</strong>: Um <em>Estudante</em> está em muitos <em>Cursos</em>, e um <em>Curso</em> tem muitos <em>Estudantes</em>.</p>
+<h2 id="introducao">Introdução</h2>
+<p>Conteúdo detalhado da aula em desenvolvimento...</p>
 <hr>
-<h2 id="4-o-padrao-repository">4. O Padrão Repository 📥</h2>
-<p>Assim como o Controller não deve "cozinhar", o Service não deve saber "falar SQL". 
-O Service pede os dados para o <strong>Repository</strong>.</p>
-<p><strong>Vantagem</strong>: Se amanhã decidirmos trocar o PostgreSQL pelo MongoDB ou por um arquivo TXT, só precisamos mudar o Repository. O Service continua igual!</p>
-<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Exemplo no Repository</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">async</span><span class="w"> </span><span class="nx">buscarPorId</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">db</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s2">"SELECT * FROM usuarios WHERE id = $1"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="nx">id</span><span class="p">]);</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
-</span></code></pre></div>
-<hr>
-<h2 id="5-migrations-o-historico-do-banco">5. Migrations: O Histórico do Banco 📜</h2>
-<p>Migrations são arquivos que descrevem as mudanças no banco de dados ao longo do tempo.
-*   "Criar tabela de produtos".
-*   "Adicionar coluna de preço".
-*   "Remover coluna de descrição".</p>
-<p>Isso permite que toda a equipe tenha sempre a mesma estrutura de banco.</p>
-<hr>
-<h2 id="6-mini-projeto-modelando-o-banco">6. Mini-Projeto: Modelando o Banco 🏗️</h2>
-<p>Imagine um sistema de <strong>Livraria</strong>.
-1.  Quais tabelas seriam necessárias? (Livros, Autores, Vendas).
-2.  Como você ligaria um Livro ao seu Autor? (Chave Estrangeira - Foreign Key).
-3  Escreva o comando SQL para buscar todos os livros que custam menos de R$ 50,00.</p>
-<hr>
-<h2 id="7-exercicio-de-fixacao">7. Exercício de Fixação 🧠</h2>
-<ol>
-<li>Qual a diferença entre uma Chave Primária (Primary Key) e uma Chave Estrangeira (Foreign Key)?</li>
-<li>Por que é perigoso deixar o Service rodar comandos SQL diretamente?</li>
-<li>O que acontece se executarmos um <code>DELETE</code> sem a cláusula <code>WHERE</code>? (⚠️ Cuidado!).</li>
-</ol>
-<hr>
-<p><strong>Próxima Aula</strong>: Como garantir que os dados que entram no banco estão corretos? <a href="../aula-08/">Boas Práticas e Validação de Dados</a> ✅</p>
+<p><strong>Próxima Aula</strong>: Avançaremos para os próximos tópicos do currículo! 🚀</p>
 
 
 
@@ -3987,7 +3807,7 @@ O Service pede os dados para o <strong>Repository</strong>.</p>
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 23:33:09 UTC">19 de fevereiro de 2026 23:33:09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="5 de março de 2026 05:11:09 UTC">5 de março de 2026 05:11:09</span>
   </span>
 
     
@@ -4047,7 +3867,7 @@ O Service pede os dados para o <strong>Repository</strong>.</p>
       <nav class="md-footer__inner md-grid" aria-label="Rodapé">
         
           
-          <a href="../aula-06/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Aula 06 - Persistência e Banco">
+          <a href="../aula-06/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Aula 06 - Persistência e Dados">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
@@ -4057,20 +3877,20 @@ O Service pede os dados para o <strong>Repository</strong>.</p>
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Aula 06 - Persistência e Banco
+                Aula 06 - Persistência e Dados
               </div>
             </div>
           </a>
         
         
           
-          <a href="../aula-08/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Aula 08 - Testes Integrados">
+          <a href="../aula-08/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Aula 08 - Event Driven e Mensageria">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Aula 08 - Testes Integrados
+                Aula 08 - Event Driven e Mensageria
               </div>
             </div>
             <div class="md-footer__button md-icon">
