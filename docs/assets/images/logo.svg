@@ -1,0 +1,37 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .logo-text { font-family: 'Roboto Mono', monospace; font-weight: bold; }
+      .code-bracket { opacity: 0.8; }
+      .markdown-symbol { font-weight: bold; }
+    </style>
+  </defs>
+  
+  <!-- Fundo transparente -->
+  
+  <!-- Brackets de código -->
+  <text x="20" y="60" class="code-bracket" fill="white" font-size="48" font-family="'Roboto Mono', monospace">&lt;</text>
+  <text x="160" y="160" class="code-bracket" fill="white" font-size="48" font-family="'Roboto Mono', monospace">&gt;</text>
+  
+  <!-- Símbolo Markdown central -->
+  <circle cx="100" cy="100" r="45" fill="none" stroke="white" stroke-width="3" opacity="0.3"/>
+  
+  <!-- M de Markdown estilizado -->
+  <path d="M 70 80 L 70 120 L 80 120 L 80 95 L 90 110 L 100 95 L 110 110 L 120 95 L 120 120 L 130 120 L 130 80 Z" 
+        fill="white" 
+        stroke="white" 
+        stroke-width="1"/>
+  
+  <!-- Elementos decorativos de código -->
+  <rect x="60" y="130" width="20" height="3" fill="white" opacity="0.6" rx="1"/>
+  <rect x="85" y="130" width="30" height="3" fill="white" opacity="0.6" rx="1"/>
+  <rect x="120" y="130" width="15" height="3" fill="white" opacity="0.6" rx="1"/>
+  
+  <!-- Dots conectores -->
+  <circle cx="45" cy="100" r="3" fill="white" opacity="0.5"/>
+  <circle cx="155" cy="100" r="3" fill="white" opacity="0.5"/>
+  
+  <!-- Linhas conectoras -->
+  <line x1="48" y1="100" x2="55" y2="100" stroke="white" stroke-width="2" opacity="0.4"/>
+  <line x1="145" y1="100" x2="152" y2="100" stroke="white" stroke-width="2" opacity="0.4"/>
+</svg>
