@@ -1,21 +1,16 @@
-# Exercícios 07 - Repositories e Banco de Dados 🗄️
+# Exercícios 07 - Cache e Performance 🧩
 
 ## 🟢 Fáceis
 
-1.  **Fundamentos**: O que significa a sigla SQL e para que ela serve?
-2.  **CRUD**: Escreva o comando SQL para inserir um novo produto (nome "Mouse", preço 50.00) na tabela `produtos`.
+1.  **Definição**: Explique com suas palavras os principais conceitos de Cache e Performance.
+2.  **Diferenciação**: Descreva casos de uso para as tecnologias mencionadas neste módulo.
 
 ## 🟡 Médios
 
-3.  **Relacionamentos**:
-    Explique a diferença entre uma **Primary Key (PK)** e uma **Foreign Key (FK)**. Por que a FK é essencial para bancos relacionais?
-4.  **Isolamento**:
-    Por que usamos o padrão Repository em vez de escrever o código SQL diretamente dentro do Service?
+3.  **Cenário**: Dado o ecossistema atual de backends, como você aplicaria Cache e Performance para resolver um problema de negócio? Justifique.
+4.  **Prática**: Pesquise uma ferramenta de mercado relacionada ao tema e descreva suas vantagens.
 
 ## 🔴 Desafio
 
-5.  **Modelagem Real**:
-    Imagine um sistema de Blog. Temos `Escritores` e `Artigos`.
-    *   **1:N**: Como você modelaria a ligação entre um Escritor e seus Artigos?
-    *   **SQL**: Escreva uma query que retorne o título de todos os artigos escritos pelo autor com `id = 5`.
-    *   **Repository**: Como ficaria a assinatura (nome e parâmetros) da função no `ArtigoRepository` responsável por essa busca?
+5.  **Análise e Design**:
+    Projete uma arquitetura ou solução simples focada em Cache e Performance que demonstre seu entendimento profundo do módulo.

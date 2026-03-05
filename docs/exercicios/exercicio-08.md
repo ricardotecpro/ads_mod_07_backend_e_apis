@@ -1,24 +1,16 @@
-# Exercícios 08 - Boas Práticas e Validação de Dados ✅
+# Exercícios 08 - Arquitetura Event Driven 🧩
 
 ## 🟢 Fáceis
 
-1.  **Conceito**: Por que nunca devemos confiar 100% nos dados vindos do frontend?
-2.  **Validação**: Dê um exemplo de uma regra de validação para um campo de "Senha".
+1.  **Definição**: Explique com suas palavras os principais conceitos de Arquitetura Event Driven.
+2.  **Diferenciação**: Descreva casos de uso para as tecnologias mencionadas neste módulo.
 
 ## 🟡 Médios
 
-3.  **Sanitização**:
-    Qual a diferença prática entre validar um campo e sanitizar um campo? Quando usamos cada um?
-4.  **Clean Code**:
-    Refatore o nome da função abaixo para seguir as boas práticas:
-    ```javascript
-    function usr_ch(a, b) { ... } // Recebe e-mail e id, checa se e-mail já existe
-    ```
+3.  **Cenário**: Dado o ecossistema atual de backends, como você aplicaria Arquitetura Event Driven para resolver um problema de negócio? Justifique.
+4.  **Prática**: Pesquise uma ferramenta de mercado relacionada ao tema e descreva suas vantagens.
 
 ## 🔴 Desafio
 
-5.  **Tratamento de Erros**:
-    Imagine que o banco de dados caiu. O Service lança um erro técnico.
-    *   Como o **Middleware Global de Erros** deve reagir?
-    *   O que ele deve enviar para o usuário final? (Erro 500 com mensagem técnica ou mensagem genérica?)
-    *   Por que é importante logar o erro real apenas no console do servidor?
+5.  **Análise e Design**:
+    Projete uma arquitetura ou solução simples focada em Arquitetura Event Driven que demonstre seu entendimento profundo do módulo.

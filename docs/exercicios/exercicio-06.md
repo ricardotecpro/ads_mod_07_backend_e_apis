@@ -1,21 +1,16 @@
-# Exercícios 06 - Services e Regras de Negócio 🧠
+# Exercícios 06 - Persistência e Bancos de Dados 🧩
 
 ## 🟢 Fáceis
 
-1.  **Conceito**: Explique por que não é uma boa prática colocar lógica de cálculo ou validação dentro do Controller.
-2.  **Responsabilidade**: Cite 3 exemplos de tarefas que devem ser feitas na camada de Service.
+1.  **Definição**: Explique com suas palavras os principais conceitos de Persistência e Bancos de Dados.
+2.  **Diferenciação**: Descreva casos de uso para as tecnologias mencionadas neste módulo.
 
 ## 🟡 Médios
 
-3.  **Tratamento de Erros**:
-    Por que o Service deve lançar (throw) um erro em vez de retornar um Status Code (ex: 404)?
-4.  **Reutilização**:
-    Imagine que você tem um `EmailService`. Cite dois Controllers diferentes que poderiam usar esse mesmo serviço.
+3.  **Cenário**: Dado o ecossistema atual de backends, como você aplicaria Persistência e Bancos de Dados para resolver um problema de negócio? Justifique.
+4.  **Prática**: Pesquise uma ferramenta de mercado relacionada ao tema e descreva suas vantagens.
 
 ## 🔴 Desafio
 
-5.  **Lógica de Negócio**:
-    Escreva o pseudocódigo para um `PedidoService.finalizar(pedidoId)`.
-    *   Quais validações você faria? (Estoque, status do pedido, limite de crédito do cliente).
-    *   Como você lidaria com o caso de "Produto Sem Estoque"?
-    *   Qual tipo de dado (DTO) o Service deveria retornar para o Controller após o sucesso?
+5.  **Análise e Design**:
+    Projete uma arquitetura ou solução simples focada em Persistência e Bancos de Dados que demonstre seu entendimento profundo do módulo.

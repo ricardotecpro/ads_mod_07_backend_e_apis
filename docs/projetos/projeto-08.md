@@ -1,16 +1,12 @@
-# Projeto 08 - Schema de Validação Profissional ✅
+# Projeto 08 - Arquitetura Event Driven 🛠️
 
-**Objetivo**: Praticar a criação de regras de validação para garantir a integridade da API.
+**Objetivo**: Validar os conhecimentos em Arquitetura Event Driven aplicados em um cenário prático.
 
 ## O Desafio
-Crie o esquema de validação (em pseudocódigo ou usando uma biblioteca como Zod/Joi) para um **Cadastro de Eventos**:
+1. Desenvolva um artefato ou configuração baseada em Arquitetura Event Driven.
+2. Utilize as ferramentas introduzidas na aula correspondente.
+3. Teste e valide sua solução em ambiente local.
 
-1.  **Campos Obrigatórios**: `titulo` (mín. 10 char), `data` (deve ser futura), `capacidade_maxima` (número positivo).
-2.  **Campos Opcionais**: `descricao` (máx. 500 char), `link_inscricao` (formato de URL).
-3.  **Sanitização**: O título não deve conter espaços em branco sobrando no início ou no fim (trim).
-4.  **Simulação**: Mostre qual seria a mensagem de erro retornada se o usuário enviasse uma capacidade negativa.
-
-## O que avaliar?
-- Clareza e rigor das regras de validação.
-- Escolha dos tipos de dados corretos.
-- Mensagens de erro amigáveis ao desenvolvedor (DX).
+## O que entregar?
+- Código-fonte ou documentação em um repositório GitHub.
+- Evidências (prints) da solução rodando.

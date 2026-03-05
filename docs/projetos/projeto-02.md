@@ -1,17 +1,12 @@
-# Projeto 02 - Modelagem de Fluxo de Gateway 🏗️
+# Projeto 02 - Arquitetura Backend 🛠️
 
-**Objetivo**: Entender o roteamento e a agregação de dados em um Gateway.
+**Objetivo**: Validar os conhecimentos em Arquitetura Backend aplicados em um cenário prático.
 
 ## O Desafio
-Imagine que você tem dois serviços:
-- **Serviço A (User)**: Retorna `{ "id": 1, "nome": "Ricardo" }`
-- **Serviço B (Orders)**: Retorna `[ { "id": 101, "valor": 50.0 }, { "id": 102, "valor": 30.0 } ]`
-
-1.  Desenhe um diagrama (pode ser no Mermaid ou papel) onde um **API Gateway** recebe uma chamada em `/dashboard/1` e busca os dados nos dois serviços.
-2.  Escreva o JSON final que o Gateway entregaria para o Frontend, unindo as informações do usuário e seus pedidos.
-3.  Pesquisa: Liste 3 ferramentas famosas de API Gateway de mercado (ex: Kong, AWS API Gateway, etc).
+1. Desenvolva um artefato ou configuração baseada em Arquitetura Backend.
+2. Utilize as ferramentas introduzidas na aula correspondente.
+3. Teste e valide sua solução em ambiente local.
 
 ## O que entregar?
-- O diagrama de fluxo.
-- O JSON de resposta agregada.
-- A lista de ferramentas pesquisadas.
+- Código-fonte ou documentação em um repositório GitHub.
+- Evidências (prints) da solução rodando.

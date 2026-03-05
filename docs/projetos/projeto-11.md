@@ -1,16 +1,12 @@
-# Projeto 11 - Blindagem de API 🏗️
+# Projeto 11 - Testes de Software Backend 🛠️
 
-**Objetivo**: Implementar camadas avançadas de segurança e renovação de tokens.
+**Objetivo**: Validar os conhecimentos em Testes de Software Backend aplicados em um cenário prático.
 
 ## O Desafio
-Fortaleça sua API de login:
+1. Desenvolva um artefato ou configuração baseada em Testes de Software Backend.
+2. Utilize as ferramentas introduzidas na aula correspondente.
+3. Teste e valide sua solução em ambiente local.
 
-1.  **Helmet**: Instale e configure o Helmet para proteger os Headers.
-2.  **CORS**: Restrinja o acesso à API para que apenas o domínio `http://localhost:3000` possa consultá-la.
-3.  **Refresh Token**: Implemente uma rota `/refresh` que receba um refresh token, valide-o no banco (ou lista em memória) e gere um novo `accessToken`.
-4.  **Rate Limit**: Adicione uma trava para que ninguém possa tentar logar mais de 5 vezes em 1 minuto.
-
-## O que avaliar?
-- Configuração correta das origens no CORS.
-- Lógica de expiração do Refresh Token (ele deve durar muito mais que o Access Token).
-- Verificação se o Helmet está realmente escondendo o header `X-Powered-By`.
+## O que entregar?
+- Código-fonte ou documentação em um repositório GitHub.
+- Evidências (prints) da solução rodando.

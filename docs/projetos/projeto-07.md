@@ -1,18 +1,12 @@
-# Projeto 07 - Modelagem de Banco de Dados 🗄️
+# Projeto 07 - Cache e Performance 🛠️
 
-**Objetivo**: Praticar a criação de esquemas relacionais e comandos SQL básicos.
+**Objetivo**: Validar os conhecimentos em Cache e Performance aplicados em um cenário prático.
 
 ## O Desafio
-Modele o banco de dados para um sistema de **Aluguel de Filmes**:
+1. Desenvolva um artefato ou configuração baseada em Cache e Performance.
+2. Utilize as ferramentas introduzidas na aula correspondente.
+3. Teste e valide sua solução em ambiente local.
 
-1.  **Tabelas**: Crie as tabelas `Clientes` e `Filmes`.
-2.  **Campos**: 
-    - `Clientes` deve ter `id`, `nome` e `email`.
-    - `Filmes` deve ter `id`, `titulo` e `genero`.
-3.  **Relacionamento**: Crie uma terceira tabela `Alugueis` que ligue um cliente a um filme (incluindo a `data_aluguel`).
-4.  **SQL**: Escreva uma query que liste o nome do cliente e o título do filme para todos os aluguéis feitos hoje.
-
-## O que avaliar?
-- Definição correta das Chaves Primárias.
-- Uso de Chaves Estrangeiras para conectar as tabelas.
-- Clareza na estrutura das colunas.
+## O que entregar?
+- Código-fonte ou documentação em um repositório GitHub.
+- Evidências (prints) da solução rodando.

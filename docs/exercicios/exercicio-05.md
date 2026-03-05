@@ -1,20 +1,16 @@
-# Exercícios 05 - Implementação de APIs ⚙️
+# Exercícios 05 - Segurança em APIs 🧩
 
 ## 🟢 Fáceis
 
-1.  **Responsabilidade**: Qual a principal função de um Controller em uma arquitetura de camadas?
-2.  **Mapeamento**: O que é um "Handler" no contexto de rotas backend?
+1.  **Definição**: Explique com suas palavras os principais conceitos de Segurança em APIs.
+2.  **Diferenciação**: Descreva casos de uso para as tecnologias mencionadas neste módulo.
 
 ## 🟡 Médios
 
-3.  **Parâmetros**: Diferencie, com exemplos de URIs, o uso de **Path Params** e **Query Params**.
-4.  **Erros**: Por que o Controller nunca deve retornar uma resposta sem um Status Code explícito?
+3.  **Cenário**: Dado o ecossistema atual de backends, como você aplicaria Segurança em APIs para resolver um problema de negócio? Justifique.
+4.  **Prática**: Pesquise uma ferramenta de mercado relacionada ao tema e descreva suas vantagens.
 
 ## 🔴 Desafio
 
-5.  **Cenário Real**:
-    Imagine que você está implementando a rota de `PUT /produtos/123`.
-    *   Como você capturaria o `123`?
-    *   Como você capturaria o novo nome do produto?
-    *   Em qual objeto (`req.params`, `req.query` ou `req.body`) cada um desses dados estaria?
-    *   O que você faria se o cliente enviasse o `id` no Body diferente do `id` na URL?
+5.  **Análise e Design**:
+    Projete uma arquitetura ou solução simples focada em Segurança em APIs que demonstre seu entendimento profundo do módulo.

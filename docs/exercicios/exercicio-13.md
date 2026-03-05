@@ -1,22 +1,16 @@
-# Exercícios 13 - Estado e Reatividade (Hooks) 🎣
+# Exercícios 13 - Serverless e Edge 🧩
 
 ## 🟢 Fáceis
 
-1.  **Conceito**: Por que uma variável comum (ex: `let x = 0`) não serve para atualizar um contador na tela do React?
-2.  **Sintaxe**: O que faz o comando `const [valor, setValor] = useState(0);`? Explique cada um dos 3 elementos.
+1.  **Definição**: Explique com suas palavras os principais conceitos de Serverless e Edge.
+2.  **Diferenciação**: Descreva casos de uso para as tecnologias mencionadas neste módulo.
 
 ## 🟡 Médios
 
-3.  **Eventos**:
-    Como passamos uma função que deve ser executada apenas quando o usuário clica em um botão? Mostre um exemplo de código.
-4.  **Imutabilidade**:
-    Por que não podemos fazer `lista.push(item)` e depois `setLista(lista)` no React? Qual o jeito correto de adicionar um item a um array no estado?
-5.  **Inputs**:
-    O que é um "Input Controlado" e como o atributo `value` e o evento `onChange` trabalham juntos?
+3.  **Cenário**: Dado o ecossistema atual de backends, como você aplicaria Serverless e Edge para resolver um problema de negócio? Justifique.
+4.  **Prática**: Pesquise uma ferramenta de mercado relacionada ao tema e descreva suas vantagens.
 
 ## 🔴 Desafio
 
-6.  **Toggle de Visibilidade**:
-    Crie a lógica para um componente que esconde ou mostra um texto secreto.
-    *   Qual tipo de dado você usaria no `useState` (Boolean, String ou Number)?
-    *   Como ficaria a expressão JSX para mostrar o texto apenas se o estado for verdadeiro?
+5.  **Análise e Design**:
+    Projete uma arquitetura ou solução simples focada em Serverless e Edge que demonstre seu entendimento profundo do módulo.

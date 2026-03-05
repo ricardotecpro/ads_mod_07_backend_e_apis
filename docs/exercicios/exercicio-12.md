@@ -1,30 +1,16 @@
-# Exercícios 12 - Introdução ao React ⚛️
+# Exercícios 12 - Deploy e DevOps 🧩
 
 ## 🟢 Fáceis
 
-1.  **Conceito**: O que significa a sigla SPA e qual sua principal vantagem?
-2.  **Sintaxe**: No React, usamos `className` ou `class` para definir classes CSS? Por quê?
+1.  **Definição**: Explique com suas palavras os principais conceitos de Deploy e DevOps.
+2.  **Diferenciação**: Descreva casos de uso para as tecnologias mencionadas neste módulo.
 
 ## 🟡 Médios
 
-3.  **Componentes**:
-    Por que dizemos que a arquitetura do React é baseada em "LEGO"? Como isso ajuda na organização do código?
-4.  **Vite**:
-    Qual a função do Vite no desenvolvimento de um projeto React moderno?
-5.  **Props**:
-    Explique como as `props` permitem que um mesmo componente (ex: um Botão) seja usado em vários lugares com textos e cores diferentes.
+3.  **Cenário**: Dado o ecossistema atual de backends, como você aplicaria Deploy e DevOps para resolver um problema de negócio? Justifique.
+4.  **Prática**: Pesquise uma ferramenta de mercado relacionada ao tema e descreva suas vantagens.
 
 ## 🔴 Desafio
 
-6.  **JSX vs HTML**:
-    O código abaixo é Javascript ou HTML? Justifique sua resposta mencionando pelo menos duas diferenças sutis que o JSX impõe.
-    ```jsx
-    const elemento = (
-      <div className="container">
-        <h1>Título</h1>
-        <br />
-      </div>
-    );
-    ```
-    *   O que acontece se eu esquecer de fechar a tag `<br>`?
-    *   Como eu faria para exibir o valor de uma variável `nome` dentro do `h1`?
+5.  **Análise e Design**:
+    Projete uma arquitetura ou solução simples focada em Deploy e DevOps que demonstre seu entendimento profundo do módulo.
