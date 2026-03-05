@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 - Engenharia de Backends e APIs Modernas</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reset.css">
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/theme/black.css">
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="../assets/css/reveal-custom.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown="slide-02.md"
+                     data-separator="^\n---\n$"
+                     data-separator-vertical="^\n--\n$">
+            </section>
+    <style>
+        /* Personalização do badge de número de slides (Canto Inferior Esquerdo) com a Cor de Navegação */
+        .reveal .slide-number {
+            background-color: var(--r-controls-color, #42affa) !important;
+            color: #ffffff !important;
+            font-size: 18px !important;
+            font-weight: bold !important;
+            border-radius: 4px !important;
+            padding: 4px 8px !important;
+            bottom: 20px !important;
+            left: 20px !important;
+            right: auto !important;
+            box-shadow: none !important;
+        }
+    </style>
+    <!-- Dicas de Atalhos Centro Removidas Conforme Padrão V2 -->
+
+    <script src="https://unpkg.com/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script src="https://unpkg.com/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://unpkg.com/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+    <script src="https://unpkg.com/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script src="https://unpkg.com/reveal.js@4.5.0/plugin/math/math.js"></script>
+    <script src="https://unpkg.com/mermaid@11.12.3/dist/mermaid.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            showSlideNumber: 'all',
+            controls: true,
+            progress: true,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3 ],
+            mathjax3: {
+                mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+                tex: {
+                    inlineMath: [ [ '$', '$' ], [ '\\(', '\\)' ] ]
+                },
+                options: {
+                    skipHtmlTags: [ 'script', 'noscript', 'style', 'textarea', 'pre' ]
+                }
+            }
+        }).then(() => {
+            // Após o build do Reveal, transpilar classes markdown Mermaid para renders SVG reais
+            document.querySelectorAll('pre code.language-mermaid').forEach(code => {
+                const pre = code.parentElement;
+                const div = document.createElement('div');
+                div.className = 'mermaid';
+                div.textContent = code.textContent;
+                pre.replaceWith(div);
+            });
+            mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+            mermaid.run({ querySelector: '.mermaid' });
+        });
+
+        // JS Customizado Removido (Dicas Ocultadas)
+    </script>
+</body>
+</html>
