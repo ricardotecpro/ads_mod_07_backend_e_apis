@@ -88,15 +88,6 @@ plugins:
       lang: pt
   - mkdocs-jupyter
   - glightbox
-plugins:
-  - social:
-      cards: false
-  - tags
-  - mkdocs-revealjs
-  - search:
-      lang: pt
-  - mkdocs-jupyter
-  - glightbox
   - git-authors:
       show_contribution: true
       show_line_count: true
