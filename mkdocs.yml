@@ -91,6 +91,7 @@ plugins:
       lang: pt
   - mkdocs-jupyter
   - glightbox
+  - awesome-pages
   - git-authors:
       show_contribution: true
       show_line_count: true
@@ -166,7 +167,7 @@ nav:
     - Sobre: sobre.md
     - Plano: plano.md
   - Aulas:
-    - Aulas: aulas/index.md
+    - aulas/index.md
     - 'Módulo 1':
       - 'Aula 01 - Fundamentos da Web e Sistemas Distribuídos': aulas/aula-01.md
       - 'Aula 02 - Arquitetura de Software Backend': aulas/aula-02.md
