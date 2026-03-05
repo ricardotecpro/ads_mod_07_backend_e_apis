@@ -34,7 +34,7 @@ def copy_slides(config, **kwargs):
     for slide in slides_source.glob('slide-*.html'):
         dest_file = slides_dest / slide.name
         shutil.copy(slide.resolve(), dest_file.resolve())
-        print(f"  [blue]→ {slide.name}[/blue]")
+        print(f"  [blue]-> {slide.name}[/blue]")
         html_copied += 1
     
     # Copiar Markdown
@@ -42,13 +42,13 @@ def copy_slides(config, **kwargs):
     for slide in slides_source.glob('slide-*.md'):  # CORRIGIDO: era *-slides.md
         dest_file = slides_dest / slide.name
         shutil.copy(slide.resolve(), dest_file.resolve())
-        print(f"  [blue]→ {slide.name}[/blue]")
+        print(f"  [blue]-> {slide.name}[/blue]")
         md_copied += 1
     
     if html_copied > 0:
-        print(f"[green]✓ {html_copied} slide(s) HTML copiados[/green]")
+        print(f"[green]OK {html_copied} slide(s) HTML copiados[/green]")
     if md_copied > 0:
-        print(f"[green]✓ {md_copied} slide(s) Markdown copiados[/green]")
+        print(f"[green]OK {md_copied} slide(s) Markdown copiados[/green]")
     
     if html_copied == 0 and md_copied == 0:
         print("[yellow]⚠ Nenhum slide encontrado em docs/slides/[/yellow]")

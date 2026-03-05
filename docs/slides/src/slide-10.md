@@ -1,101 +1,66 @@
-# Aula 10 - Controle de Acesso (RBAC) 🛡️
-## Hierarquia e Segurança em Camadas
+# Módulo 10
+## Observabilidade
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda 📅
+## A Importância de Observabilidade 📈
 
-1. O que é RBAC? (Roles) { .fragment }
-2. Autenticação vs Autorização { .fragment }
-3. O Fluxo do Middleware { .fragment }
-4. Erros 401 vs 403 { .fragment }
-5. Protegendo rotas na prática { .fragment }
-6. Hierarquia de Perfis { .fragment }
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## 1. Role-Based Access Control 👑
+## 1. O que é Prometheus? 🧩
 
-- Permissões ligadas a **Perfis** (Roles). { .fragment }
-- Ex: ADMIN, EDITOR, VIEWER. { .fragment }
-- Facilita a gestão de milhares de usuários. { .fragment }
+Um divisor de águas na arquitetura.
+
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
+
+--
+
+### Exemplificando 🛠️
+
+```python
+import backend
+
+def render():
+    return backend.scale_up()
+```
 
 ---
 
-## 2. A Cancela (Middleware) 🚧
-
-- O middleware checa se o usuário tem a "chave" certa. { .fragment }
-- Se não tiver -> 403 Forbidden. { .fragment }
-- Se tiver -> `next()`. { .fragment }
-
----
-
-## 3. O Fluxo de Segurança 🌊
+## 2. Abordando Grafana 📊
 
 ```mermaid
 graph LR
-    Req[Request] --> Auth[Autenticação]
-    Auth --> |OK| Role[Autorização]
-    Role --> |OK| Controller[Recurso Final]
+    User -->|Call| Server[Observabilidade]
+    Server -->|Parse| Data[(Database)]
 ```
 
 ---
 
-## 4. 401 vs 403: Não confunda! ❌
+## Matemática Aplicada 🔢
 
-- **401 (Unauthorized)**: "Quem é você?". Token inválido ou ausente. { .fragment }
-- **403 (Forbidden)**: "Eu sei quem você é, mas não deixo entrar". Falta de permissão. { .fragment }
-
----
-
-## 5. Implementação Dinâmica 🔒
-
-```javascript
-// Middleware genérico
-router.delete('/usuario/:id', 
-    autenticar, 
-    autorizar(['ADMIN']), 
-    userController.remover
-);
-```
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
 
 ---
 
-## 6. Hierarquia de Acesso 🏛️
+## Aprofundando em Tracing e OpenTelemetry 🚢
 
-- Um Admin deve poder acessar rotas de User? { .fragment }
-- Design de sistema: Roles "Pai" e "Filho". { .fragment }
-
----
-
-## 7. Melhores Práticas 🏆
-
-- Centralize a lógica em Middlewares. { .fragment }
-- Nunca exponha permissões sensíveis no frontend (segurança do lado do servidor). { .fragment }
+- **Tracing**: Reduz o acoplamento temporal. <!-- .element: class="fragment" -->
+- **OpenTelemetry**: Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" -->
 
 ---
 
-## Desafio: Segurança ⚡
+## Resumo e Próximos Passos ✅
 
-Em um sistema escolar, o Diretor e o Professor podem ver notas. O Aluno só vê as dele. Como você configuraria a Role da rota `GET /notas`?
+- A base de **Observabilidade** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
 
----
-
-## Resumo ✅
-
-- RBAC organiza permissões por grupos. { .fragment }
-- Middlewares são os guardiões das rotas. { .fragment }
-- Diferenciar 401 de 403 é vital para Debug. { .fragment }
-
----
-
-## Próxima Aula: Segurança Avançada 🏗️
-
-### Session vs Token e Refresh Tokens
-
-- O que fazer quando o token expira? { .fragment }
-- Protegendo contra ataques comuns (XSS, CSRF). { .fragment }
-
----
-
-## Dúvidas? 🛡️
+> "O código que você escreve hoje moldará o sistema de amanhã."

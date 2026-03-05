@@ -1,35 +1,20 @@
-# Quizzes Interativos 🧠
+# Índice de Quizzes 🧭
 
-Teste seus conhecimentos rapidamente ao final de cada módulo.
+Acesse todo o conteúdo prático da disciplina.
 
-<div class="grid cards" markdown>
-
--   :material-numeric-1-box: **Fase 1**
-    ---
-    - [Quiz 01 - Intro](quiz-01.md)
-    - [Quiz 02 - Java vs Swift](quiz-02.md)
-    - [Quiz 03 - Kotlin](quiz-03.md)
-    - [Quiz 04 - Estrutura App](quiz-04.md)
-
--   :material-numeric-2-box: **Fase 2**
-    ---
-    - [Quiz 05 - UI/Layouts](quiz-05.md)
-    - [Quiz 06 - Navegação](quiz-06.md)
-    - [Quiz 07 - MVVM](quiz-07.md)
-    - [Quiz 08 - Persistência](quiz-08.md)
-
--   :material-numeric-3-box: **Fase 3**
-    ---
-    - [Quiz 09 - RecyclerView](quiz-09.md)
-    - [Quiz 10 - API REST](quiz-10.md)
-    - [Quiz 11 - Async/Threads](quiz-11.md)
-    - [Quiz 12 - UX/Material](quiz-12.md)
-
--   :material-numeric-4-box: **Fase 4**
-    ---
-    - [Quiz 13 - Sensores](quiz-13.md)
-    - [Quiz 14 - Testes/Debug](quiz-14.md)
-    - [Quiz 15 - Publicação](quiz-15.md)
-    - [Quiz 16 - Revisão Final](quiz-16.md)
-
-</div>
+- [:octicons-arrow-right-24: Quizze 01 - Fundamentos da Web](./quizze-01.md)
+- [:octicons-arrow-right-24: Quizze 02 - Arquitetura Backend](./quizze-02.md)
+- [:octicons-arrow-right-24: Quizze 03 - Design de APIs](./quizze-03.md)
+- [:octicons-arrow-right-24: Quizze 04 - Protocolos de Comunicação](./quizze-04.md)
+- [:octicons-arrow-right-24: Quizze 05 - Sec e Autenticação](./quizze-05.md)
+- [:octicons-arrow-right-24: Quizze 06 - Persistência e Dados](./quizze-06.md)
+- [:octicons-arrow-right-24: Quizze 07 - Cache e Performance](./quizze-07.md)
+- [:octicons-arrow-right-24: Quizze 08 - Event Driven](./quizze-08.md)
+- [:octicons-arrow-right-24: Quizze 09 - Infra. Cloud Native](./quizze-09.md)
+- [:octicons-arrow-right-24: Quizze 10 - Observabilidade](./quizze-10.md)
+- [:octicons-arrow-right-24: Quizze 11 - Testes de Backend](./quizze-11.md)
+- [:octicons-arrow-right-24: Quizze 12 - Deploy e DevOps](./quizze-12.md)
+- [:octicons-arrow-right-24: Quizze 13 - Serverless e Edge](./quizze-13.md)
+- [:octicons-arrow-right-24: Quizze 14 - API Gateways](./quizze-14.md)
+- [:octicons-arrow-right-24: Quizze 15 - Ecossistemas](./quizze-15.md)
+- [:octicons-arrow-right-24: Quizze 16 - Tópicos Avançados](./quizze-16.md)

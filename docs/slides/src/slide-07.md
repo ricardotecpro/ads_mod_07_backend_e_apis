@@ -1,106 +1,66 @@
-# Aula 07 - Repositories e Banco de Dados 🗄️
-## Onde a informação descansa
+# Módulo 07
+## Cache e Performance
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda 📅
+## A Importância de Cache e Performance 📈
 
-1. Por que Bancos de Dados? { .fragment }
-2. PostgreSQL: O Robusto { .fragment }
-3. SQL Básico (SELECT, INSERT...) { .fragment }
-4. Relacionamentos (1:N, N:N) { .fragment }
-5. Camada de Persistence { .fragment }
-6. O Padrão Repository { .fragment }
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## 1. Persistência de Dados 💾
+## 1. O que é Redis? 🧩
 
-- Sem banco, o servidor esquece tudo ao reiniciar. { .fragment }
-- Precisamos de segurança e integridade. { .fragment }
-- **Estritamente Tipado**: O banco garante o formato. { .fragment }
+Um divisor de águas na arquitetura.
 
----
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
 
-## 2. Por que PostgreSQL? 🐘
+--
 
-- Código Aberto (Open Source). { .fragment }
-- Extremamente confiável (ACID). { .fragment }
-- Suporta dados complexos (JSONB). { .fragment }
+### Exemplificando 🛠️
 
----
+```python
+import backend
 
-## 3. SQL: A Linguagem Universal 🗣️
-
-```sql
--- Buscar usuários VIP
-SELECT * FROM usuarios 
-WHERE tipo = 'VIP' 
-ORDER BY nome;
-```
-
-- **DDL**: Define a estrutura (Tabelas). { .fragment }
-- **DML**: Manipula os dados (Linhas). { .fragment }
-
----
-
-## 4. O Coração: Relacionamentos 🔗
-
-- **1:N**: Um cliente, muitos pedidos. { .fragment }
-- **N:N**: Muitos alunos, muitos cursos. { .fragment }
-- **Foreign Key**: A âncora que liga tudo. { .fragment }
-
----
-
-## 5. Camada de Persistence 🧱
-
-- O código que conversa com o driver do banco. { .fragment }
-- Onde as queries são traduzidas para o código. { .fragment }
-
----
-
-## 6. Padrão Repository 📥
-
-- "Não me diga como, diga O QUE você quer". { .fragment }
-- Isola o SQL da regra de negócio. { .fragment }
-
-```javascript
-// No Service
-userRepository.findByEmail(email);
+def render():
+    return backend.scale_up()
 ```
 
 ---
 
-## 7. Migrations 📜
+## 2. Abordando CDN 📊
 
-- Controle de versão para o Banco. { .fragment }
-- Permite "voltar no tempo" se algo quebrar. { .fragment }
-- Mantém o time em sincronia. { .fragment }
-
----
-
-## Desafio SQL ⚡
-
-Qual comando você usaria para mudar o preço de todos os produtos da categoria 'Games' para 99.90?
+```mermaid
+graph LR
+    User -->|Call| Server[Cache e Performance]
+    Server -->|Parse| Data[(Database)]
+```
 
 ---
 
-## Resumo ✅
+## Matemática Aplicada 🔢
 
-- Bancos de dados dão memória ao sistema. { .fragment }
-- PostgreSQL é o padrão da indústria. { .fragment }
-- SQL é habilidade obrigatória para backend. { .fragment }
-- Repository Pattern traz flexibilidade. { .fragment }
-
----
-
-## Próxima Aula: Integridade! ✅
-
-### Validação e Boas Práticas
-
-- Garantindo que dados "sujos" não entrem no banco. { .fragment }
-- Tratamento de exceções de banco. { .fragment }
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
 
 ---
 
-## Dúvidas? 🗄️
+## Aprofundando em Cache aside e Pagination 🚢
+
+- **Cache aside**: Reduz o acoplamento temporal. <!-- .element: class="fragment" -->
+- **Pagination**: Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" -->
+
+---
+
+## Resumo e Próximos Passos ✅
+
+- A base de **Cache e Performance** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
+
+> "O código que você escreve hoje moldará o sistema de amanhã."

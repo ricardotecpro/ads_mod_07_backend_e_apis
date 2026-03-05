@@ -1,84 +1,66 @@
-# Aula 12 - Introdução ao React ⚛️
-## O Poder dos Componentes Modernos
+# Módulo 12
+## Deploy e DevOps
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda 📅
+## A Importância de Deploy e DevOps 📈
 
-1. O que são SPAs? { .fragment }
-2. Por que React? { .fragment }
-3. Vite: A Ferramenta Rápida { .fragment }
-4. JSX: JS + HTML { .fragment }
-5. Componentes e LEGO { .fragment }
-6. Props: O Coração Dinâmico { .fragment }
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## 1. Single Page Applications (SPA) 📄
+## 1. O que é CI/CD? 🧩
 
-- O site que nunca recarrega. { .fragment }
-- Navegação fluida e instantânea. { .fragment }
-- Ex: Gmail, Facebook, Spotify Web. { .fragment }
+Um divisor de águas na arquitetura.
 
----
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
 
-## 2. Por que o React venceu? ⚔️
+--
 
-- **Componentização** (Foco no Reuso). { .fragment }
-- **Virtual DOM** (Foco na Performance). { .fragment }
-- **Gigantesco Ecossistema** (Foco no Emprego). { .fragment }
+### Exemplificando 🛠️
 
----
+```python
+import backend
 
-## 3. Vite: O Novo Padrão ⚡
-
-- Inicia o projeto em segundos. { .fragment }
-- Feedback instantâneo durante o código. { .fragment }
-
----
-
-## 4. JSX: A Mistura Perfeita 🧪
-
-```jsx
-function Titulo() {
-  const nome = "React";
-  return <h1>Olá, {nome}!</h1>;
-}
+def render():
+    return backend.scale_up()
 ```
 
-- Parece HTML, mas tem o poder do Javascript. { .fragment }
+---
+
+## 2. Abordando Blue/Green 📊
+
+```mermaid
+graph LR
+    User -->|Call| Server[Deploy e DevOps]
+    Server -->|Parse| Data[(Database)]
+```
 
 ---
 
-## 5. Componentes = LEGO 🧩
+## Matemática Aplicada 🔢
 
-- Pequenas partes isoladas. { .fragment }
-- Facilita testes e trabalho em equipe. { .fragment }
-
----
-
-## 6. Props: Passando o Bastão 🎁
-
-- Permite que componentes recebam dados do "pai". { .fragment }
-- Torna componentes genéricos e reutilizáveis. { .fragment }
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
 
 ---
 
-## Resumo ✅
+## Aprofundando em Canary e Feature Flags 🚢
 
-- SPA torna a Web parecida com Apps. { .fragment }
-- React organiza sua UI em componentes. { .fragment }
-- Vite é seu melhor amigo no desenvolvimento. { .fragment }
-
----
-
-## Próxima Aula: Dinâmica e Estado 🎣
-
-### O que acontece quando o usuário clica?
-
-- Hooks: `useState`. { .fragment }
-- Reatividade na prática. { .fragment }
+- **Canary**: Reduz o acoplamento temporal. <!-- .element: class="fragment" -->
+- **Feature Flags**: Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" -->
 
 ---
 
-## Dúvidas? ⚛️
+## Resumo e Próximos Passos ✅
+
+- A base de **Deploy e DevOps** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
+
+> "O código que você escreve hoje moldará o sistema de amanhã."

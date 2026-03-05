@@ -1,39 +1,52 @@
-# Aulas do Curso 📚
+# Índice de Aulas 🧭
 
-Acesse aqui todo o conteúdo teórico dividido em módulos de aprendizado.
+Acesse todo o conteúdo prático da disciplina.
 
-<div class="grid cards" markdown>
+## Módulo 1 - Fundamentos da Web
+- [:octicons-arrow-right-24: Aula 01](./aula-01.md)
 
--   :material-server: **Módulo 1: Fundamentos de Backend**
-    ---
-    A base do desenvolvimento de APIs e Microsserviços.
-    - [Aula 01 - Intro a Microsserviços](aula-01.md)
-    - [Aula 02 - Arquitetura e API Gateway](aula-02.md)
-    - [Aula 03 - Modelagem de APIs RESTful](aula-03.md)
-    - [Aula 04 - Documentação e Mock](aula-04.md)
+## Módulo 2 - Arquitetura Backend
+- [:octicons-arrow-right-24: Aula 02](./aula-02.md)
 
--   :material-database: **Módulo 2: Manipulação de Dados**
-    ---
-    Implementação robusta e persistência de dados.
-    - [Aula 05 - Controllers e Rotas](aula-05.md)
-    - [Aula 06 - Services e Lógica](aula-06.md)
-    - [Aula 07 - Repositories e Banco SQL](aula-07.md)
-    - [Aula 08 - Validação de Dados](aula-08.md)
+## Módulo 3 - Design de APIs
+- [:octicons-arrow-right-24: Aula 03](./aula-03.md)
 
--   :material-shield-check: **Módulo 3: Segurança e Autenticação**
-    ---
-    Protegendo sua API contra acessos não autorizados.
-    - [Aula 09 - Autenticação com JWT](aula-09.md)
-    - [Aula 10 - Controle de Acesso (RBAC)](aula-10.md)
-    - [Aula 11 - Segurança Avançada (CORS)](aula-11.md)
+## Módulo 4 - Protocolos de Comunicação
+- [:octicons-arrow-right-24: Aula 04](./aula-04.md)
 
--   :material-web: **Módulo 4: Aplicações SPA (React)**
-    ---
-    Criando o frontend moderno para consumir sua API.
-    - [Aula 12 - Intro ao Frontend (React)](aula-12.md)
-    - [Aula 13 - Estado e Hooks (useState)](aula-13.md)
-    - [Aula 14 - Chamadas de API (useEffect)](aula-14.md)
-    - [Aula 15 - Navegação (React Router)](aula-15.md)
-    - [Aula 16 - Projeto Final Integrado](aula-16.md)
+## Módulo 5 - Sec e Autenticação
+- [:octicons-arrow-right-24: Aula 05](./aula-05.md)
 
-</div>
+## Módulo 6 - Persistência e Dados
+- [:octicons-arrow-right-24: Aula 06](./aula-06.md)
+
+## Módulo 7 - Cache e Performance
+- [:octicons-arrow-right-24: Aula 07](./aula-07.md)
+
+## Módulo 8 - Event Driven
+- [:octicons-arrow-right-24: Aula 08](./aula-08.md)
+
+## Módulo 9 - Infra. Cloud Native
+- [:octicons-arrow-right-24: Aula 09](./aula-09.md)
+
+## Módulo 10 - Observabilidade
+- [:octicons-arrow-right-24: Aula 10](./aula-10.md)
+
+## Módulo 11 - Testes de Backend
+- [:octicons-arrow-right-24: Aula 11](./aula-11.md)
+
+## Módulo 12 - Deploy e DevOps
+- [:octicons-arrow-right-24: Aula 12](./aula-12.md)
+
+## Módulo 13 - Serverless e Edge
+- [:octicons-arrow-right-24: Aula 13](./aula-13.md)
+
+## Módulo 14 - API Gateways
+- [:octicons-arrow-right-24: Aula 14](./aula-14.md)
+
+## Módulo 15 - Ecossistemas
+- [:octicons-arrow-right-24: Aula 15](./aula-15.md)
+
+## Módulo 16 - Tópicos Avançados
+- [:octicons-arrow-right-24: Aula 16](./aula-16.md)
+

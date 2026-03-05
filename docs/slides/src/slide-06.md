@@ -1,104 +1,66 @@
-# Aula 06 - Services e Regras de Negócio 🧠
-## O Cérebro da Aplicação
+# Módulo 06
+## Persistência e Dados
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda 📅
+## A Importância de Persistência e Dados 📈
 
-1. Por que separar as coisas? { .fragment }
-2. Responsabilidades do Service { .fragment }
-3. O Fluxo: Controller -> Service { .fragment }
-4. Tratamento de Erros Profissional { .fragment }
-5. DTOs: Protegendo os Dados { .fragment }
-6. Service vs ViewModel (Mobile) { .fragment }
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## 1. O Problema: "Controller Gordo" 🍔
+## 1. O que é Relacional? 🧩
 
-- Lógica de negócio misturada com HTTP. { .fragment }
-- Código impossível de reutilizar. { .fragment }
-- Difícil de testar. { .fragment }
+Um divisor de águas na arquitetura.
 
----
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
 
-## 2. A Solução: Layered Architecture 🧱
+--
 
-- **Controller**: Trata o transporte (HTTP). { .fragment }
-- **Service**: Trata a regra (O QUE fazer). { .fragment }
+### Exemplificando 🛠️
 
----
+```python
+import backend
 
-## 3. O que vai no Service? ⚖️
-
-- Validações complexas. { .fragment }
-- Cálculos de valores. { .fragment }
-- Envio de e-mails/notificações. { .fragment }
-- Integração com repositórios. { .fragment }
-
----
-
-## 4. Tratamento de Erros ⚠️
-
-- O Service **Lança** (Throws). { .fragment }
-- O Controller **Captura** (Catches). { .fragment }
-
-```javascript
-// Service
-if (!saldo) throw new Error("Saldo Insuficiente");
-
-// Controller
-try { ... } catch (e) { res.status(400)... }
+def render():
+    return backend.scale_up()
 ```
 
 ---
 
-## 5. DTOs: Filtrando a Saída 📦
+## 2. Abordando NoSQL 📊
 
-- Nunca envie "tudo" do banco para o cliente. { .fragment }
-- Proteja campos sensíveis (Ex: `senha_hash`). { .fragment }
-- Melhore a performance (menos dados trafegados). { .fragment }
-
----
-
-## 6. Service vs ViewModel 🆚
-
-- No Backend: **Service** é o cérebro. { .fragment }
-- No Mobile/Front: **ViewModel** é o cérebro. { .fragment }
-- Ambos servem para "limpar" a camada de visualização. { .fragment }
+```mermaid
+graph LR
+    User -->|Call| Server[Persistência e Dados]
+    Server -->|Parse| Data[(Database)]
+```
 
 ---
 
-## 7. Prática: Validando um Cadastro 💻
+## Matemática Aplicada 🔢
 
-- Verificando se o e-mail é válido. { .fragment }
-- Verificando se o usuário já existe. { .fragment }
-- Lançando erros específicos. { .fragment }
-
----
-
-## Desafio: Onde colocar? ⚡
-
-Se uma regra diz: "Usuários VIP ganham 20% de desconto", essa regra deve ficar no **Controller** ou no **Service**?
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
 
 ---
 
-## Resumo ✅
+## Aprofundando em ACID e Eventual Consistency 🚢
 
-- Controllers recebem, Services processam. { .fragment }
-- Mantenha seus Controllers "finos" (Slim Controllers). { .fragment }
-- Centralize as regras para facilitar a manutenção. { .fragment }
-- DTOs são as fronteiras dos dados. { .fragment }
+- **ACID**: Reduz o acoplamento temporal. <!-- .element: class="fragment" -->
+- **Eventual Consistency**: Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" -->
 
 ---
 
-## Próxima Aula: Onde os dados vivem! 🗄️
+## Resumo e Próximos Passos ✅
 
-### Repositories e Banco de Dados
+- A base de **Persistência e Dados** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
 
-- PostgreSQL e SQL básico. { .fragment }
-- Camada de persistência. { .fragment }
-
----
-
-## Dúvidas? 🧠
+> "O código que você escreve hoje moldará o sistema de amanhã."

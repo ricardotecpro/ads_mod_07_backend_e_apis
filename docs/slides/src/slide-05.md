@@ -1,102 +1,66 @@
-# Aula 05 - Implementação de APIs ⚙️
-## Controllers e Rotas
+# Módulo 05
+## Sec e Autenticação
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda 📅
+## A Importância de Sec e Autenticação 📈
 
-1. Camadas do Backend { .fragment }
-2. O Papel do Controller { .fragment }
-3. Rotas e Handlers { .fragment }
-4. Capturando Dados (Params/Body) { .fragment }
-5. Status Codes na Prática { .fragment }
-6. Injeção de Dependência { .fragment }
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## 1. Organização em Camadas 🧱
+## 1. O que é JWT? 🧩
 
-- **Controller**: Trata a entrada (HTTP). { .fragment }
-- **Service**: Regras de negócio. { .fragment }
-- **Repository**: Acesso ao banco. { .fragment }
+Um divisor de águas na arquitetura.
 
----
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
 
-## 2. O Papel do Controller 🎮
+--
 
-- Ele é o ponto de entrada. { .fragment }
-- **Não deve ter lógica complexa!** { .fragment }
-- Deve apenas orquestrar a execução. { .fragment }
+### Exemplificando 🛠️
 
-> **Controller** = Garçom 🤵
-> **Service** = Cozinheiro 👨‍🍳
+```python
+import backend
 
----
-
-## 3. Rotas e Handlers 📍
-
-- **Rota**: Verbo HTTP + Path. { .fragment }
-- **Handler**: Função executada. { .fragment }
-
-```javascript
-router.post('/login', controller.realizarLogin);
+def render():
+    return backend.scale_up()
 ```
 
 ---
 
-## 4. Capturando Dados 📥
+## 2. Abordando OAuth 2.0 📊
 
-- **Path Params**: `/id/123` (Identificação). { .fragment }
-- **Query Params**: `?q=busca` (Filtro). { .fragment }
-- **Body**: Enviando JSON (Criação/Update). { .fragment }
-
----
-
-## 5. Respostas de Qualidade 📤
-
-- Nunca esqueça o Status Code! { .fragment }
-- Sucesso: 200, 201, 204. { .fragment }
-- Erro: 400, 401, 404, 500. { .fragment }
+```mermaid
+graph LR
+    User -->|Call| Server[Sec e Autenticação]
+    Server -->|Parse| Data[(Database)]
+```
 
 ---
 
-## 6. Injeção de Dependência 💉
+## Matemática Aplicada 🔢
 
-- Receber serviços prontos. { .fragment }
-- Facilita testar o Controller "isolado". { .fragment }
-
----
-
-## 7. Prática: O Primeiro Endpoint 💻
-
-- Mapeando um `GET /ping`. { .fragment }
-- Retornando um `pong` em JSON. { .fragment }
-- Testando no Insomnia/Postman. { .fragment }
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
 
 ---
 
-## Desafio: Params vs Query ⚡
+## Aprofundando em OpenID e OWASP API 🚢
 
-Se você quer listar todos os alunos de uma sala com o nome "Pedro", qual tipo de parâmetro você usaria para o nome?
-
----
-
-## Resumo ✅
-
-- Controllers são a porta de entrada. { .fragment }
-- Devem ser leves e objetivos. { .fragment }
-- Capturam dados e retornam status/JSON. { .fragment }
-- Seguem as rotas definidas. { .fragment }
+- **OpenID**: Reduz o acoplamento temporal. <!-- .element: class="fragment" -->
+- **OWASP API**: Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" -->
 
 ---
 
-## Próxima Aula: Regras de Negócio! 🧠
+## Resumo e Próximos Passos ✅
 
-### Services e Validações
+- A base de **Sec e Autenticação** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
 
-- Onde o cálculo acontece. { .fragment }
-- Isolando o código do "mundo externo". { .fragment }
-
----
-
-## Dúvidas? ⚙️
+> "O código que você escreve hoje moldará o sistema de amanhã."

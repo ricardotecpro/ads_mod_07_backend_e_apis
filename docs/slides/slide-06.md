@@ -1,40 +1,66 @@
-# Aula 06 - Persistência e Camada de Dados 🌐
-## Persistência e Bancos de Dados
+# Módulo 06
+## Persistência e Dados
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda de Hoje 📅
+## A Importância de Persistência e Dados 📈
 
-1. Introdução <!-- .element: class="fragment" -->
-2. Conceitos base <!-- .element: class="fragment" -->
-3. Ferramentas <!-- .element: class="fragment" -->
-4. Casos práticos <!-- .element: class="fragment" -->
-
----
-
-## Tópicos do Módulo
-
-- Modelos de bancos (Relacional <!-- .element: class="fragment" -->
-- NoSQL <!-- .element: class="fragment" -->
-- Graph) <!-- .element: class="fragment" -->
-- Estratégias (ORM <!-- .element: class="fragment" -->
-- Repositórios) <!-- .element: class="fragment" -->
-- Transações ACID e Eventual consistency. <!-- .element: class="fragment" -->
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## Introdução 🚀
+## 1. O que é Relacional? 🧩
 
-Conteúdo em desenvolvimento...
+Um divisor de águas na arquitetura.
+
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
+
+--
+
+### Exemplificando 🛠️
+
+```python
+import backend
+
+def render():
+    return backend.scale_up()
+```
 
 ---
 
-## Próxima Aula 🚀
+## 2. Abordando NoSQL 📊
 
-Continuaremos explorando Engenharia de Backends!
+```mermaid
+graph LR
+    User -->|Call| Server[Persistência e Dados]
+    Server -->|Parse| Data[(Database)]
+```
 
 ---
 
-## Dúvidas? 🤔
+## Matemática Aplicada 🔢
 
-> "A arquitetura de hoje é o legado de amanhã. Escolha com sabedoria."
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
+
+---
+
+## Aprofundando em ACID e Eventual Consistency 🚢
+
+- **ACID**: <span class="fragment">Reduz o acoplamento temporal. <!-- .element: class="fragment" --></span>
+- **Eventual Consistency**: <span class="fragment">Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" --></span>
+
+---
+
+## Resumo e Próximos Passos ✅
+
+- A base de **Persistência e Dados** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
+
+> "O código que você escreve hoje moldará o sistema de amanhã."

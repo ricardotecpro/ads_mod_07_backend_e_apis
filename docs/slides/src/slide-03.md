@@ -1,130 +1,66 @@
-# Aula 03 - Modelagem de APIs RESTful 📡
-## Recursos, Verbos e Contratos
+# Módulo 03
+## Design de APIs
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda 📅
+## A Importância de Design de APIs 📈
 
-1. O que é REST? { .fragment }
-2. Recursos e URIs { .fragment }
-3. Verbos HTTP (GET, POST, PUT...) { .fragment }
-4. Status Codes { .fragment }
-5. JSON: A Linguagem das APIs { .fragment }
-6. Boas Práticas de Design { .fragment }
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## 1. REST: A "Língua" da Web 🌐
+## 1. O que é REST Constraints? 🧩
 
-- Style arquitetural para sistemas distribuídos. { .fragment }
-- Baseado no protocolo **HTTP**. { .fragment }
-- Independência entre Client e Server. { .fragment }
+Um divisor de águas na arquitetura.
 
----
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
 
-## Princípios REST
+--
 
-- **Stateless**: Cada requisição é única. { .fragment }
-- **Uniform Interface**: Padrões compartilhados. { .fragment }
-- **Cacheable**: Melhore a performance. { .fragment }
+### Exemplificando 🛠️
 
----
+```python
+import backend
 
-## 2. Identificando Recursos 📍
-
-- Um recurso é qualquer coisa que expomos. { .fragment }
-- **URI**: O endereço do recurso. { .fragment }
-
-### O que NÃO fazer:
-`GET /obterUsuarios` ❌
-
-### O que fazer:
-`GET /usuarios` ✅ (Sempre substantivos no plural!)
-
----
-
-## 3. Os Verbos HTTP 🛠️
-
-Eles definem a intenção da chamada:
-
-- **GET**: Buscar dados. { .fragment }
-- **POST**: Criar novo dado. { .fragment }
-- **PUT**: Atualizar (Trocar tudo). { .fragment }
-- **PATCH**: Atualizar (Apenas um pedaço). { .fragment }
-- **DELETE**: Remover dado. { .fragment }
-
----
-
-## Idempotência e Segurança
-
-| Verbo | Seguro? | Idempotente? |
-| :--- | :--- | :--- |
-| GET | Sim ✅ | Sim ✅ |
-| POST | Não ❌ | Não ❌ |
-| PUT | Não ❌ | Sim ✅ |
-| DELETE | Não ❌ | Sim ✅ |
-
----
-
-## 4. Status Codes: A Resposta 🚦
-
-- **2xx**: Deu certo! (200, 201, 204). { .fragment }
-- **4xx**: Você (cliente) errou algo (400, 401, 404). { .fragment }
-- **5xx**: Eu (servidor) quebrei (500, 503). { .fragment }
-
----
-
-## 5. O Formato JSON 🏗️
-
-```json
-{
-  "nome": "Curso Backend",
-  "modulo": 1,
-  "ativo": true
-}
+def render():
+    return backend.scale_up()
 ```
 
-- Leve, legível e universal. { .fragment }
+---
+
+## 2. Abordando HATEOAS 📊
+
+```mermaid
+graph LR
+    User -->|Call| Server[Design de APIs]
+    Server -->|Parse| Data[(Database)]
+```
 
 ---
 
-## 6. Design de URIs Complexas
+## Matemática Aplicada 🔢
 
-Como buscar os pedidos de um usuário específico?
-
-`GET /usuarios/123/pedidos` ✅
-
-- Hierarquia lógica e limpa. { .fragment }
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
 
 ---
 
-## 7. Prática: Postman em Ação 💻
+## Aprofundando em GraphQL e Versionamento 🚢
 
-- Testando verbos em APIs reais. { .fragment }
-- Analisando Headers e Body. { .fragment }
-
----
-
-## Desafio REST ⚡
-
-Se você quer mudar apenas o e-mail de um usuário, qual verbo deve usar: PUT ou PATCH?
+- **GraphQL**: Reduz o acoplamento temporal. <!-- .element: class="fragment" -->
+- **Versionamento**: Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" -->
 
 ---
 
-## Resumo ✅
+## Resumo e Próximos Passos ✅
 
-- REST é sobre recursos e padrões. { .fragment }
-- URIs usam substantivos no plural. { .fragment }
-- Status codes guiam o frontend. { .fragment }
-- JSON é o padrão de facto. { .fragment }
+- A base de **Design de APIs** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
 
----
-
-## Próxima Aula: Swagger e Mocks 📝
-
-- Documentação automática. { .fragment }
-- Como trabalhar sem o backend pronto? { .fragment }
-
----
-
-## Dúvidas? 📡
+> "O código que você escreve hoje moldará o sistema de amanhã."

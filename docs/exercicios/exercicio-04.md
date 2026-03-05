@@ -1,16 +1,18 @@
-# Exercícios 04 - Protocolos de Comunicação 🧩
+# Exercício 04 - Protocolos de Comunicação 🧩
 
-## 🟢 Fáceis
+## 🟢 Básicos
 
-1.  **Definição**: Explique com suas palavras os principais conceitos de Protocolos de Comunicação.
-2.  **Diferenciação**: Descreva casos de uso para as tecnologias mencionadas neste módulo.
+1. Defina o conceito principal por trás de **gRPC**.
+2. Quais as vantagens operacionais de adotar **WebSockets** neste modelo arquitetural?
 
-## 🟡 Médios
+## 🟡 Intermediários
 
-3.  **Cenário**: Dado o ecossistema atual de backends, como você aplicaria Protocolos de Comunicação para resolver um problema de negócio? Justifique.
-4.  **Prática**: Pesquise uma ferramenta de mercado relacionada ao tema e descreva suas vantagens.
+3. Compare detalhadamente **Streaming** com uma arquitetura monolítica tradicional.
+4. Escreva um pseudo-código ou comando CLI que inicie um serviço de **SSE**.
 
 ## 🔴 Desafio
 
-5.  **Análise e Design**:
-    Projete uma arquitetura ou solução simples focada em Protocolos de Comunicação que demonstre seu entendimento profundo do módulo.
+5. Projete a arquitetura de um ecommerce que deve suportar picos na Black Friday usando os conceitos listados nesta aula. Considere resiliência e failover.
+
+<br>
+[:octicons-key-24: Acessar Soluções](../solucoes/solucao-04.md){ .md-button }

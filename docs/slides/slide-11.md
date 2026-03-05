@@ -1,42 +1,66 @@
-# Aula 11 - Testes de Backend 🌐
-## Testes de Software Backend
+# Módulo 11
+## Testes de Backend
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda de Hoje 📅
+## A Importância de Testes de Backend 📈
 
-1. Introdução <!-- .element: class="fragment" -->
-2. Conceitos base <!-- .element: class="fragment" -->
-3. Ferramentas <!-- .element: class="fragment" -->
-4. Casos práticos <!-- .element: class="fragment" -->
-
----
-
-## Tópicos do Módulo
-
-- Tipos de testes (Unitários <!-- .element: class="fragment" -->
-- Integração <!-- .element: class="fragment" -->
-- Contrato <!-- .element: class="fragment" -->
-- E2E) <!-- .element: class="fragment" -->
-- Ferramentas (Postman <!-- .element: class="fragment" -->
-- Pact) <!-- .element: class="fragment" -->
-- Testes de Performance (k6 <!-- .element: class="fragment" -->
-- JMeter). <!-- .element: class="fragment" -->
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## Introdução 🚀
+## 1. O que é Testes Unitários? 🧩
 
-Conteúdo em desenvolvimento...
+Um divisor de águas na arquitetura.
+
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
+
+--
+
+### Exemplificando 🛠️
+
+```python
+import backend
+
+def render():
+    return backend.scale_up()
+```
 
 ---
 
-## Próxima Aula 🚀
+## 2. Abordando Postman 📊
 
-Continuaremos explorando Engenharia de Backends!
+```mermaid
+graph LR
+    User -->|Call| Server[Testes de Backend]
+    Server -->|Parse| Data[(Database)]
+```
 
 ---
 
-## Dúvidas? 🤔
+## Matemática Aplicada 🔢
 
-> "A arquitetura de hoje é o legado de amanhã. Escolha com sabedoria."
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
+
+---
+
+## Aprofundando em Pact e K6 🚢
+
+- **Pact**: <span class="fragment">Reduz o acoplamento temporal. <!-- .element: class="fragment" --></span>
+- **K6**: <span class="fragment">Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" --></span>
+
+---
+
+## Resumo e Próximos Passos ✅
+
+- A base de **Testes de Backend** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
+
+> "O código que você escreve hoje moldará o sistema de amanhã."

@@ -1,92 +1,66 @@
-# Aula 11 - Refresh Token e Segurança Avançada 🏗️
-## Blindando sua API contra o mundo
+# Módulo 11
+## Testes de Backend
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda 📅
+## A Importância de Testes de Backend 📈
 
-1. O Problema do Token Curto ⏰ { .fragment }
-2. Refresh Tokens (O que são?) { .fragment }
-3. CORS: Origens e Destinos { .fragment }
-4. Helmet: Headers de Aço { .fragment }
-5. Rate Limit: Contra Brute Force { .fragment }
-6. Ataques Comuns (XSS, Injection) { .fragment }
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## 1. Por que Tokens Expiram? ⏰
+## 1. O que é Testes Unitários? 🧩
 
-- Segurança! Se roubarem o token, ele dura pouco. { .fragment }
-- **Problema**: O usuário odeia fazer login toda hora. { .fragment }
+Um divisor de águas na arquitetura.
 
----
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
 
-## 2. Refresh Token 🔁
+--
 
-- Um token de longa duração (7 dias+). { .fragment }
-- Serve apenas para trocar por um novo Access Token. { .fragment }
-- Deve ser invalidado se o usuário deslogar. { .fragment }
+### Exemplificando 🛠️
 
----
+```python
+import backend
 
-## 3. CORS: Cross-Origin Resource Sharing 🌍
-
-- "Quem pode me chamar?". { .fragment }
-- Resolvido via Headers no Servidor. { .fragment }
-- **Nunca** use `origin: '*'` em ambientes reais! { .fragment }
+def render():
+    return backend.scale_up()
+```
 
 ---
 
-## 4. Helmet: Proteção de Headers 🪖
+## 2. Abordando Postman 📊
 
-- Remove o `X-Powered-By` (não diz que é Express). { .fragment }
-- Adiciona proteção contra Clickjacking e XSS. { .fragment }
-
----
-
-## 5. Rate Limiting 🔨
-
-- 5 tentativas de login por minuto? Sim. { .fragment }
-- Evita que robôs tentem descobrir senhas via "força bruta". { .fragment }
+```mermaid
+graph LR
+    User -->|Call| Server[Testes de Backend]
+    Server -->|Parse| Data[(Database)]
+```
 
 ---
 
-## 6. Onde salvar os Tokens? 🛡️
+## Matemática Aplicada 🔢
 
-- **Frontend**: LocalStorage? Seguro? { .fragment }
-- **Melhor Prática**: Cookies `HttpOnly` + `Secure`. { .fragment }
-
----
-
-## 7. Melhores Práticas de Segurança 🏆
-
-1. Use HTTPS sempre. { .fragment }
-2. Valide TODAS as entradas do usuário. { .fragment }
-3. Mantenha as bibliotecas atualizadas. { .fragment }
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
 
 ---
 
-## Desafio de Segurança ⚡
+## Aprofundando em Pact e K6 🚢
 
-Qual a diferença entre 401 e 403 no contexto de Refresh Tokens? Se eu recebo 401, eu tento o refresh ou deslogo o usuário?
-
----
-
-## Resumo ✅
-
-- Refresh Token equilibra UX e Segurança. { .fragment }
-- CORS e Helmet são as portas do seu castelo. { .fragment }
-- Proteja-se contra robôs com Rate Limit. { .fragment }
+- **Pact**: Reduz o acoplamento temporal. <!-- .element: class="fragment" -->
+- **K6**: Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" -->
 
 ---
 
-## Próximo Módulo: Front-End Moderno 🎨
+## Resumo e Próximos Passos ✅
 
-### Saindo das APIs e indo para a Web!
+- A base de **Testes de Backend** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
 
-- Introdução ao React/Vite. { .fragment }
-- Consumindo nossas APIs no navegador. { .fragment }
-
----
-
-## Dúvidas? 🏗️
+> "O código que você escreve hoje moldará o sistema de amanhã."

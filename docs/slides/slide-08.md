@@ -1,39 +1,66 @@
-# Aula 08 - Mensageria e Arquitetura Orientada a Eventos 🌐
-## Arquitetura Event Driven
+# Módulo 08
+## Event Driven
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda de Hoje 📅
+## A Importância de Event Driven 📈
 
-1. Introdução <!-- .element: class="fragment" -->
-2. Conceitos base <!-- .element: class="fragment" -->
-3. Ferramentas <!-- .element: class="fragment" -->
-4. Casos práticos <!-- .element: class="fragment" -->
-
----
-
-## Tópicos do Módulo
-
-- Comunicação assíncrona (Message queues <!-- .element: class="fragment" -->
-- Pub/Sub) <!-- .element: class="fragment" -->
-- Event Driven Architecture <!-- .element: class="fragment" -->
-- Ferramentas (Kafka <!-- .element: class="fragment" -->
-- RabbitMQ). <!-- .element: class="fragment" -->
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## Introdução 🚀
+## 1. O que é Kafka? 🧩
 
-Conteúdo em desenvolvimento...
+Um divisor de águas na arquitetura.
+
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
+
+--
+
+### Exemplificando 🛠️
+
+```python
+import backend
+
+def render():
+    return backend.scale_up()
+```
 
 ---
 
-## Próxima Aula 🚀
+## 2. Abordando RabbitMQ 📊
 
-Continuaremos explorando Engenharia de Backends!
+```mermaid
+graph LR
+    User -->|Call| Server[Event Driven]
+    Server -->|Parse| Data[(Database)]
+```
 
 ---
 
-## Dúvidas? 🤔
+## Matemática Aplicada 🔢
 
-> "A arquitetura de hoje é o legado de amanhã. Escolha com sabedoria."
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
+
+---
+
+## Aprofundando em Pub/Sub e Event Streaming 🚢
+
+- **Pub/Sub**: <span class="fragment">Reduz o acoplamento temporal. <!-- .element: class="fragment" --></span>
+- **Event Streaming**: <span class="fragment">Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" --></span>
+
+---
+
+## Resumo e Próximos Passos ✅
+
+- A base de **Event Driven** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
+
+> "O código que você escreve hoje moldará o sistema de amanhã."

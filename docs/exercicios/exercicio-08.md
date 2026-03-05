@@ -1,16 +1,18 @@
-# Exercícios 08 - Arquitetura Event Driven 🧩
+# Exercício 08 - Event Driven 🧩
 
-## 🟢 Fáceis
+## 🟢 Básicos
 
-1.  **Definição**: Explique com suas palavras os principais conceitos de Arquitetura Event Driven.
-2.  **Diferenciação**: Descreva casos de uso para as tecnologias mencionadas neste módulo.
+1. Defina o conceito principal por trás de **Kafka**.
+2. Quais as vantagens operacionais de adotar **RabbitMQ** neste modelo arquitetural?
 
-## 🟡 Médios
+## 🟡 Intermediários
 
-3.  **Cenário**: Dado o ecossistema atual de backends, como você aplicaria Arquitetura Event Driven para resolver um problema de negócio? Justifique.
-4.  **Prática**: Pesquise uma ferramenta de mercado relacionada ao tema e descreva suas vantagens.
+3. Compare detalhadamente **Pub/Sub** com uma arquitetura monolítica tradicional.
+4. Escreva um pseudo-código ou comando CLI que inicie um serviço de **Event Streaming**.
 
 ## 🔴 Desafio
 
-5.  **Análise e Design**:
-    Projete uma arquitetura ou solução simples focada em Arquitetura Event Driven que demonstre seu entendimento profundo do módulo.
+5. Projete a arquitetura de um ecommerce que deve suportar picos na Black Friday usando os conceitos listados nesta aula. Considere resiliência e failover.
+
+<br>
+[:octicons-key-24: Acessar Soluções](../solucoes/solucao-08.md){ .md-button }

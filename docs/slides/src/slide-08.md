@@ -1,103 +1,66 @@
-# Aula 08 - Boas Práticas e Validação ✅
-## Qualidade e Segurança no Backend
+# Módulo 08
+## Event Driven
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda 📅
+## A Importância de Event Driven 📈
 
-1. Por que Validar Tudo? { .fragment }
-2. Validação vs Sanitização { .fragment }
-3. Schema Validation (Ex: Zod) { .fragment }
-4. Clean Code (Código Limpo) { .fragment }
-5. Tratamento de Erros Profissional { .fragment }
-6. Middlewares Globais { .fragment }
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## 1. Regra de Ouro: Desconfiança 🛡️
+## 1. O que é Kafka? 🧩
 
-- O cliente é o "lado perigoso" da aplicação. { .fragment }
-- Validações evitam dados corrompidos. { .fragment }
-- **Defesa em Profundidade**: Garanta a regra no banco E no código. { .fragment }
+Um divisor de águas na arquitetura.
 
----
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
 
-## 2. Validar vs Sanitizar 🧼
+--
 
-- **Validar**: Checar (Idade > 18?). { .fragment }
-- **Sanitizar**: Limpar (Remover `<script>`). { .fragment }
+### Exemplificando 🛠️
 
----
+```python
+import backend
 
-## 3. Schema Validation 📐
-
-- Crie "moldes" para seus dados. { .fragment }
-- Validação centralizada e reutilizável. { .fragment }
-
-```javascript
-const userSchema = {
-    nome: string().min(3),
-    email: string().email()
-};
+def render():
+    return backend.scale_up()
 ```
 
 ---
 
-## 4. O Backend Elegante (Clean Code) ✨
+## 2. Abordando RabbitMQ 📊
 
-- **DRY**: Don't Repeat Yourself (Não repita lógica). { .fragment }
-- **KISS**: Keep It Simple, Stupid (Mantenha o simples). { .fragment }
-- Nomes de funções que explicam o que está acontecendo. { .fragment }
-
----
-
-## 5. Tratamento de Erros 🚨
-
-- Controller trata o fluxo, não o detalhe técnico. { .fragment }
-- **Try/Catch Global**: Evite crashes. { .fragment }
-- Mensagens amigáveis para o cliente. { .fragment }
+```mermaid
+graph LR
+    User -->|Call| Server[Event Driven]
+    Server -->|Parse| Data[(Database)]
+```
 
 ---
 
-## 6. Logs vs Mensagens 📜
+## Matemática Aplicada 🔢
 
-- **Terminal/Log**: Detalhe técnico completo. { .fragment }
-- **Cliente (JSON)**: Apenas o que ele precisa saber. { .fragment }
-
-> "Ocorreu um erro interno" (Cliente) ✅
-> "Query failed at line 42 due to NULL constraint" (Logs) ✅
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
 
 ---
 
-## 7. Prática: O Schema Perfeito 💻
+## Aprofundando em Pub/Sub e Event Streaming 🚢
 
-- Validando um produto complexo. { .fragment }
-- Tratando erros de tipo (String no lugar de Number). { .fragment }
-
----
-
-## Desafio: Limpeza ⚡
-
-Se você recebe um texto de um post com muitos espaços em branco no final, você deve **Validar** ou **Sanitizar**?
+- **Pub/Sub**: Reduz o acoplamento temporal. <!-- .element: class="fragment" -->
+- **Event Streaming**: Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" -->
 
 ---
 
-## Resumo ✅
+## Resumo e Próximos Passos ✅
 
-- Backend robusto exige validação rigorosa. { .fragment }
-- Limpe os dados antes de salvar (Sanitize). { .fragment }
-- Middleware Global centraliza a gestão de falhas. { .fragment }
-- Código limpo economiza meses de manutenção. { .fragment }
+- A base de **Event Driven** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
 
----
-
-## Próxima Aula: Módulo 3! 🔐
-
-### Segurança e Autenticação
-
-- Quem é você? (Authentication). { .fragment }
-- O que você pode fazer? (Authorization). { .fragment }
-
----
-
-## Dúvidas? ✅
+> "O código que você escreve hoje moldará o sistema de amanhã."

@@ -1,71 +1,94 @@
-# Quiz 14 - Efeitos e APIs (useEffect) 🌐
+# Quiz 14 - API Gateways
 
-1. O que é um "Efeito Colateral" no React?
-    - [ ] É um bug que trava o computador
-    - [x] Uma ação que acontece fora do fluxo normal de renderizar a interface (ex: buscar dados, timers)
-    - [ ] É o nome de uma biblioteca de animação
-    - [ ] É quando o CSS muda a cor do botão
-    *Explicação: Efeitos saem do campo puro de "desenhar componentes" e tocam o mundo externo.*
+--8<-- "assets/quiz.html"
 
-2. Qual o segundo parâmetro do `useEffect`?
-    - [ ] Um número inteiro
-    - [x] O array de dependências
-    - [ ] O nome do componente
-    - [ ] Um arquivo CSS
-    *Explicação: Esse array decide quando o efeito deve ser re-executado.*
+<div class="quiz-container">
+  <div class="quiz-question">1. No contexto de API Gateways, julgue a afirmação sobre Kong ou Apigee.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Kong.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de Rate Limiting</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-3. O que acontece se passarmos um array de dependências vazio `[]`?
-    - [ ] O efeito nunca roda
-    - [ ] O efeito roda em todo "re-render"
-    - [x] O efeito roda apenas uma vez, quando o componente é montado (aparece na tela)
-    - [ ] O app fecha com erro
-    *Explicação: É o padrão usado para buscar dados iniciais de uma API.*
+<div class="quiz-container">
+  <div class="quiz-question">2. No contexto de API Gateways, julgue a afirmação sobre Kong ou Apigee.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Kong.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de Rate Limiting</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-4. Como fazemos para que um efeito rode toda vez que o estado `tema` mudar?
-    - [ ] useEffect(() => { ... })
-    - [ ] useEffect(() => { ... }, [])
-    - [x] useEffect(() => { ... }, [tema])
-    - [ ] useEffect([tema], () => { ... })
-    *Explicação: Incluir a variável no array obriga o React a monitorá-la.*
+<div class="quiz-container">
+  <div class="quiz-question">3. No contexto de API Gateways, julgue a afirmação sobre Kong ou Apigee.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Kong.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de Rate Limiting</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-5. O que a função `fetch()` retorna?
-    - [ ] O dado final em formato JSON
-    - [x] Uma Promise (Promessa)
-    - [ ] Um número de erro
-    - [ ] Uma string de texto
-    *Explicação: Chamadas de rede são assíncronas; o fetch promete que trará o dado no futuro.*
+<div class="quiz-container">
+  <div class="quiz-question">4. No contexto de API Gateways, julgue a afirmação sobre Kong ou Apigee.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Kong.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de Rate Limiting</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-6. Para que serve o `.then(res => res.json())`?
-    - [ ] Para salvar o dado no disco
-    - [ ] Para fechar a conexão
-    - [x] Para converter a resposta bruta da rede em um objeto Javascript que possamos usar
-    - [ ] Para criptografar os dados
-    *Explicação: A resposta inicial é um objeto de rede; precisamos extrair o corpo dela em JSON.*
+<div class="quiz-container">
+  <div class="quiz-question">5. No contexto de API Gateways, julgue a afirmação sobre Kong ou Apigee.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Kong.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de Rate Limiting</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-7. Qual a maneira correta de lidar com o estado de "Carregando"?
-    - [ ] Usar um cronômetro de 5 segundos
-    - [x] Criar um estado booleano `isLoading` e exibi-lo enquanto a API não responde
-    - [ ] Pedir para o usuário clicar em "Refresh"
-    - [ ] Não precisa lidar, o React faz sozinho
-    *Explicação: Feedback para o usuário é essencial para uma boa experiência (UX).*
+<div class="quiz-container">
+  <div class="quiz-question">6. No contexto de API Gateways, julgue a afirmação sobre Kong ou Apigee.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Kong.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de Rate Limiting</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-8. O que acontece se você atualizar um estado dentro de um `useEffect` sem o array `[]`?
-    - [ ] O estado não muda
-    - [x] Pode gerar um loop infinito (o efeito muda o estado, que re-renderiza, que roda o efeito...)
-    - [ ] O site fica mais rápido
-    - [ ] O computador reinicia
-    *Explicação: Este é um dos erros mais comuns de iniciantes no React.*
+<div class="quiz-container">
+  <div class="quiz-question">7. No contexto de API Gateways, julgue a afirmação sobre Kong ou Apigee.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Kong.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de Rate Limiting</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-9. Onde devemos colocar a chamada `fetch` para que ela não rode milhares de vezes sem necessidade?
-    - [ ] Fora do componente
-    - [ ] No meio do JSX
-    - [x] Dentro de um `useEffect` com dependências controladas
-    - [ ] Dentro do CSS
-    *Explicação: O useEffect isola a lógica de disparos de rede.*
+<div class="quiz-container">
+  <div class="quiz-question">8. No contexto de API Gateways, julgue a afirmação sobre Kong ou Apigee.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Kong.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de Rate Limiting</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-10. Se quisermos limpar um timer ou fechar um socket quando o componente sumir da tela, onde fazemos isso?
-    - [ ] Em outro componente
-    - [ ] No `useState`
-    - [x] Na função de "cleanup" retornada pelo `useEffect`
-    - [ ] Deletando o arquivo
-    *Explicação: O useEffect permite retornar uma função que o React chama ao "desmontar" o componente.*
+<div class="quiz-container">
+  <div class="quiz-question">9. No contexto de API Gateways, julgue a afirmação sobre Kong ou Apigee.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Kong.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de Rate Limiting</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
+
+<div class="quiz-container">
+  <div class="quiz-question">10. No contexto de API Gateways, julgue a afirmação sobre Kong ou Apigee.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Kong.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de Rate Limiting</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
+

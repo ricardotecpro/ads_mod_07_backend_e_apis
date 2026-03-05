@@ -1,71 +1,94 @@
-# Quiz 02 - Arquitetura e Gateway 🏗️
+# Quiz 02 - Arquitetura Backend
 
-1. O que acontece na comunicação síncrona (Sync)?
-    - [ ] O serviço envia a mensagem e esquece
-    - [x] O serviço envia a requisição e aguarda a resposta para continuar
-    - [ ] A comunicação só ocorre via rádio
-    - [ ] O banco de dados é desligado
-    *Explicação: No modelo síncrono, a execução fica bloqueada até que o destino retorne o dado.*
+--8<-- "assets/quiz.html"
 
-2. Qual o principal perigo da comunicação síncrona em excesso?
-    - [ ] O código fica muito curto
-    - [x] Cascateamento de falhas (um serviço lento trava todos os outros)
-    - [ ] Economia exagerada de memória
-    - [ ] O sistema fica rápido demais
-    *Explicação: Se um serviço na cadeia falhar ou demorar, todos os serviços "acima" dele também sofrerão.*
+<div class="quiz-container">
+  <div class="quiz-question">1. No contexto de Arquitetura Backend, julgue a afirmação sobre Clean Architecture ou Hexagonal.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Clean Architecture.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de DDD</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-3. Qual a função do API Gateway?
-    - [ ] Armazenar as senhas dos desenvolvedores
-    - [x] Atuar como ponto único de entrada para roteamento e segurança
-    - [ ] Substituir o roteador Wi-Fi da empresa
-    - [ ] Processar scripts de interface visual
-    *Explicação: O Gateway centraliza preocupações transversais como autenticação, log e roteamento.*
+<div class="quiz-container">
+  <div class="quiz-question">2. No contexto de Arquitetura Backend, julgue a afirmação sobre Clean Architecture ou Hexagonal.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Clean Architecture.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de DDD</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-4. O que é "Rate Limiting"?
-    - [ ] Aumentar a velocidade da internet
-    - [x] Limitar a quantidade de requisições que um cliente pode fazer em um tempo
-    - [ ] Cobrar por cada clique no botão
-    - [ ] Diminuir a fonte do texto
-    *Explicação: Rate limiting protege o sistema contra abusos ou ataques de negação de serviço (DoS).*
+<div class="quiz-container">
+  <div class="quiz-question">3. No contexto de Arquitetura Backend, julgue a afirmação sobre Clean Architecture ou Hexagonal.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Clean Architecture.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de DDD</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-5. No Service Discovery, como os serviços são localizados?
-    - [ ] Por endereços IP fixos escritos no código
-    - [x] Via um registro dinâmico que mantém os endereços atualizados
-    - [ ] Através de busca no Google
-    - [ ] Usando GPS
-    *Explicação: Em ambientes elásticos (Docker/K8s), os IPs mudam sempre, exigindo um "Discovery" dinâmico.*
+<div class="quiz-container">
+  <div class="quiz-question">4. No contexto de Arquitetura Backend, julgue a afirmação sobre Clean Architecture ou Hexagonal.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Clean Architecture.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de DDD</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-6. Qual o papel do "Load Balancer"?
-    - [ ] Medir o peso dos servidores físicos
-    - [x] Distribuir a carga de trabalho entre várias instâncias do mesmo serviço
-    - [ ] Equilibrar o gasto de energia
-    - [ ] Organizar as pastas do projeto
-    *Explicação: Ele garante que nenhuma instância fique sobrecarregada enquanto outras estão ociosas.*
+<div class="quiz-container">
+  <div class="quiz-question">5. No contexto de Arquitetura Backend, julgue a afirmação sobre Clean Architecture ou Hexagonal.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Clean Architecture.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de DDD</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-7. O que caracteriza a comunicação Assíncrona (Async)?
-    - [ ] Uso obrigatório de cabos de fibra ótica
-    - [x] O uso de mensageria (filas) onde o chamador não espera a resposta imediata
-    - [ ] Comunicação em tempo real por vídeo
-    - [ ] Bloqueio total do banco de dados
-    *Explicação: É ideal para processos longos ou para aumentar a resiliência do sistema.*
+<div class="quiz-container">
+  <div class="quiz-question">6. No contexto de Arquitetura Backend, julgue a afirmação sobre Clean Architecture ou Hexagonal.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Clean Architecture.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de DDD</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-8. O que é um "Circuit Breaker" (Disjuntor)?
-    - [ ] Um fusível físico no servidor
-    - [x] Um padrão que interrompe chamadas para um serviço falho para evitar sobrecarga
-    - [ ] Um hacker que invade sistemas
-    - [ ] O botão de desligar do computador
-    *Explicação: Ele protege o sistema impedindo que requisições inúteis sejam feitas a um serviço que já se sabe estar fora do ar.*
+<div class="quiz-container">
+  <div class="quiz-question">7. No contexto de Arquitetura Backend, julgue a afirmação sobre Clean Architecture ou Hexagonal.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Clean Architecture.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de DDD</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-9. Qual destas é uma responsabilidade típica de um Gateway?
-    - [ ] Desenhar o logo da empresa
-    - [ ] Compilar código C++
-    - [x] Agregação de respostas e Autenticação
-    - [ ] Formatar o HD do servidor
-    *Explicação: O Gateway pode unir dados de 3 serviços diferentes e entregar um único JSON ao frontend.*
+<div class="quiz-container">
+  <div class="quiz-question">8. No contexto de Arquitetura Backend, julgue a afirmação sobre Clean Architecture ou Hexagonal.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Clean Architecture.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de DDD</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
 
-10. Qual ferramenta é comumente usada para implementar Service Discovery?
-    - [ ] Microsoft Word
-    - [x] Netflix Eureka / Consul
-    - [ ] Adobe Photoshop
-    - [ ] WhatsApp
-    *Explicação: Eureka e Consul são soluções populares para gerenciar a agenda de serviços em microsserviços.*
+<div class="quiz-container">
+  <div class="quiz-question">9. No contexto de Arquitetura Backend, julgue a afirmação sobre Clean Architecture ou Hexagonal.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Clean Architecture.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de DDD</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
+
+<div class="quiz-container">
+  <div class="quiz-question">10. No contexto de Arquitetura Backend, julgue a afirmação sobre Clean Architecture ou Hexagonal.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Uma premissa falsa sobre Clean Architecture.">Opção A: Afirmação irreal</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! De fato, a teoria confirma isto.">Opção B: Definição exata e testada no mercado</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Estás confundindo com o paradigma anterior.">Opção C: Distorção do conceito de DDD</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Falta embasamento arquitetural.">Opção D: Completamente fora de contexto</div>
+  <div class="quiz-feedback"></div>
+</div>
+

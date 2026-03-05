@@ -1,89 +1,66 @@
-# Aula 13 - Estado e Hooks 🎣
-## Tornando seu App Interativo
+# Módulo 13
+## Serverless e Edge
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda 📅
+## A Importância de Serverless e Edge 📈
 
-1. O que é o Estado (State)? { .fragment }
-2. Hook `useState` { .fragment }
-3. Lidando com Cliques e Eventos { .fragment }
-4. Inputs Controlados { .fragment }
-5. Imutabilidade e Arrays { .fragment }
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## 1. O Problema da Estática 🧱
+## 1. O que é AWS Lambda? 🧩
 
-- Variáveis comuns mudam nos bastidores... { .fragment }
-- ...mas a tela continua a mesma! { .fragment }
-- O React precisa de um sinal para re-desenhar. { .fragment }
+Um divisor de águas na arquitetura.
 
----
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
 
-## 2. useState: O Motor de Mudança 🚀
+--
 
-```jsx
-const [cont, setCont] = useState(0);
+### Exemplificando 🛠️
+
+```python
+import backend
+
+def render():
+    return backend.scale_up()
 ```
 
-1. **cont**: O valor atual. { .fragment }
-2. **setCont**: A função que atualiza. { .fragment }
-3. **0**: O ponto de partida. { .fragment }
+---
+
+## 2. Abordando FaaS 📊
+
+```mermaid
+graph LR
+    User -->|Call| Server[Serverless e Edge]
+    Server -->|Parse| Data[(Database)]
+```
 
 ---
 
-## 3. Eventos no React ⚡
+## Matemática Aplicada 🔢
 
-- `onClick={funcao}` { .fragment }
-- `onChange={(e) => ...}` { .fragment }
-- Sempre em **CamelCase**! { .fragment }
-
----
-
-## 4. Inputs Controlados ⌨️
-
-- O React é quem manda no valor do input. { .fragment }
-- `value={estado}` + `onChange`. { .fragment }
-- Facilita validação e limpeza de campos. { .fragment }
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
 
 ---
 
-## 5. Imutabilidade (Muito Importante!) 💎
+## Aprofundando em Workers e Vercel 🚢
 
-- Nunca altere o estado original: `lista.push(x)` ❌ { .fragment }
-- Sempre crie uma cópia nova: `setLista([...lista, x])` ✅ { .fragment }
-
----
-
-## 6. Fluxo de Dados 🌊
-
-- O estado flui do Pai para o Filho via Props. { .fragment }
-- Se o estado do Pai muda, todo mundo abaixo dele atualiza. { .fragment }
+- **Workers**: Reduz o acoplamento temporal. <!-- .element: class="fragment" -->
+- **Vercel**: Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" -->
 
 ---
 
-## Desafio de Estado ⚡
+## Resumo e Próximos Passos ✅
 
-Se eu tenho um botão que soma +1 ao contador, o que acontece com a interface se eu esquecer de importar o `useState` e usar uma variável global `let contador = 0`?
+- A base de **Serverless e Edge** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
 
----
-
-## Resumo ✅
-
-- `useState` traz vida aos componentes. { .fragment }
-- Mudança de estado = Re-renderização. { .fragment }
-- Use sempre funções disparadoras (`set...`). { .fragment }
-
----
-
-## Próxima Aula: Efeitos e APIs 🌐
-
-### Buscando dados no mundo real!
-
-- Hook: `useEffect`. { .fragment }
-- Consumindo nossa API Backend. { .fragment }
-
----
-
-## Dúvidas? 🎣
+> "O código que você escreve hoje moldará o sistema de amanhã."

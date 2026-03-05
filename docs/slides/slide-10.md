@@ -1,40 +1,66 @@
-# Aula 10 - Observabilidade e Monitoramento 🌐
+# Módulo 10
 ## Observabilidade
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda de Hoje 📅
+## A Importância de Observabilidade 📈
 
-1. Introdução <!-- .element: class="fragment" -->
-2. Conceitos base <!-- .element: class="fragment" -->
-3. Ferramentas <!-- .element: class="fragment" -->
-4. Casos práticos <!-- .element: class="fragment" -->
-
----
-
-## Tópicos do Módulo
-
-- Logs estruturados <!-- .element: class="fragment" -->
-- Métricas <!-- .element: class="fragment" -->
-- Tracing distribuído (Prometheus <!-- .element: class="fragment" -->
-- Grafana <!-- .element: class="fragment" -->
-- OpenTelemetry) <!-- .element: class="fragment" -->
-- Health checks. <!-- .element: class="fragment" -->
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## Introdução 🚀
+## 1. O que é Prometheus? 🧩
 
-Conteúdo em desenvolvimento...
+Um divisor de águas na arquitetura.
+
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
+
+--
+
+### Exemplificando 🛠️
+
+```python
+import backend
+
+def render():
+    return backend.scale_up()
+```
 
 ---
 
-## Próxima Aula 🚀
+## 2. Abordando Grafana 📊
 
-Continuaremos explorando Engenharia de Backends!
+```mermaid
+graph LR
+    User -->|Call| Server[Observabilidade]
+    Server -->|Parse| Data[(Database)]
+```
 
 ---
 
-## Dúvidas? 🤔
+## Matemática Aplicada 🔢
 
-> "A arquitetura de hoje é o legado de amanhã. Escolha com sabedoria."
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
+
+---
+
+## Aprofundando em Tracing e OpenTelemetry 🚢
+
+- **Tracing**: <span class="fragment">Reduz o acoplamento temporal. <!-- .element: class="fragment" --></span>
+- **OpenTelemetry**: <span class="fragment">Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" --></span>
+
+---
+
+## Resumo e Próximos Passos ✅
+
+- A base de **Observabilidade** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
+
+> "O código que você escreve hoje moldará o sistema de amanhã."

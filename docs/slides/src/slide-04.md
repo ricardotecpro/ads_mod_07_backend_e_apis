@@ -1,110 +1,66 @@
-# Aula 04 - Documentação e Mocks 📝
-## Developer Experience e Contratos
+# Módulo 04
+## Protocolos de Comunicação
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda 📅
+## A Importância de Protocolos de Comunicação 📈
 
-1. Por que documentar? { .fragment }
-2. OpenAPI vs Swagger { .fragment }
-3. Swagger UI e Editor { .fragment }
-4. O Poder dos Mocks { .fragment }
-5. Developer Experience (DX) { .fragment }
-6. Ferramentas de Simulação { .fragment }
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## 1. Documentação é DX 🚀
+## 1. O que é gRPC? 🧩
 
-- Sua API é seu produto. { .fragment }
-- Documentar economiza tempo de suporte. { .fragment }
-- Facilita a integração com Front/Mobile. { .fragment }
+Um divisor de águas na arquitetura.
 
----
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
 
-## 2. OpenAPI (OAS) 📜
+--
 
-- O padrão mundial. { .fragment }
-- Arquivo YAML ou JSON descritivo. { .fragment }
-- Agnóstico de linguagem. { .fragment }
+### Exemplificando 🛠️
 
----
+```python
+import backend
 
-## 3. Swagger: O Canivete Suíço 🛠️
-
-- **Editor**: Escreva e valide o contrato. { .fragment }
-- **UI**: Gere a página visual de testes. { .fragment }
-- **Codegen**: Gere código (client/server) automaticamente. { .fragment }
+def render():
+    return backend.scale_up()
+```
 
 ---
 
-## Swagger UI em Ação
+## 2. Abordando WebSockets 📊
 
-- Permite testar endpoints no próprio navegador. { .fragment }
-- Mostra exemplos de JSON de entrada e saída. { .fragment }
-- Exibe todos os Status Codes possíveis. { .fragment }
-
----
-
-## 4. O Poder dos Mocks 🎭
-
-- **Development in Parallel**: Front não espera pelo Back. { .fragment }
-- Servidor "Fake" que retorna dados reais. { .fragment }
-- Valide a experiência antes da implementação complexa. { .fragment }
+```mermaid
+graph LR
+    User -->|Call| Server[Protocolos de Comunicação]
+    Server -->|Parse| Data[(Database)]
+```
 
 ---
 
-## 5. Developer Experience (DX) 👨‍💻
+## Matemática Aplicada 🔢
 
-Como ser amado por outros devs:
-
-- Nomes de rotas claros. { .fragment }
-- Erros descritivos no Body. { .fragment }
-- Exemplos de requisição. { .fragment }
-- Documentação atualizada (ou gerada pelo código). { .fragment }
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
 
 ---
 
-## 6. Ferramentas Recomendadas 🧰
+## Aprofundando em Streaming e SSE 🚢
 
-- **Swagger Editor**: Online ou Local. { .fragment }
-- **Mockoon**: Mock local amigável. { .fragment }
-- **Prism**: Mock via CLI. { .fragment }
-- **Postman**: Collections documentadas. { .fragment }
+- **Streaming**: Reduz o acoplamento temporal. <!-- .element: class="fragment" -->
+- **SSE**: Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" -->
 
 ---
 
-## 7. Prática: Editando um YAML 💻
+## Resumo e Próximos Passos ✅
 
-- Desenhando um endpoint `GET /tarefas`. { .fragment }
-- Definindo parâmetros de entrada. { .fragment }
-- Criando esquemas de dados. { .fragment }
+- A base de **Protocolos de Comunicação** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
 
----
-
-## Desafio: Mock vs Stubs ⚡
-
-Qual a principal vantagem de um Mock Server online (como Postman) em relação a um Mock rodando apenas no computador do desenvolvedor?
-
----
-
-## Resumo ✅
-
-- OpenAPI é o contrato. { .fragment }
-- Swagger UI é a vitrine da sua API. { .fragment }
-- Mocks destravam o desenvolvimento da equipe. { .fragment }
-- DX é o diferencial de uma boa API. { .fragment }
-
----
-
-## Próxima Aula: Implementação Backend! 💻
-
-### Módulo 2: Manipulação de Dados
-
-- Controllers e Services. { .fragment }
-- Repositories e Banco de Dados. { .fragment }
-- Mão na massa com código real! { .fragment }
-
----
-
-## Dúvidas? 📝
+> "O código que você escreve hoje moldará o sistema de amanhã."

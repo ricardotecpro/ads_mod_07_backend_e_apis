@@ -47,15 +47,27 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
           # Generate content before deploy
-          poetry run task slides || echo "No slides task"
-          poetry run task quizzes || echo "No quizzes task"
+          poetry run task slides
+          poetry run task quizzes
           
+          # Build site to trigger hooks (copies slides to site/)
+          poetry run mkdocs build
+          
+          # Start MkDocs server in background for tests
+          poetry run mkdocs serve &
+          PID=$!
+          sleep 10  # Wait for server to start
+          
+          # Run tests to ensure quality
+          poetry run task test
+          
+          # Kill server
+          kill $PID
+          
+          # Clean local gh-pages to ensure fresh fetch/deploy
           # Clean local gh-pages to ensure fresh fetch/deploy
           git branch -D gh-pages || echo "gh-pages not present locally"
           git fetch origin gh-pages --depth=1 || echo "gh-pages branch not found on remote"
-          
-          # Deploy with versioning support
           poetry run mike deploy --push --update-aliases estavel latest
           poetry run mike set-default --push estavel

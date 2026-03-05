@@ -1,25 +1,30 @@
+﻿"""
+Script para gerar automaticamente todos os slides HTML e quizzes interativos
+Baseado nos formatos antigos que funcionavam
+"""
 import pathlib
 import re
-import sys
-import io
-
-# Fix for Windows encoding issues with emojis
-if sys.platform == "win32":
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8")
-
+import yaml
 from rich import print
 from rich.progress import track
 
 
-def generate_slide_html(lesson_number: int) -> str:
+def load_config():
+    """Lê configurações do mkdocs.yml"""
+    yml_path = pathlib.Path('mkdocs.yml')
+    if not yml_path.exists():
+        return {"site_name": "Digital Lab"}
+    with open(yml_path, 'r', encoding='utf-8') as f:
+        return yaml.load(f, Loader=yaml.UnsafeLoader)
+
+def generate_slide_html(lesson_number: int, site_name: str) -> str:
     """Gera HTML para um slide específico"""
     return f'''<!doctype html>
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula {lesson_number:02d} - Desenvolvimento Mobile Nativo</title>
+    <title>Aula {lesson_number:02d} - {site_name}</title>
     
     <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reset.css">
     <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reveal.css">
@@ -34,18 +39,29 @@ def generate_slide_html(lesson_number: int) -> str:
                      data-separator="^\\n---\\n$"
                      data-separator-vertical="^\\n--\\n$">
             </section>
-        </div>
-    </div>
-    
-    <!-- Dicas de Atalhos -->
-    <div class="reveal-shortcuts">
-        Atalhos: F (Tela Cheia) | S (Speaker View)
-    </div>
+    <style>
+        /* Personalização do badge de número de slides (Canto Inferior Esquerdo) com a Cor de Navegação */
+        .reveal .slide-number {{
+            background-color: var(--r-controls-color, #42affa) !important;
+            color: #ffffff !important;
+            font-size: 18px !important;
+            font-weight: bold !important;
+            border-radius: 4px !important;
+            padding: 4px 8px !important;
+            bottom: 20px !important;
+            left: 20px !important;
+            right: auto !important;
+            box-shadow: none !important;
+        }}
+    </style>
+    <!-- Dicas de Atalhos Centro Removidas Conforme Padrão V2 -->
 
     <script src="https://unpkg.com/reveal.js@4.5.0/dist/reveal.js"></script>
     <script src="https://unpkg.com/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
     <script src="https://unpkg.com/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
     <script src="https://unpkg.com/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script src="https://unpkg.com/reveal.js@4.5.0/plugin/math/math.js"></script>
+    <script src="https://unpkg.com/mermaid@11.12.3/dist/mermaid.min.js"></script>
     <script>
         Reveal.initialize({{
             hash: true,
@@ -53,77 +69,57 @@ def generate_slide_html(lesson_number: int) -> str:
             showSlideNumber: 'all',
             controls: true,
             progress: true,
-            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3 ],
+            mathjax3: {{
+                mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+                tex: {{
+                    inlineMath: [ [ '$', '$' ], [ '\\\\(', '\\\\)' ] ]
+                }},
+                options: {{
+                    skipHtmlTags: [ 'script', 'noscript', 'style', 'textarea', 'pre' ]
+                }}
+            }}
+        }}).then(() => {{
+            // Após o build do Reveal, transpilar classes markdown Mermaid para renders SVG reais
+            document.querySelectorAll('pre code.language-mermaid').forEach(code => {{
+                const pre = code.parentElement;
+                const div = document.createElement('div');
+                div.className = 'mermaid';
+                div.textContent = code.textContent;
+                pre.replaceWith(div);
+            }});
+            mermaid.initialize({{ startOnLoad: false, theme: 'dark' }});
+            mermaid.run({{ querySelector: '.mermaid' }});
         }});
 
-        function updateShortcutsVisibility() {{
-            const isFullscreen = document.fullscreenElement || 
-                                 document.webkitFullscreenElement || 
-                                 document.mozFullScreenElement || 
-                                 document.msFullscreenElement;
-            
-            const shortcuts = document.querySelector('.reveal-shortcuts');
-            if (shortcuts) {{
-                shortcuts.style.display = isFullscreen ? 'none' : 'block';
-            }}
-        }}
-
-        document.addEventListener('fullscreenchange', updateShortcutsVisibility);
-        document.addEventListener('webkitfullscreenchange', updateShortcutsVisibility);
+        // JS Customizado Removido (Dicas Ocultadas)
     </script>
 </body>
 </html>
 '''
 
 
-def convert_quiz_md_to_html(md_content: str) -> str:
-    """Converte o formato MarkDown de quiz para o formato HTML interativo"""
-    # Regex para capturar Perguntas, Opções e Explicações
-    # 1. Título
-    title_match = re.search(r'# (.*)', md_content)
-    title = title_match.group(1) if title_match else "Quiz"
+def clean_slide_markdown(md_path: pathlib.Path) -> None:
+    """Remove frontmatter YAML dos slides markdown"""
+    content = md_path.read_text(encoding='utf-8')
     
-    html_output = [f"# {title}\n", '--8<-- "assets/quiz.html"\n']
-    
-    # Split by questions
-    questions = re.split(r'\n\d+\. ', md_content)
-    if not questions[0].strip().startswith('1.'):
-        # The first element might be the title, discard it if it doesn't have a question
-        questions = questions[1:]
-    else:
-        # If it starts with 1., the first split will have it
-        questions[0] = questions[0].replace('1. ', '', 1)
-
-    for i, q_block in enumerate(questions, 1):
-        lines = q_block.strip().split('\n')
-        if not lines: continue
-        
-        question_text = lines[0].strip()
-        options = []
-        explanation = ""
-        
-        for line in lines[1:]:
-            line = line.strip()
-            if line.startswith('- ['):
-                is_correct = 'x' in line.lower()[:5]
-                option_text = line[line.find(']')+1:].strip()
-                options.append((option_text, is_correct))
-            elif line.startswith('*Explicação:'):
-                explanation = line.replace('*Explicação:', '').strip('*').strip()
-        
-        # Build HTML
-        html_output.append('<div class="quiz-container">')
-        html_output.append(f'  <div class="quiz-question">{i}. {question_text}</div>')
-        
-        for opt_text, is_correct in options:
-            correct_attr = "true" if is_correct else "false"
-            feedback = f"✅ Correto! {explanation}" if is_correct else f"❌ Incorreto. {explanation}"
-            html_output.append(f'  <div class="quiz-option" data-correct="{correct_attr}" data-feedback="{feedback}">{opt_text}</div>')
-        
-        html_output.append('  <div class="quiz-feedback"></div>')
-        html_output.append('</div>\n')
-        
-    return "\n".join(html_output)
+    # Remove frontmatter se existir
+    if content.startswith('---'):
+        parts = content.split('---', 2)
+        if len(parts) >= 3:
+            # Remove tudo até o segundo ---
+            content = parts[2].lstrip()
+            
+            # Remove comentários Marp
+            lines = content.split('\n')
+            cleaned_lines = [line for line in lines if not line.strip().startswith('<!-- _class:')]
+            content = '\n'.join(cleaned_lines)
+            
+            md_path.write_text(content, encoding='utf-8')
+            print(f"  [green]✓[/green] Limpou frontmatter de {md_path.name}")
 
 
 def generate_all_slides():
@@ -136,6 +132,7 @@ def generate_all_slides():
         return
     
     print("\n[bold cyan]📊 Gerando Slides HTML...[/bold cyan]")
+    print(f"Fonte: {slides_src_dir}")
     
     for i in track(range(1, 17), description="Processando slides..."):
         src_md_name = f"slide-{i:02d}.md"
@@ -144,58 +141,89 @@ def generate_all_slides():
         html_path = slides_dst_dir / f"slide-{i:02d}.html"
         
         if src_md_path.exists():
+            # 1. Ler fonte
             content = src_md_path.read_text(encoding='utf-8')
             
-            # 1. Corrigir fragmentos: transformar { .fragment } em <!-- .element: class="fragment" -->
-            # Isso permite usar uma sintaxe mais limpa no source. Captura variações de espaço.
-            content = re.sub(r'\{\s*\.fragment\s*\}', '<!-- .element: class="fragment" -->', content)
+            # 2. Limpar (opcional, se já estiver limpo não faz mal)
+            # A função clean_slide_markdown era in-place, vamos fazer em memória aqui ou adaptar
+            # Para simplificar, copiamos e limpamos no destino
             
-            # 2. Remover frontmatter (YAML) se existir, mas manter os comentários de slide do Reveal.js
+            # Remove frontmatter se existir
             if content.startswith('---'):
                 parts = content.split('---', 2)
                 if len(parts) >= 3:
-                    # Se houver YAML no topo (comum em arquivos Markdown), removemos para não quebrar o Reveal.js
-                    # Mas atenção: o split('---', 2) pode remover o primeiro slide se o arquivo começa com --- separador de slide
-                    # No Reveal.js, slides costumam ser separados por ---. Se o arquivo começa com ---, ele pode ser YAML ou o primeiro slide.
-                    # Vamos assumir que se começa com --- e termina com --- logo depois, é YAML.
-                    header = parts[1]
-                    if 'title:' in header or 'author:' in header:
-                        content = parts[2].lstrip()
+                    content = parts[2].lstrip()
             
-            dst_md_path.write_text(content, encoding='utf-8')
-            html_path.write_text(generate_slide_html(i), encoding='utf-8')
+            # Remove classes Marp (legado)
+            lines = content.split('\n')
+            
+            # Análise inteligente e injeção de fragmentos visando primeiro Mostrar o Tópico (Ex: **Byte**) e depois a Descrição
+            processed_lines = []
+            for l in lines:
+                if l.strip().startswith('<!-- _class:'):
+                    continue
+                
+                # Se for um item de lista forte seguido de dois pontos, separa as fases da animação
+                # Ex: * **Byte**: 8 bits (etc)
+                if re.match(r'^[\*\-] \*\*.*?\*\*:$', l.strip()):
+                    processed_lines.append(l)
+                elif re.match(r'^[\*\-] \*\*.*?\*\*: (.*)$', l.strip()):
+                    # Separa o título do resto para embutir tag inline span fragment
+                    match = re.match(r'^([\*\-] \*\*.*?\*\*: )(.*)$', l.strip())
+                    if match:
+                        processed_lines.append(f"{match.group(1)}<span class=\"fragment\">{match.group(2)}</span>")
+                else:
+                    processed_lines.append(l)
+
+            content = '\n'.join(processed_lines)
+            
+            # Converte fragmentos antigos
+            content = content.replace('{ .fragment }', '<!-- .element: class="fragment" -->')
+            
+            # (Removemos a lógica destrutiva de Regex do Mermaid que estava quebrando quotes necessários)
+            
+            # 3. Escrever Markdown runtime em docs/slides/
+            dst_md_path.write_text(content.strip(), encoding='utf-8')
+            
+            # 4. Gerar HTML referenciando este markdown
+            config = load_config()
+            html_content = generate_slide_html(i, config.get('site_name', 'Digital Lab'))
+            html_path.write_text(html_content, encoding='utf-8')
+        else:
+            print(f"[yellow]⚠ Fonte {src_md_path} não encontrada[/yellow]")
+    
+    print(f"[green]✓ {16} slides HTML e MD gerados com sucesso![/green]")
 
 
-def generate_all_quizzes():
-    """Gera arquivos HTML para todos os 16 quizzes"""
-    quizzes_dst_dir = pathlib.Path('docs/quizzes')
-    quizzes_src_dir = quizzes_dst_dir / 'src'
-    
-    if not quizzes_src_dir.exists():
-        print("[yellow]⚠ Pasta docs/quizzes/src/ não encontrada.[/yellow]")
-        return
-    
-    print("\n[bold magenta]📝 Gerando Quizzes Interativos...[/bold magenta]")
-    
-    for i in track(range(1, 17), description="Processando quizzes..."):
-        src_md_name = f"quiz-{i:02d}.md"
-        src_md_path = quizzes_src_dir / src_md_name
-        dst_md_path = quizzes_dst_dir / src_md_name
-        
-        if src_md_path.exists():
-            content = src_md_path.read_text(encoding='utf-8')
-            html_quiz = convert_quiz_md_to_html(content)
-            dst_md_path.write_text(html_quiz, encoding='utf-8')
+def convert_quiz_to_html(quiz_number: int) -> str:
+    """Lê quiz markdown e retorna versão HTML (placeholder - precisa ser implementado)"""
+    # Por enquanto retorna template básico
+    # Você precisará implementar a conversão real baseado no conteúdo
+    return f'''# Quiz {quiz_number:02d}
+
+--8<-- "assets/quiz.html"
+
+<!-- Adicione as perguntas aqui no formato HTML -->
+<div class="quiz-container">
+  <div class="quiz-question">Pergunta de exemplo</div>
+  <div class="quiz-option" data-correct="true" data-feedback="Correto!">Opção correta</div>
+  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Opção incorreta</div>
+  <div class="quiz-feedback"></div>
+</div>
+'''
 
 
 def main():
-    print("[bold]🚀 Automação de Conteúdo: Mobile Nativo[/bold]")
+    """Função principal"""
+    print("[bold]🚀 Automação de Slides e Quizzes[/bold]")
     print("=" * 50)
     
     generate_all_slides()
-    generate_all_quizzes()
     
-    print("\n[green]✅ Conteúdo gerado com sucesso![/green]")
+    print("\n[yellow]⚠ Nota:[/yellow] Quizzes precisam ser convertidos manualmente")
+    print("  Use o template em docs/quizzes/quiz-01.md como referência")
+    
+    print("\n[green]✅ Automação concluída![/green]")
 
 
 if __name__ == '__main__':

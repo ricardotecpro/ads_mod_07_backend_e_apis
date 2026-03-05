@@ -1,35 +1,20 @@
-# Listas de Exercícios 🏋️
+# Índice de Exercicios 🧭
 
-Pratique o que aprendeu com desafios graduais para cada aula.
+Acesse todo o conteúdo prático da disciplina.
 
-<div class="grid cards" markdown>
-
--   :material-numeric-1-box: **Módulo 1: Fundamentos de Backend**
-    ---
-    - [Ex 01 - Intro a Microsserviços](exercicio-01.md)
-    - [Ex 02 - Arquitetura e Gateway](exercicio-02.md)
-    - [Ex 03 - Modelagem REST](exercicio-03.md)
-    - [Ex 04 - Documentação e Mocks](exercicio-04.md)
-
--   :material-numeric-2-box: **Módulo 2: Manipulação de Dados**
-    ---
-    - [Ex 05 - Controllers e Rotas](exercicio-05.md)
-    - [Ex 06 - Services e Lógica](exercicio-06.md)
-    - [Ex 07 - Banco de Dados SQL](exercicio-07.md)
-    - [Ex 08 - Validação de Dados](exercicio-08.md)
-
--   :material-numeric-3-box: **Módulo 3: Segurança e Autenticação**
-    ---
-    - [Ex 09 - Autenticação JWT](exercicio-09.md)
-    - [Ex 10 - Controle de Acesso (RBAC)](exercicio-10.md)
-    - [Ex 11 - Segurança Avançada](exercicio-11.md)
-
--   :material-numeric-4-box: **Módulo 4: Aplicações SPA (React)**
-    ---
-    - [Ex 12 - Introdução ao React](exercicio-12.md)
-    - [Ex 13 - Estado e Hooks](exercicio-13.md)
-    - [Ex 14 - Chamadas de API](exercicio-14.md)
-    - [Ex 15 - Navegação Router](exercicio-15.md)
-    - [Ex 16 - Planejamento Projeto Final](exercicio-16.md)
-
-</div>
+- [:octicons-arrow-right-24: Exercicio 01 - Fundamentos da Web](./exercicio-01.md)
+- [:octicons-arrow-right-24: Exercicio 02 - Arquitetura Backend](./exercicio-02.md)
+- [:octicons-arrow-right-24: Exercicio 03 - Design de APIs](./exercicio-03.md)
+- [:octicons-arrow-right-24: Exercicio 04 - Protocolos de Comunicação](./exercicio-04.md)
+- [:octicons-arrow-right-24: Exercicio 05 - Sec e Autenticação](./exercicio-05.md)
+- [:octicons-arrow-right-24: Exercicio 06 - Persistência e Dados](./exercicio-06.md)
+- [:octicons-arrow-right-24: Exercicio 07 - Cache e Performance](./exercicio-07.md)
+- [:octicons-arrow-right-24: Exercicio 08 - Event Driven](./exercicio-08.md)
+- [:octicons-arrow-right-24: Exercicio 09 - Infra. Cloud Native](./exercicio-09.md)
+- [:octicons-arrow-right-24: Exercicio 10 - Observabilidade](./exercicio-10.md)
+- [:octicons-arrow-right-24: Exercicio 11 - Testes de Backend](./exercicio-11.md)
+- [:octicons-arrow-right-24: Exercicio 12 - Deploy e DevOps](./exercicio-12.md)
+- [:octicons-arrow-right-24: Exercicio 13 - Serverless e Edge](./exercicio-13.md)
+- [:octicons-arrow-right-24: Exercicio 14 - API Gateways](./exercicio-14.md)
+- [:octicons-arrow-right-24: Exercicio 15 - Ecossistemas](./exercicio-15.md)
+- [:octicons-arrow-right-24: Exercicio 16 - Tópicos Avançados](./exercicio-16.md)

@@ -1,46 +1,66 @@
-# Aula 01 - Fundamentos da Web e Sistemas Distribuídos 🌐
+# Módulo 01
 ## Fundamentos da Web
+<br>
+Aprofundamento na Engenharia Cloud-Native
 
 ---
 
-## Agenda de Hoje 📅
+## A Importância de Fundamentos da Web 📈
 
-1. Introdução <!-- .element: class="fragment" -->
-2. Conceitos base <!-- .element: class="fragment" -->
-3. Ferramentas <!-- .element: class="fragment" -->
-4. Casos práticos <!-- .element: class="fragment" -->
-
----
-
-## Tópicos do Módulo
-
-- Arquitetura cliente-servidor <!-- .element: class="fragment" -->
-- Sistemas distribuídos <!-- .element: class="fragment" -->
-- Escalabilidade <!-- .element: class="fragment" -->
-- Latência <!-- .element: class="fragment" -->
-- Consistência de dados <!-- .element: class="fragment" -->
-- Alta disponibilidade <!-- .element: class="fragment" -->
-- Protocolos Web (HTTP <!-- .element: class="fragment" -->
-- HTTPS <!-- .element: class="fragment" -->
-- HTTP/2 e 3 <!-- .element: class="fragment" -->
-- DNS <!-- .element: class="fragment" -->
-- TLS) <!-- .element: class="fragment" -->
-- Padrões Monólitos e Microsserviços. <!-- .element: class="fragment" -->
+- Base para sistemas de milhões de acessos. <!-- .element: class="fragment" -->
+- Substitui práticas engessadas do legado. <!-- .element: class="fragment" -->
+- Padroniza o fluxo de entrega. <!-- .element: class="fragment" -->
 
 ---
 
-## Introdução 🚀
+## 1. O que é Arquitetura cliente-servidor? 🧩
 
-Conteúdo em desenvolvimento...
+Um divisor de águas na arquitetura.
+
+- Separação real de contexto. <!-- .element: class="fragment" -->
+- Independência de deploy. <!-- .element: class="fragment" -->
+
+--
+
+### Exemplificando 🛠️
+
+```python
+import backend
+
+def render():
+    return backend.scale_up()
+```
 
 ---
 
-## Próxima Aula 🚀
+## 2. Abordando Sistemas distribuídos 📊
 
-Continuaremos explorando Engenharia de Backends!
+```mermaid
+graph LR
+    User -->|Call| Server[Fundamentos da Web]
+    Server -->|Parse| Data[(Database)]
+```
 
 ---
 
-## Dúvidas? 🤔
+## Matemática Aplicada 🔢
 
-> "A arquitetura de hoje é o legado de amanhã. Escolha com sabedoria."
+As métricas de resposta provam que:
+$$ O(log N) $$
+Traz mais consistência do que buscas lineares sob estresse da rede.
+
+---
+
+## Aprofundando em HTTP/2 e Monólito e Microsserviços 🚢
+
+- **HTTP/2**: <span class="fragment">Reduz o acoplamento temporal. <!-- .element: class="fragment" --></span>
+- **Monólito e Microsserviços**: <span class="fragment">Garante que o estado seja imutável a longo prazo. <!-- .element: class="fragment" --></span>
+
+---
+
+## Resumo e Próximos Passos ✅
+
+- A base de **Fundamentos da Web** é sólida. <!-- .element: class="fragment" -->
+- Apliquem este fluxo aos **Projetos Práticos**. <!-- .element: class="fragment" -->
+
+> "O código que você escreve hoje moldará o sistema de amanhã."
