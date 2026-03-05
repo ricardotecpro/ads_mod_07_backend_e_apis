@@ -1,0 +1,1710 @@
+
+> deploy	Build and Deploy	´╗┐2026-03-05T21:50:10.7043070Z ##[group]Run git config --global --add safe.directory '*'
+> deploy	Build and Deploy	2026-03-05T21:50:10.7043937Z git config --global --add safe.directory '*'
+> deploy	Build and Deploy	2026-03-05T21:50:10.7044283Z git config user.name "github-actions[bot]"
+> deploy	Build and Deploy	2026-03-05T21:50:10.7044719Z git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+> deploy	Build and Deploy	2026-03-05T21:50:10.7045186Z # Gera conte├║do (slides e quizzes)
+> deploy	Build and Deploy	2026-03-05T21:50:10.7045464Z poetry run task slides
+> deploy	Build and Deploy	2026-03-05T21:50:10.7045708Z poetry run task quizzes
+> deploy	Build and Deploy	2026-03-05T21:50:10.7046001Z # Build do site (dispara hooks de c├│pia)
+> deploy	Build and Deploy	2026-03-05T21:50:10.7046513Z poetry run mkdocs build
+> deploy	Build and Deploy	2026-03-05T21:50:10.7046810Z # Servidor em background para testes
+> deploy	Build and Deploy	2026-03-05T21:50:10.7047154Z poetry run mkdocs serve -a 127.0.0.1:8766 &
+> deploy	Build and Deploy	2026-03-05T21:50:10.7047427Z PID=$!
+> deploy	Build and Deploy	2026-03-05T21:50:10.7047613Z sleep 10
+> deploy	Build and Deploy	2026-03-05T21:50:10.7047826Z # Roda testes para garantir qualidade
+> deploy	Build and Deploy	2026-03-05T21:50:10.7048135Z poetry run task test
+> deploy	Build and Deploy	2026-03-05T21:50:10.7048359Z kill $PID
+> deploy	Build and Deploy	2026-03-05T21:50:10.7048587Z # Deploy direto para gh-pages (sem Mike)
+> deploy	Build and Deploy	2026-03-05T21:50:10.7048906Z poetry run mkdocs gh-deploy --force
+> deploy	Build and Deploy	2026-03-05T21:50:10.7099643Z shell: /usr/bin/bash -e {0}
+> deploy	Build and Deploy	2026-03-05T21:50:10.7099895Z env:
+> deploy	Build and Deploy	2026-03-05T21:50:10.7100154Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.14/x64
+> deploy	Build and Deploy	2026-03-05T21:50:10.7100589Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib/pkgconfig
+> deploy	Build and Deploy	2026-03-05T21:50:10.7101002Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+> deploy	Build and Deploy	2026-03-05T21:50:10.7101391Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+> deploy	Build and Deploy	2026-03-05T21:50:10.7101781Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.14/x64
+> deploy	Build and Deploy	2026-03-05T21:50:10.7102170Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.14/x64/lib
+> deploy	Build and Deploy	2026-03-05T21:50:10.7102489Z   VENV: .venv/bin/activate
+> deploy	Build and Deploy	2026-03-05T21:50:10.7102697Z ##[endgroup]
+> deploy	Build and Deploy	2026-03-05T21:50:11.6564141Z ­ƒÜÇ Automa├º├úo de Slides e Quizzes
+> deploy	Build and Deploy	2026-03-05T21:50:11.6566958Z ==================================================
+> deploy	Build and Deploy	2026-03-05T21:50:11.6572787Z 
+> deploy	Build and Deploy	2026-03-05T21:50:11.6573408Z ­ƒôè Gerando Slides HTML...
+> deploy	Build and Deploy	2026-03-05T21:50:11.6575688Z Fonte: docs/slides/src
+> deploy	Build and Deploy	2026-03-05T21:50:12.1847833Z Processando slides... ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü 100% 0:00:00
+> deploy	Build and Deploy	2026-03-05T21:50:12.1852338Z Ô£ô 16 slides HTML e MD gerados com sucesso!
+> deploy	Build and Deploy	2026-03-05T21:50:12.1857507Z 
+> deploy	Build and Deploy	2026-03-05T21:50:12.1858136Z ÔÜá Nota: Quizzes precisam ser convertidos manualmente
+> deploy	Build and Deploy	2026-03-05T21:50:12.1861492Z   Use o template em docs/quizzes/quiz-01.md como refer├¬ncia
+> deploy	Build and Deploy	2026-03-05T21:50:12.1864776Z 
+> deploy	Build and Deploy	2026-03-05T21:50:12.1865251Z Ô£à Automa├º├úo conclu├¡da!
+> deploy	Build and Deploy	2026-03-05T21:50:12.9047021Z ­ƒÜÇ Convers├úo Autom├ítica de Quizzes
+> deploy	Build and Deploy	2026-03-05T21:50:12.9048950Z ==================================================
+> deploy	Build and Deploy	2026-03-05T21:50:12.9055019Z 
+> deploy	Build and Deploy	2026-03-05T21:50:12.9055585Z ­ƒºá Convertendo Quizzes para HTML...
+> deploy	Build and Deploy	2026-03-05T21:50:12.9058570Z Fonte: docs/quizzes/src
+> deploy	Build and Deploy	2026-03-05T21:50:12.9082772Z   ÔÜá Nenhuma pergunta encontrada em quiz-01.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9091858Z   ÔÜá Nenhuma pergunta encontrada em quiz-02.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9100653Z   ÔÜá Nenhuma pergunta encontrada em quiz-03.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9109852Z   ÔÜá Nenhuma pergunta encontrada em quiz-04.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9118493Z   ÔÜá Nenhuma pergunta encontrada em quiz-05.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9127158Z   ÔÜá Nenhuma pergunta encontrada em quiz-06.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9135520Z   ÔÜá Nenhuma pergunta encontrada em quiz-07.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9144254Z   ÔÜá Nenhuma pergunta encontrada em quiz-08.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9152758Z   ÔÜá Nenhuma pergunta encontrada em quiz-09.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9161368Z   ÔÜá Nenhuma pergunta encontrada em quiz-10.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9180603Z   ÔÜá Nenhuma pergunta encontrada em quiz-11.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9189627Z   ÔÜá Nenhuma pergunta encontrada em quiz-12.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9198001Z   ÔÜá Nenhuma pergunta encontrada em quiz-13.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9206221Z   ÔÜá Nenhuma pergunta encontrada em quiz-14.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9215073Z   ÔÜá Nenhuma pergunta encontrada em quiz-15.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9223728Z   ÔÜá Nenhuma pergunta encontrada em quiz-16.md
+> deploy	Build and Deploy	2026-03-05T21:50:12.9238897Z Processando quizzes... ÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöüÔöü 100% 0:00:00
+> deploy	Build and Deploy	2026-03-05T21:50:12.9243315Z 
+> deploy	Build and Deploy	2026-03-05T21:50:12.9243900Z Ô£ô 0/16 quizzes convertidos com sucesso!
+> deploy	Build and Deploy	2026-03-05T21:50:12.9247485Z 
+> deploy	Build and Deploy	2026-03-05T21:50:12.9247887Z Ô£à Convers├úo conclu├¡da!
+> deploy	Build and Deploy	2026-03-05T21:50:12.9253324Z 
+> deploy	Build and Deploy	2026-03-05T21:50:12.9254021Z ­ƒÆí Dica: Teste os quizzes em http://localhost:8000/quizzes/
+> deploy	Build and Deploy	2026-03-05T21:50:14.1327791Z 
+> deploy	Build and Deploy	2026-03-05T21:50:14.1329294Z  Ôöé  ÔÜá  WARNING ÔÇô MkDocs 2.0 is incompatible with Material for MkDocs
+> deploy	Build and Deploy	2026-03-05T21:50:14.1330200Z  Ôöé
+> deploy	Build and Deploy	2026-03-05T21:50:14.1331048Z  Ôöé  MkDocs 2.0 introduces backward-incompatible changes:
+> deploy	Build and Deploy	2026-03-05T21:50:14.1331834Z  Ôöé
+> deploy	Build and Deploy	2026-03-05T21:50:14.1332790Z  Ôöé  ├ù All plugins will stop working ÔÇô the plugin system has been removed
+> deploy	Build and Deploy	2026-03-05T21:50:14.1333955Z  Ôöé  ├ù All theme overrides will break ÔÇô the theming system has been rewritten
+> deploy	Build and Deploy	2026-03-05T21:50:14.1334728Z  Ôöé  ├ù No migration path exists ÔÇô existing projects cannot be upgraded
+> deploy	Build and Deploy	2026-03-05T21:50:14.1335428Z  Ôöé  ├ù Closed contribution model ÔÇô community members can't report bugs
+> deploy	Build and Deploy	2026-03-05T21:50:14.1336065Z  Ôöé  ├ù Currently unlicensed ÔÇô unsuitable for production use
+> deploy	Build and Deploy	2026-03-05T21:50:14.1336672Z  Ôöé
+> deploy	Build and Deploy	2026-03-05T21:50:14.1336957Z  Ôöé  Our full analysis:
+> deploy	Build and Deploy	2026-03-05T21:50:14.1337223Z  Ôöé
+> deploy	Build and Deploy	2026-03-05T21:50:14.1337801Z  Ôöé  https://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/
+> deploy	Build and Deploy	2026-03-05T21:50:14.1338284Z 
+> deploy	Build and Deploy	2026-03-05T21:50:16.3424939Z INFO    -  [macros] - No default module `main` found
+> deploy	Build and Deploy	2026-03-05T21:50:16.3607397Z INFO    -  [macros] - Config variables: ['extra', 'config', 'environment', 'plugin', 'git', 'social', 'macros', 'filters', 'filters_builtin']
+> deploy	Build and Deploy	2026-03-05T21:50:16.3644296Z INFO    -  [macros] - Config macros: ['context', 'macros_info', 'now', 'fix_url']
+> deploy	Build and Deploy	2026-03-05T21:50:16.3645939Z INFO    -  [macros] - Config filters: ['pretty', 'relative_url']
+> deploy	Build and Deploy	2026-03-05T21:50:16.3647062Z INFO    -  Cleaning site directory
+> deploy	Build and Deploy	2026-03-05T21:50:16.3648618Z INFO    -  Building documentation to directory: /home/runner/work/ads_mod_07_backends_e_apis/ads_mod_07_backends_e_apis/site
+> deploy	Build and Deploy	2026-03-05T21:50:17.6283682Z HERE= /home/runner/work/ads_mod_07_backends_e_apis/ads_mod_07_backends_e_apis/.venv/lib/python3.11/site-packages/mkdocs_revealjs
+> deploy	Build and Deploy	2026-03-05T21:50:17.6284577Z DIRNAME= docs/revealjs
+> deploy	Build and Deploy	2026-03-05T21:50:18.3042607Z INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+> deploy	Build and Deploy	2026-03-05T21:50:18.3043598Z   - audit.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9168308Z Copiando slides HTML...
+> deploy	Build and Deploy	2026-03-05T21:50:22.9176949Z   -> slide-12.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9183173Z   -> slide-03.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9189312Z   -> slide-09.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9195051Z   -> slide-07.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9200910Z   -> slide-02.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9206766Z   -> slide-11.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9212901Z   -> slide-08.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9218739Z   -> slide-16.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9224274Z   -> slide-10.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9229996Z   -> slide-15.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9235540Z   -> slide-01.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9241240Z   -> slide-06.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9246814Z   -> slide-04.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9252678Z   -> slide-13.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9258459Z   -> slide-14.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9264111Z   -> slide-05.html
+> deploy	Build and Deploy	2026-03-05T21:50:22.9267639Z Copiando slides Markdown...
+> deploy	Build and Deploy	2026-03-05T21:50:22.9274532Z   -> slide-13.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9280028Z   -> slide-09.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9285505Z   -> slide-11.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9290870Z   -> slide-06.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9297445Z   -> slide-07.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9301760Z   -> slide-05.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9307087Z   -> slide-01.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9312592Z   -> slide-10.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9318352Z   -> slide-08.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9323737Z   -> slide-04.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9329294Z   -> slide-14.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9335902Z   -> slide-03.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9339890Z   -> slide-02.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9345182Z   -> slide-12.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9350655Z   -> slide-15.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9355919Z   -> slide-16.md
+> deploy	Build and Deploy	2026-03-05T21:50:22.9360216Z OK 16 slide(s) HTML copiados
+> deploy	Build and Deploy	2026-03-05T21:50:22.9363880Z OK 16 slide(s) Markdown copiados
+> deploy	Build and Deploy	2026-03-05T21:50:22.9365243Z INFO    -  Documentation built in 6.66 seconds
+> deploy	Build and Deploy	2026-03-05T21:50:24.0530582Z 
+> deploy	Build and Deploy	2026-03-05T21:50:24.0532484Z  Ôöé  ÔÜá  WARNING ÔÇô MkDocs 2.0 is incompatible with Material for MkDocs
+> deploy	Build and Deploy	2026-03-05T21:50:24.0533311Z  Ôöé
+> deploy	Build and Deploy	2026-03-05T21:50:24.0533990Z  Ôöé  MkDocs 2.0 introduces backward-incompatible changes:
+> deploy	Build and Deploy	2026-03-05T21:50:24.0534635Z  Ôöé
+> deploy	Build and Deploy	2026-03-05T21:50:24.0535378Z  Ôöé  ├ù All plugins will stop working ÔÇô the plugin system has been removed
+> deploy	Build and Deploy	2026-03-05T21:50:24.0536879Z  Ôöé  ├ù All theme overrides will break ÔÇô the theming system has been rewritten
+> deploy	Build and Deploy	2026-03-05T21:50:24.0538162Z  Ôöé  ├ù No migration path exists ÔÇô existing projects cannot be upgraded
+> deploy	Build and Deploy	2026-03-05T21:50:24.0539280Z  Ôöé  ├ù Closed contribution model ÔÇô community members can't report bugs
+> deploy	Build and Deploy	2026-03-05T21:50:24.0540361Z  Ôöé  ├ù Currently unlicensed ÔÇô unsuitable for production use
+> deploy	Build and Deploy	2026-03-05T21:50:24.0540989Z  Ôöé
+> deploy	Build and Deploy	2026-03-05T21:50:24.0541438Z  Ôöé  Our full analysis:
+> deploy	Build and Deploy	2026-03-05T21:50:24.0541906Z  Ôöé
+> deploy	Build and Deploy	2026-03-05T21:50:24.0542861Z  Ôöé  https://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/
+> deploy	Build and Deploy	2026-03-05T21:50:24.0543665Z 
+> deploy	Build and Deploy	2026-03-05T21:50:24.8890179Z INFO    -  Building documentation...
+> deploy	Build and Deploy	2026-03-05T21:50:24.9429915Z INFO    -  [macros] - No default module `main` found
+> deploy	Build and Deploy	2026-03-05T21:50:24.9500260Z INFO    -  [macros] - Config variables: ['extra', 'config', 'environment', 'plugin', 'git', 'social', 'macros', 'filters', 'filters_builtin']
+> deploy	Build and Deploy	2026-03-05T21:50:24.9537219Z INFO    -  [macros] - Config macros: ['context', 'macros_info', 'now', 'fix_url']
+> deploy	Build and Deploy	2026-03-05T21:50:24.9538408Z INFO    -  [macros] - Config filters: ['pretty', 'relative_url']
+> deploy	Build and Deploy	2026-03-05T21:50:24.9540115Z INFO    -  Cleaning site directory
+> deploy	Build and Deploy	2026-03-05T21:50:26.1071262Z HERE= /home/runner/work/ads_mod_07_backends_e_apis/ads_mod_07_backends_e_apis/.venv/lib/python3.11/site-packages/mkdocs_revealjs
+> deploy	Build and Deploy	2026-03-05T21:50:26.1071971Z DIRNAME= docs/revealjs
+> deploy	Build and Deploy	2026-03-05T21:50:26.7647253Z INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+> deploy	Build and Deploy	2026-03-05T21:50:26.7647917Z   - audit.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.1957442Z Copiando slides HTML...
+> deploy	Build and Deploy	2026-03-05T21:50:31.1964657Z   -> slide-12.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.1970797Z   -> slide-03.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.1976616Z   -> slide-09.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.1982093Z   -> slide-07.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.1988002Z   -> slide-02.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.1993377Z   -> slide-11.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.1999228Z   -> slide-08.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.2004690Z   -> slide-16.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.2010101Z   -> slide-10.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.2015341Z   -> slide-15.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.2020931Z   -> slide-01.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.2026124Z   -> slide-06.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.2031568Z   -> slide-04.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.2036932Z   -> slide-13.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.2042156Z   -> slide-14.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.2047607Z   -> slide-05.html
+> deploy	Build and Deploy	2026-03-05T21:50:31.2050856Z Copiando slides Markdown...
+> deploy	Build and Deploy	2026-03-05T21:50:31.2057630Z   -> slide-13.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2062690Z   -> slide-09.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2067838Z   -> slide-11.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2072800Z   -> slide-06.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2078187Z   -> slide-07.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2083067Z   -> slide-05.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2088176Z   -> slide-01.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2093272Z   -> slide-10.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2098461Z   -> slide-08.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2103534Z   -> slide-04.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2108713Z   -> slide-14.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2113658Z   -> slide-03.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2118812Z   -> slide-02.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2123849Z   -> slide-12.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2129012Z   -> slide-15.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2134021Z   -> slide-16.md
+> deploy	Build and Deploy	2026-03-05T21:50:31.2138247Z OK 16 slide(s) HTML copiados
+> deploy	Build and Deploy	2026-03-05T21:50:31.2141925Z OK 16 slide(s) Markdown copiados
+> deploy	Build and Deploy	2026-03-05T21:50:31.2143231Z INFO    -  Documentation built in 6.33 seconds
+> deploy	Build and Deploy	2026-03-05T21:50:31.2146961Z INFO    -  [21:50:31] Serving on http://127.0.0.1:8766/ads_mod_07_backends_e_apis/
+> deploy	Build and Deploy	2026-03-05T21:50:34.6831782Z ============================= test session starts ==============================
+> deploy	Build and Deploy	2026-03-05T21:50:34.6833423Z platform linux -- Python 3.11.14, pytest-8.4.2, pluggy-1.6.0 -- /home/runner/work/ads_mod_07_backends_e_apis/ads_mod_07_backends_e_apis/.venv/bin/python
+> deploy	Build and Deploy	2026-03-05T21:50:34.6834598Z cachedir: .pytest_cache
+> deploy	Build and Deploy	2026-03-05T21:50:34.6835145Z baseurl: http://127.0.0.1:8766
+> deploy	Build and Deploy	2026-03-05T21:50:34.6835970Z rootdir: /home/runner/work/ads_mod_07_backends_e_apis/ads_mod_07_backends_e_apis
+> deploy	Build and Deploy	2026-03-05T21:50:34.6837060Z configfile: pyproject.toml
+> deploy	Build and Deploy	2026-03-05T21:50:34.6837626Z plugins: base-url-2.1.0, playwright-0.5.2
+> deploy	Build and Deploy	2026-03-05T21:50:34.7499861Z collecting ... collected 132 items
+> deploy	Build and Deploy	2026-03-05T21:50:34.7500278Z 
+> deploy	Build and Deploy	2026-03-05T21:50:34.7539821Z WARNING -  [21:50:34] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:34.7607714Z tests/test_assets.py::test_assets_exist PASSED                           [  0%]
+> deploy	Build and Deploy	2026-03-05T21:50:34.7631520Z WARNING -  [21:50:34] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:34.7670776Z tests/test_course_structure.py::test_content_structure_exists PASSED     [  1%]
+> deploy	Build and Deploy	2026-03-05T21:50:34.7694089Z WARNING -  [21:50:34] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:34.7730829Z tests/test_course_structure.py::test_lessons_exist PASSED                [  2%]
+> deploy	Build and Deploy	2026-03-05T21:50:34.7752463Z WARNING -  [21:50:34] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:34.7789262Z tests/test_course_structure.py::test_slides_exist PASSED                 [  3%]
+> deploy	Build and Deploy	2026-03-05T21:50:34.7810098Z WARNING -  [21:50:34] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:34.7843941Z tests/test_course_structure.py::test_quizzes_exist PASSED                [  3%]
+> deploy	Build and Deploy	2026-03-05T21:50:34.7863858Z WARNING -  [21:50:34] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:34.7897504Z tests/test_course_structure.py::test_exercises_exist PASSED              [  4%]
+> deploy	Build and Deploy	2026-03-05T21:50:34.7918568Z WARNING -  [21:50:34] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:34.7952360Z tests/test_course_structure.py::test_projects_exist PASSED               [  5%]
+> deploy	Build and Deploy	2026-03-05T21:50:34.7973161Z WARNING -  [21:50:34] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:34.8007374Z tests/test_course_structure.py::test_setups_exist PASSED                 [  6%]
+> deploy	Build and Deploy	2026-03-05T21:50:34.8033420Z WARNING -  [21:50:34] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:34.8077278Z tests/test_course_structure.py::test_indexes_exist PASSED                [  6%]
+> deploy	Build and Deploy	2026-03-05T21:50:36.8007980Z WARNING -  [21:50:36] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:36.8667400Z WARNING -  [21:50:36] "GET /slides/slide-01.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:36.8918102Z WARNING -  [21:50:36] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:36.9383230Z WARNING -  [21:50:36] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:42.4722302Z tests/test_fullscreen.py::test_shortcuts_hidden_in_fullscreen[chromium] FAILED [  7%]
+> deploy	Build and Deploy	2026-03-05T21:50:42.4754203Z WARNING -  [21:50:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:42.5239506Z WARNING -  [21:50:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:42.5541483Z WARNING -  [21:50:42] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:42.5940707Z WARNING -  [21:50:42] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:43.1619924Z tests/test_layout.py::test_homepage_structure[chromium] PASSED           [  8%]
+> deploy	Build and Deploy	2026-03-05T21:50:43.1652554Z WARNING -  [21:50:43] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:43.2106680Z WARNING -  [21:50:43] "GET /aulas/aula-01/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:43.2366177Z WARNING -  [21:50:43] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:43.2841260Z WARNING -  [21:50:43] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:48.7892152Z tests/test_layout.py::test_lesson_01_page[chromium] FAILED               [  9%]
+> deploy	Build and Deploy	2026-03-05T21:50:48.7923481Z WARNING -  [21:50:48] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:48.8364051Z WARNING -  [21:50:48] "GET /quizzes/quiz-01/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:48.8553887Z WARNING -  [21:50:48] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:48.8989760Z WARNING -  [21:50:48] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:49.3903892Z tests/test_layout.py::test_quiz_functionality[chromium] PASSED           [  9%]
+> deploy	Build and Deploy	2026-03-05T21:50:49.3957733Z WARNING -  [21:50:49] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:49.4423401Z WARNING -  [21:50:49] "GET /slides/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:49.4629277Z WARNING -  [21:50:49] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:49.5015878Z WARNING -  [21:50:49] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:49.9824307Z tests/test_layout.py::test_slides_structure[chromium] FAILED             [ 10%]
+> deploy	Build and Deploy	2026-03-05T21:50:49.9854468Z WARNING -  [21:50:49] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:50.0342221Z WARNING -  [21:50:50] "GET /aulas/aula-16/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:50.0545737Z WARNING -  [21:50:50] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:50.1128557Z WARNING -  [21:50:50] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:55.5626930Z tests/test_layout.py::test_lesson_16_page[chromium] FAILED               [ 11%]
+> deploy	Build and Deploy	2026-03-05T21:50:55.5660131Z WARNING -  [21:50:55] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:55.6111112Z WARNING -  [21:50:55] "GET /aulas/aula-09/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:55.6347915Z WARNING -  [21:50:55] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:55.6764416Z WARNING -  [21:50:55] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:56.1750187Z tests/test_layout.py::test_mermaid_diagram[chromium] PASSED              [ 12%]
+> deploy	Build and Deploy	2026-03-05T21:50:56.1782493Z WARNING -  [21:50:56] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:56.2278252Z WARNING -  [21:50:56] "GET /aulas/aula-01/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:56.2489550Z WARNING -  [21:50:56] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:56.2984581Z WARNING -  [21:50:56] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:56.7932461Z tests/test_layout.py::test_assets_load[chromium] PASSED                  [ 12%]
+> deploy	Build and Deploy	2026-03-05T21:50:56.7965917Z WARNING -  [21:50:56] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:56.8409377Z WARNING -  [21:50:56] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:56.8660984Z WARNING -  [21:50:56] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:56.9099676Z WARNING -  [21:50:56] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:57.4393424Z tests/test_navigation.py::TestNavigation::test_home_page_loads[chromium] PASSED [ 13%]
+> deploy	Build and Deploy	2026-03-05T21:50:57.4427612Z WARNING -  [21:50:57] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:57.4925725Z WARNING -  [21:50:57] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:57.5203700Z WARNING -  [21:50:57] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:57.5681413Z WARNING -  [21:50:57] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:58.1169660Z tests/test_navigation.py::TestNavigation::test_curso_menu_exists[chromium] PASSED [ 14%]
+> deploy	Build and Deploy	2026-03-05T21:50:58.1200995Z WARNING -  [21:50:58] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:58.1646946Z WARNING -  [21:50:58] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:58.1938308Z WARNING -  [21:50:58] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:58.2334114Z WARNING -  [21:50:58] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:58.7637015Z tests/test_navigation.py::TestNavigation::test_plano_ensino_menu_exists[chromium] PASSED [ 15%]
+> deploy	Build and Deploy	2026-03-05T21:50:58.7671292Z WARNING -  [21:50:58] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:58.8120439Z WARNING -  [21:50:58] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:58.8388299Z WARNING -  [21:50:58] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:58.8739690Z WARNING -  [21:50:58] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:59.4127040Z tests/test_navigation.py::TestNavigation::test_print_version_link_exists[chromium] PASSED [ 15%]
+> deploy	Build and Deploy	2026-03-05T21:50:59.4160403Z WARNING -  [21:50:59] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:59.4658810Z WARNING -  [21:50:59] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:50:59.4918606Z WARNING -  [21:50:59] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:50:59.5320565Z WARNING -  [21:50:59] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:00.1080045Z WARNING -  [21:51:00] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:30.2334529Z tests/test_navigation.py::TestNavigation::test_navigation_to_lesson_01[chromium] FAILED [ 16%]
+> deploy	Build and Deploy	2026-03-05T21:51:30.2366610Z WARNING -  [21:51:30] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:51:30.2780446Z WARNING -  [21:51:30] "GET /quizzes/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:30.2973306Z WARNING -  [21:51:30] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:30.3470659Z WARNING -  [21:51:30] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:35.8220943Z tests/test_quizzes.py::TestQuizzes::test_quiz_index_loads[chromium] FAILED [ 17%]
+> deploy	Build and Deploy	2026-03-05T21:51:35.8250968Z WARNING -  [21:51:35] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:51:35.8694025Z WARNING -  [21:51:35] "GET /quizzes/quiz-01/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:35.8921699Z WARNING -  [21:51:35] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:35.9288531Z WARNING -  [21:51:35] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:36.4203297Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-1] PASSED [ 18%]
+> deploy	Build and Deploy	2026-03-05T21:51:36.4236094Z WARNING -  [21:51:36] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:51:36.4687307Z WARNING -  [21:51:36] "GET /quizzes/quiz-01/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:36.4870502Z WARNING -  [21:51:36] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:36.5706992Z WARNING -  [21:51:36] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:41.9949650Z tests/test_quizzes.py::TestQuizzes::test_quiz_has_interactive_elements[chromium] FAILED [ 18%]
+> deploy	Build and Deploy	2026-03-05T21:51:41.9988622Z WARNING -  [21:51:41] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:51:42.0434066Z WARNING -  [21:51:42] "GET /quizzes/quiz-01/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:42.0649856Z WARNING -  [21:51:42] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:42.0991503Z WARNING -  [21:51:42] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:47.5820517Z tests/test_quizzes.py::TestQuizzes::test_quiz_questions_visible[chromium] FAILED [ 19%]
+> deploy	Build and Deploy	2026-03-05T21:51:47.5850006Z WARNING -  [21:51:47] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:51:47.6298772Z WARNING -  [21:51:47] "GET /quizzes/quiz-01/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:47.6495901Z WARNING -  [21:51:47] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:47.7027428Z WARNING -  [21:51:47] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:48.1838643Z tests/test_quizzes.py::TestQuizzes::test_quiz_can_select_answer[chromium] PASSED [ 20%]
+> deploy	Build and Deploy	2026-03-05T21:51:48.1864248Z WARNING -  [21:51:48] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:51:48.2323073Z WARNING -  [21:51:48] "GET /quizzes/quiz-01/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:48.2554456Z WARNING -  [21:51:48] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:48.3056066Z WARNING -  [21:51:48] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:48.8244853Z tests/test_quizzes.py::TestQuizzes::test_quiz_has_multiple_questions[chromium] FAILED [ 21%]
+> deploy	Build and Deploy	2026-03-05T21:51:48.8276630Z WARNING -  [21:51:48] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:51:48.8742046Z WARNING -  [21:51:48] "GET /slides/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:48.8958466Z WARNING -  [21:51:48] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:48.9351494Z WARNING -  [21:51:48] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:54.4371107Z tests/test_slides.py::TestSlides::test_slides_index_loads[chromium] FAILED [ 21%]
+> deploy	Build and Deploy	2026-03-05T21:51:54.4401698Z WARNING -  [21:51:54] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:51:54.4893486Z WARNING -  [21:51:54] "GET /slides/slide-01.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:54.5078995Z WARNING -  [21:51:54] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:51:54.5494408Z WARNING -  [21:51:54] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:15.5702230Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-1] FAILED [ 22%]
+> deploy	Build and Deploy	2026-03-05T21:52:15.5733587Z WARNING -  [21:52:15] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:15.6232930Z WARNING -  [21:52:15] "GET /slides/slide-01.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:15.6453015Z WARNING -  [21:52:15] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:15.7699012Z WARNING -  [21:52:15] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:21.1814240Z tests/test_slides.py::TestSlides::test_revealjs_present_on_slide_01[chromium] FAILED [ 23%]
+> deploy	Build and Deploy	2026-03-05T21:52:21.1846680Z WARNING -  [21:52:21] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:21.2299723Z WARNING -  [21:52:21] "GET /slides/slide-01.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:21.2521590Z WARNING -  [21:52:21] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:21.2863811Z WARNING -  [21:52:21] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:26.7604681Z tests/test_slides.py::TestSlides::test_slide_navigation_exists[chromium] FAILED [ 24%]
+> deploy	Build and Deploy	2026-03-05T21:52:26.7636607Z WARNING -  [21:52:26] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:26.8076914Z WARNING -  [21:52:26] "GET /slides/slide-01.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:26.8305419Z WARNING -  [21:52:26] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:26.8660176Z WARNING -  [21:52:26] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:32.3559243Z tests/test_slides.py::TestSlides::test_slide_content_visible[chromium] FAILED [ 25%]
+> deploy	Build and Deploy	2026-03-05T21:52:32.3590550Z WARNING -  [21:52:32] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:32.4040716Z WARNING -  [21:52:32] "GET /slides/slide-01.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:32.4295610Z WARNING -  [21:52:32] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:32.4636212Z WARNING -  [21:52:32] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:36.4693346Z tests/test_slides.py::TestSlides::test_slide_markdown_loads_without_404[chromium] FAILED [ 25%]
+> deploy	Build and Deploy	2026-03-05T21:52:36.4724241Z WARNING -  [21:52:36] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:36.5192232Z WARNING -  [21:52:36] "GET /aulas/aula-04/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:36.5424924Z WARNING -  [21:52:36] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:36.5875120Z WARNING -  [21:52:36] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:42.0539536Z tests/test_termynal_copy.py::test_termynal_copy_button[chromium] FAILED  [ 26%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.0570123Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.0622304Z tests/test_layout.py::test_build_output_exists PASSED                    [ 27%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.0654030Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.0697053Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path0-43-block0] PASSED [ 28%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.0719265Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.0755787Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path1-18-block1] PASSED [ 28%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.0777353Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.0813673Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path2-25-block2] PASSED [ 29%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.0835660Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.0872082Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path3-25-block3] PASSED [ 30%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.0893021Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.0928746Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path4-25-block4] PASSED [ 31%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.0950605Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.0987231Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path5-25-block5] PASSED [ 31%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1011419Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1046869Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path6-25-block6] PASSED [ 32%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1067497Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1100386Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path7-25-block7] PASSED [ 33%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1120648Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1153273Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path8-25-block8] PASSED [ 34%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1172982Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1207118Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path9-25-block9] PASSED [ 34%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1225820Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1258678Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path10-25-block10] PASSED [ 35%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1277939Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1310744Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path11-25-block11] PASSED [ 36%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1330187Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1363607Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path12-25-block12] PASSED [ 37%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1383653Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1416974Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path13-25-block13] PASSED [ 37%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1437298Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1469509Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path14-25-block14] PASSED [ 38%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1488718Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1529342Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path15-25-block15] PASSED [ 39%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1549230Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1582066Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path16-25-block16] PASSED [ 40%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1601541Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1635345Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path17-25-block17] PASSED [ 40%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1654744Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1691211Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path18-38-block18] PASSED [ 41%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1711576Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1745629Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path19-38-block19] PASSED [ 42%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1765795Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1800474Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path20-38-block20] PASSED [ 43%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1826224Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1871701Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path21-38-block21] PASSED [ 43%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1892425Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1928469Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path22-38-block22] PASSED [ 44%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.1949309Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.1992792Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path23-38-block23] PASSED [ 45%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2013534Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2047665Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path24-38-block24] PASSED [ 46%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2067432Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2102726Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path25-38-block25] PASSED [ 46%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2122299Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2157612Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path26-38-block26] PASSED [ 47%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2183902Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2229436Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path27-38-block27] PASSED [ 48%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2251936Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2287079Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path28-38-block28] PASSED [ 49%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2307441Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2341366Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path29-38-block29] PASSED [ 50%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2361116Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2395573Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path30-38-block30] PASSED [ 50%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2415441Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2451090Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path31-38-block31] PASSED [ 51%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2471577Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2505679Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path32-38-block32] PASSED [ 52%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2526055Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2560492Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path33-38-block33] PASSED [ 53%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2581636Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2616776Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path34-38-block34] PASSED [ 53%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2637488Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2671952Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path35-38-block35] PASSED [ 54%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2692103Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2726231Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path36-38-block36] PASSED [ 55%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2749470Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2781811Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path37-38-block37] PASSED [ 56%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2802066Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2835628Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path38-38-block38] PASSED [ 56%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2855520Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2889529Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path39-38-block39] PASSED [ 57%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2909382Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2942803Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path40-38-block40] PASSED [ 58%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.2962352Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.2996522Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path41-38-block41] PASSED [ 59%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.3015884Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.3049384Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path42-38-block42] PASSED [ 59%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.3068511Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.3102102Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path43-38-block43] PASSED [ 60%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.3121658Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.3154727Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path44-38-block44] PASSED [ 61%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.3173932Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.3207081Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path45-38-block45] PASSED [ 62%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.3226291Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.3259500Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path46-38-block46] PASSED [ 62%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.3278490Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.3311215Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path47-38-block47] PASSED [ 63%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.3330465Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.3362948Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path48-38-block48] PASSED [ 64%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.3381809Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.3413747Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path49-38-block49] PASSED [ 65%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.3432464Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.3465919Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path50-67-block50] PASSED [ 65%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.3485467Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.3518349Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path51-35-block51] PASSED [ 66%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.3537280Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.3571352Z tests/test_mermaid_syntax.py::test_mermaid_syntax_safety[file_path52-69-block52] PASSED [ 67%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.3591468Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:42.3986634Z WARNING -  [21:52:42] "GET /quizzes/quiz-02/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:42.4213947Z WARNING -  [21:52:42] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:42.4595038Z WARNING -  [21:52:42] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:42.9611058Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-2] PASSED [ 68%]
+> deploy	Build and Deploy	2026-03-05T21:52:42.9643447Z WARNING -  [21:52:42] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:52:43.0065130Z WARNING -  [21:52:43] "GET /slides/slide-02.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:43.0293528Z WARNING -  [21:52:43] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:52:43.0641485Z WARNING -  [21:52:43] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:04.0657086Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-2] FAILED [ 68%]
+> deploy	Build and Deploy	2026-03-05T21:53:04.0686102Z WARNING -  [21:53:04] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:53:04.1104425Z WARNING -  [21:53:04] "GET /quizzes/quiz-03/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:04.1325866Z WARNING -  [21:53:04] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:04.1696754Z WARNING -  [21:53:04] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:04.6698106Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-3] PASSED [ 69%]
+> deploy	Build and Deploy	2026-03-05T21:53:04.6731706Z WARNING -  [21:53:04] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:53:04.7206090Z WARNING -  [21:53:04] "GET /slides/slide-03.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:04.7425930Z WARNING -  [21:53:04] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:04.7813501Z WARNING -  [21:53:04] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:25.7800311Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-3] FAILED [ 70%]
+> deploy	Build and Deploy	2026-03-05T21:53:25.7830858Z WARNING -  [21:53:25] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:53:25.8268279Z WARNING -  [21:53:25] "GET /quizzes/quiz-04/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:25.8480869Z WARNING -  [21:53:25] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:25.8855579Z WARNING -  [21:53:25] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:26.3705888Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-4] PASSED [ 71%]
+> deploy	Build and Deploy	2026-03-05T21:53:26.3737421Z WARNING -  [21:53:26] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:53:26.4157362Z WARNING -  [21:53:26] "GET /slides/slide-04.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:26.4367795Z WARNING -  [21:53:26] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:26.5097546Z WARNING -  [21:53:26] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:47.4754457Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-4] FAILED [ 71%]
+> deploy	Build and Deploy	2026-03-05T21:53:47.4783464Z WARNING -  [21:53:47] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:53:47.5200777Z WARNING -  [21:53:47] "GET /quizzes/quiz-05/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:47.5428964Z WARNING -  [21:53:47] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:47.5790213Z WARNING -  [21:53:47] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:48.0787752Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-5] PASSED [ 72%]
+> deploy	Build and Deploy	2026-03-05T21:53:48.0819716Z WARNING -  [21:53:48] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:53:48.1274971Z WARNING -  [21:53:48] "GET /slides/slide-05.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:48.1500393Z WARNING -  [21:53:48] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:53:48.1881274Z WARNING -  [21:53:48] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:09.1865220Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-5] FAILED [ 73%]
+> deploy	Build and Deploy	2026-03-05T21:54:09.1908703Z WARNING -  [21:54:09] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:54:09.2320383Z WARNING -  [21:54:09] "GET /quizzes/quiz-06/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:09.2569924Z WARNING -  [21:54:09] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:09.2974989Z WARNING -  [21:54:09] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:09.7927340Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-6] PASSED [ 74%]
+> deploy	Build and Deploy	2026-03-05T21:54:09.7959542Z WARNING -  [21:54:09] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:54:09.8454652Z WARNING -  [21:54:09] "GET /slides/slide-06.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:09.8670476Z WARNING -  [21:54:09] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:09.9053144Z WARNING -  [21:54:09] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:30.9266551Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-6] FAILED [ 75%]
+> deploy	Build and Deploy	2026-03-05T21:54:30.9293757Z WARNING -  [21:54:30] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:54:30.9763423Z WARNING -  [21:54:30] "GET /quizzes/quiz-07/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:30.9957201Z WARNING -  [21:54:30] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:31.0340082Z WARNING -  [21:54:31] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:31.5193743Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-7] PASSED [ 75%]
+> deploy	Build and Deploy	2026-03-05T21:54:31.5227345Z WARNING -  [21:54:31] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:54:31.5652914Z WARNING -  [21:54:31] "GET /slides/slide-07.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:31.5843852Z WARNING -  [21:54:31] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:31.6230266Z WARNING -  [21:54:31] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:52.6140456Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-7] FAILED [ 76%]
+> deploy	Build and Deploy	2026-03-05T21:54:52.6171629Z WARNING -  [21:54:52] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:54:52.6588309Z WARNING -  [21:54:52] "GET /quizzes/quiz-08/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:52.6809491Z WARNING -  [21:54:52] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:52.7132166Z WARNING -  [21:54:52] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:53.2149058Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-8] PASSED [ 77%]
+> deploy	Build and Deploy	2026-03-05T21:54:53.2181473Z WARNING -  [21:54:53] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:54:53.2620814Z WARNING -  [21:54:53] "GET /slides/slide-08.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:53.2829730Z WARNING -  [21:54:53] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:54:53.3226208Z WARNING -  [21:54:53] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:14.3109143Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-8] FAILED [ 78%]
+> deploy	Build and Deploy	2026-03-05T21:55:14.3137995Z WARNING -  [21:55:14] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:55:14.3602405Z WARNING -  [21:55:14] "GET /quizzes/quiz-09/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:14.3818071Z WARNING -  [21:55:14] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:14.4182689Z WARNING -  [21:55:14] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:14.9028798Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-9] PASSED [ 78%]
+> deploy	Build and Deploy	2026-03-05T21:55:14.9060940Z WARNING -  [21:55:14] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:55:14.9547140Z WARNING -  [21:55:14] "GET /slides/slide-09.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:14.9788980Z WARNING -  [21:55:14] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:15.0112412Z WARNING -  [21:55:15] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:36.0055743Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-9] FAILED [ 79%]
+> deploy	Build and Deploy	2026-03-05T21:55:36.0087402Z WARNING -  [21:55:36] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:55:36.0530370Z WARNING -  [21:55:36] "GET /quizzes/quiz-10/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:36.0727403Z WARNING -  [21:55:36] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:36.1124795Z WARNING -  [21:55:36] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:36.5925892Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-10] PASSED [ 80%]
+> deploy	Build and Deploy	2026-03-05T21:55:36.5958678Z WARNING -  [21:55:36] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:55:36.6391496Z WARNING -  [21:55:36] "GET /slides/slide-10.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:36.6611905Z WARNING -  [21:55:36] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:36.6964780Z WARNING -  [21:55:36] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:57.6861341Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-10] FAILED [ 81%]
+> deploy	Build and Deploy	2026-03-05T21:55:57.6890362Z WARNING -  [21:55:57] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:55:57.7334918Z WARNING -  [21:55:57] "GET /quizzes/quiz-11/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:57.7535829Z WARNING -  [21:55:57] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:57.7862009Z WARNING -  [21:55:57] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:58.2848161Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-11] PASSED [ 81%]
+> deploy	Build and Deploy	2026-03-05T21:55:58.2879777Z WARNING -  [21:55:58] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:55:58.3324068Z WARNING -  [21:55:58] "GET /slides/slide-11.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:58.3517801Z WARNING -  [21:55:58] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:55:58.3968956Z WARNING -  [21:55:58] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:56:19.3916255Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-11] FAILED [ 82%]
+> deploy	Build and Deploy	2026-03-05T21:56:19.3946824Z WARNING -  [21:56:19] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:56:19.4404944Z WARNING -  [21:56:19] "GET /quizzes/quiz-12/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:56:19.4625880Z WARNING -  [21:56:19] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:56:19.5132870Z WARNING -  [21:56:19] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:56:19.9878651Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-12] PASSED [ 83%]
+> deploy	Build and Deploy	2026-03-05T21:56:19.9908126Z WARNING -  [21:56:19] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:56:20.0331560Z WARNING -  [21:56:20] "GET /slides/slide-12.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:56:20.0551951Z WARNING -  [21:56:20] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:56:20.0938801Z WARNING -  [21:56:20] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:56:41.0877438Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-12] FAILED [ 84%]
+> deploy	Build and Deploy	2026-03-05T21:56:41.0910740Z WARNING -  [21:56:41] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:56:41.1377557Z WARNING -  [21:56:41] "GET /quizzes/quiz-13/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:56:41.1591114Z WARNING -  [21:56:41] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:56:41.2014200Z WARNING -  [21:56:41] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:56:41.6852292Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-13] PASSED [ 84%]
+> deploy	Build and Deploy	2026-03-05T21:56:41.6882878Z WARNING -  [21:56:41] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:56:41.7322427Z WARNING -  [21:56:41] "GET /slides/slide-13.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:56:41.7565099Z WARNING -  [21:56:41] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:56:41.7930148Z WARNING -  [21:56:41] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:02.8042586Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-13] FAILED [ 85%]
+> deploy	Build and Deploy	2026-03-05T21:57:02.8074129Z WARNING -  [21:57:02] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:57:02.8485300Z WARNING -  [21:57:02] "GET /quizzes/quiz-14/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:02.8737412Z WARNING -  [21:57:02] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:02.9046764Z WARNING -  [21:57:02] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:03.3875963Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-14] PASSED [ 86%]
+> deploy	Build and Deploy	2026-03-05T21:57:03.3905712Z WARNING -  [21:57:03] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:57:03.4368634Z WARNING -  [21:57:03] "GET /slides/slide-14.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:03.4572929Z WARNING -  [21:57:03] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:03.4950661Z WARNING -  [21:57:03] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:24.4802352Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-14] FAILED [ 87%]
+> deploy	Build and Deploy	2026-03-05T21:57:24.4833160Z WARNING -  [21:57:24] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:57:24.5320719Z WARNING -  [21:57:24] "GET /quizzes/quiz-15/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:24.5572069Z WARNING -  [21:57:24] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:24.5885849Z WARNING -  [21:57:24] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:25.0957853Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-15] PASSED [ 87%]
+> deploy	Build and Deploy	2026-03-05T21:57:25.0987670Z WARNING -  [21:57:25] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:57:25.1490886Z WARNING -  [21:57:25] "GET /slides/slide-15.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:25.1698612Z WARNING -  [21:57:25] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:25.2113803Z WARNING -  [21:57:25] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:46.2228606Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-15] FAILED [ 88%]
+> deploy	Build and Deploy	2026-03-05T21:57:46.2260292Z WARNING -  [21:57:46] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:57:46.2721194Z WARNING -  [21:57:46] "GET /quizzes/quiz-16/ HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:46.2954877Z WARNING -  [21:57:46] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:46.3327502Z WARNING -  [21:57:46] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:46.8177621Z tests/test_quizzes.py::TestQuizzes::test_quiz_page_loads[chromium-16] PASSED [ 89%]
+> deploy	Build and Deploy	2026-03-05T21:57:46.8210626Z WARNING -  [21:57:46] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:57:46.8696712Z WARNING -  [21:57:46] "GET /slides/slide-16.html HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:46.8948458Z WARNING -  [21:57:46] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:57:46.9265951Z WARNING -  [21:57:46] "GET /ads_mod_07_backends_e_apis/assets/images/logo.svg HTTP/1.1" code 404
+> deploy	Build and Deploy	2026-03-05T21:58:07.9292523Z tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-16] FAILED [ 90%]
+> deploy	Build and Deploy	2026-03-05T21:58:07.9324672Z WARNING -  [21:58:07] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:58:07.9382512Z tests/test_site_structure.py::test_site_exists PASSED                    [ 90%]
+> deploy	Build and Deploy	2026-03-05T21:58:07.9404165Z WARNING -  [21:58:07] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:58:07.9446174Z tests/test_site_structure.py::test_site_slides_exists PASSED             [ 91%]
+> deploy	Build and Deploy	2026-03-05T21:58:07.9467482Z WARNING -  [21:58:07] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:58:07.9502038Z tests/test_site_structure.py::test_debug_cwd PASSED                      [ 92%]
+> deploy	Build and Deploy	2026-03-05T21:58:07.9522199Z WARNING -  [21:58:07] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:58:07.9555844Z tests/test_slide_build.py::test_slide_markdown_copied_to_site PASSED     [ 93%]
+> deploy	Build and Deploy	2026-03-05T21:58:07.9575108Z WARNING -  [21:58:07] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:58:07.9619208Z tests/test_slide_build.py::test_slide_html_copied_to_site PASSED         [ 93%]
+> deploy	Build and Deploy	2026-03-05T21:58:07.9640429Z WARNING -  [21:58:07] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:58:07.9674096Z tests/test_slide_build.py::test_slide_markdown_content_valid_in_site PASSED [ 94%]
+> deploy	Build and Deploy	2026-03-05T21:58:07.9694767Z WARNING -  [21:58:07] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:58:07.9731158Z tests/test_slide_build.py::test_all_slides_present_in_site PASSED        [ 95%]
+> deploy	Build and Deploy	2026-03-05T21:58:07.9751657Z WARNING -  [21:58:07] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:58:07.9785721Z tests/test_slide_build.py::test_slide_index_exists_in_site PASSED        [ 96%]
+> deploy	Build and Deploy	2026-03-05T21:58:07.9805028Z WARNING -  [21:58:07] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:58:07.9838618Z tests/test_slide_generation.py::test_slide_markdown_files_exist PASSED   [ 96%]
+> deploy	Build and Deploy	2026-03-05T21:58:07.9858426Z WARNING -  [21:58:07] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:58:07.9891925Z tests/test_slide_generation.py::test_slide_html_files_exist PASSED       [ 97%]
+> deploy	Build and Deploy	2026-03-05T21:58:07.9911374Z WARNING -  [21:58:07] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:58:07.9948922Z tests/test_slide_generation.py::test_slide_html_references_correct_markdown PASSED [ 98%]
+> deploy	Build and Deploy	2026-03-05T21:58:07.9968234Z WARNING -  [21:58:07] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:58:08.0005656Z tests/test_slide_generation.py::test_slide_markdown_has_content PASSED   [ 99%]
+> deploy	Build and Deploy	2026-03-05T21:58:08.0025960Z WARNING -  [21:58:08] "GET / HTTP/1.1" code 302
+> deploy	Build and Deploy	2026-03-05T21:58:08.0432461Z tests/test_slide_generation.py::test_slide_html_has_revealjs_structure PASSED [100%]
+> deploy	Build and Deploy	2026-03-05T21:58:08.0433115Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0433516Z =================================== FAILURES ===================================
+> deploy	Build and Deploy	2026-03-05T21:58:08.0434446Z ________________ test_shortcuts_hidden_in_fullscreen[chromium] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0434990Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0435418Z page = <Page url='http://127.0.0.1:8766/slides/slide-01.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0435856Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0436183Z     def test_shortcuts_hidden_in_fullscreen(page: Page):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0436925Z         """
+> deploy	Build and Deploy	2026-03-05T21:58:08.0437536Z         Test that the .reveal-shortcuts element is hidden when the presentation
+> deploy	Build and Deploy	2026-03-05T21:58:08.0438226Z         enters fullscreen mode.
+> deploy	Build and Deploy	2026-03-05T21:58:08.0438623Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0439061Z         Note: Fullscreen API in headless mode can be tricky.
+> deploy	Build and Deploy	2026-03-05T21:58:08.0439927Z         We rely on checking if the CSS pseudo-class matches or if specific styling is applied.
+> deploy	Build and Deploy	2026-03-05T21:58:08.0440661Z         However, forcing pseudo-classes in Playwright is hard.
+> deploy	Build and Deploy	2026-03-05T21:58:08.0441185Z         Instead, we check if the element has the class or if we can simulate the state.
+> deploy	Build and Deploy	2026-03-05T21:58:08.0441565Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0441867Z         Actually, triggering 'F' in Reveal.js triggers the API.
+> deploy	Build and Deploy	2026-03-05T21:58:08.0442363Z         Browsers usually require user gesture. page.keyboard.press helps.
+> deploy	Build and Deploy	2026-03-05T21:58:08.0442724Z         """
+> deploy	Build and Deploy	2026-03-05T21:58:08.0442920Z         # Load a slide
+> deploy	Build and Deploy	2026-03-05T21:58:08.0443278Z         page.on("console", lambda msg: print(f"BROWSER LOG: {msg.text}"))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0443674Z         page.goto("/slides/slide-01.html")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0443943Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0444112Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0444356Z         # 1. Verify shortcuts are initially visible
+> deploy	Build and Deploy	2026-03-05T21:58:08.0444929Z         shortcuts = page.locator(".reveal-shortcuts")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0445594Z         print(f"\nCreated locator. Count: {shortcuts.count()}")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0446111Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0446493Z         # Debug info
+> deploy	Build and Deploy	2026-03-05T21:58:08.0446833Z         if shortcuts.count() > 0:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0447134Z             box = shortcuts.bounding_box()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0447437Z             print(f"Bounding box: {box}")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0447737Z             viz = shortcuts.is_visible()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0448032Z             print(f"Is visible: {viz}")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0448347Z             if not viz:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0448575Z                 # Check style
+> deploy	Build and Deploy	2026-03-05T21:58:08.0448970Z                 display = shortcuts.evaluate("el => getComputedStyle(el).display")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0449424Z                 print(f"Computed display: {display}")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0450121Z                 opacity = shortcuts.evaluate("el => getComputedStyle(el).opacity")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0450561Z                 print(f"Computed opacity: {opacity}")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0450829Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0451216Z >       expect(shortcuts).to_be_visible()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0451600Z E       AssertionError: Locator expected to be visible
+> deploy	Build and Deploy	2026-03-05T21:58:08.0451927Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0452207Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0452467Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0452773Z E         - Expect "to_be_visible" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0453221Z E         - waiting for locator(".reveal-shortcuts")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0453605Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0453912Z tests/test_fullscreen.py:39: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0454707Z ----------------------------- Captured stdout call -----------------------------
+> deploy	Build and Deploy	2026-03-05T21:58:08.0455770Z BROWSER LOG: Failed to load resource: the server responded with a status of 404 (Not Found)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0457206Z BROWSER LOG: Failed to load resource: the server responded with a status of 404 (Not Found)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0458136Z BROWSER LOG: Failed to load resource: the server responded with a status of 404 (Not Found)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0458782Z BROWSER LOG: Failed to load resource: the server responded with a status of 404 ()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0459216Z BROWSER LOG: Termynal loaded
+> deploy	Build and Deploy	2026-03-05T21:58:08.0459482Z BROWSER LOG: Quiz JS loaded
+> deploy	Build and Deploy	2026-03-05T21:58:08.0459755Z BROWSER LOG: Found termynals: 0
+> deploy	Build and Deploy	2026-03-05T21:58:08.0459918Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0460025Z Created locator. Count: 0
+> deploy	Build and Deploy	2026-03-05T21:58:08.0460424Z ________________________ test_lesson_01_page[chromium] _________________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0460694Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0460907Z page = <Page url='http://127.0.0.1:8766/aulas/aula-01/'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0461281Z base_url = 'http://127.0.0.1:8766'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0461455Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0461617Z     def test_lesson_01_page(page: Page, base_url):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0462014Z         """Test Lesson 01 page loads and has correct content."""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0462432Z         page.goto(f"{base_url}/aulas/aula-01/")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0462928Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0463292Z         # Check title (flexible match)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0463945Z >       expect(page).to_have_title(re.compile(r"Aula 01"))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0464774Z E       AssertionError: Page title expected to be 're.compile('Aula 01')'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0465622Z E       Actual value: Engenharia de Backends e APIs Modernas 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0466162Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0466801Z E         - Expect "to_have_title" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0467521Z E           9 ├ù unexpected value "Engenharia de Backends e APIs Modernas"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0467809Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0467983Z tests/test_layout.py:45: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0468432Z _______________________ test_slides_structure[chromium] ________________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0468725Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0468912Z page = <Page url='http://127.0.0.1:8766/slides/'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0469259Z base_url = 'http://127.0.0.1:8766'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0469432Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0469591Z     def test_slides_structure(page: Page, base_url):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0469964Z         """Test that slides are generated correctly."""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0470290Z         page.goto(f"{base_url}/slides/")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0470541Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0470751Z         # Check title contains "Slides"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0471013Z         title = page.title()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0471431Z >       assert "Slides" in title, f"Expected 'Slides' in title, got: {title}"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0472062Z E       AssertionError: Expected 'Slides' in title, got: Engenharia de Backends e APIs Modernas
+> deploy	Build and Deploy	2026-03-05T21:58:08.0472637Z E       assert 'Slides' in 'Engenharia de Backends e APIs Modernas'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0472893Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0473044Z tests/test_layout.py:80: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0473717Z ________________________ test_lesson_16_page[chromium] _________________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0473991Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0474198Z page = <Page url='http://127.0.0.1:8766/aulas/aula-16/'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0474683Z base_url = 'http://127.0.0.1:8766'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0474850Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0475007Z     def test_lesson_16_page(page: Page, base_url):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0475351Z         """Test Lesson 16 page loads correctly."""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0475688Z         page.goto(f"{base_url}/aulas/aula-16/")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0475949Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0476129Z         # Check title
+> deploy	Build and Deploy	2026-03-05T21:58:08.0476818Z >       expect(page).to_have_title(re.compile(r"Aula 16"))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0477475Z E       AssertionError: Page title expected to be 're.compile('Aula 16')'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0478338Z E       Actual value: Engenharia de Backends e APIs Modernas 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0478887Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0479375Z E         - Expect "to_have_title" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0480311Z E           9 ├ù unexpected value "Engenharia de Backends e APIs Modernas"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0480765Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0481024Z tests/test_layout.py:95: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0481841Z ____________ TestNavigation.test_navigation_to_lesson_01[chromium] _____________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0482238Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0482492Z self = <test_navigation.TestNavigation object at 0x7f15b7a6a710>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0483087Z page_with_base_url = <Page url='http://127.0.0.1:8766/ads_mod_07_backends_e_apis/aulas/'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0483559Z base_url = 'http://127.0.0.1:8766'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0483758Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0484028Z     def test_navigation_to_lesson_01(self, page_with_base_url: Page, base_url: str):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0484616Z         """Verifica se ├® poss├¡vel navegar para Aula 01"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0484967Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0487786Z         page.goto(base_url)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0488175Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0488569Z         self._ensure_menu_visible(page)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0488979Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0489549Z         # Navigate Aulas -> M├│dulo 1: Fundamentos -> Aula 01
+> deploy	Build and Deploy	2026-03-05T21:58:08.0490039Z         # Click Aulas
+> deploy	Build and Deploy	2026-03-05T21:58:08.0490583Z         page.get_by_role("link", name="Aulas").first.click(force=True)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0491087Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0491577Z         # Click M├│dulo 1: Fundamentos
+> deploy	Build and Deploy	2026-03-05T21:58:08.0492089Z >       page.get_by_text("M├│dulo 1: Fundamentos").first.click()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0492347Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0492480Z tests/test_navigation.py:74: 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0492882Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0493474Z .venv/lib/python3.11/site-packages/playwright/sync_api/_generated.py:15631: in click
+> deploy	Build and Deploy	2026-03-05T21:58:08.0493896Z     self._sync(
+> deploy	Build and Deploy	2026-03-05T21:58:08.0494323Z .venv/lib/python3.11/site-packages/playwright/_impl/_locator.py:162: in click
+> deploy	Build and Deploy	2026-03-05T21:58:08.0494891Z     return await self._frame._click(self._selector, strict=True, **params)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0495328Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> deploy	Build and Deploy	2026-03-05T21:58:08.0495826Z .venv/lib/python3.11/site-packages/playwright/_impl/_frame.py:566: in _click
+> deploy	Build and Deploy	2026-03-05T21:58:08.0496640Z     await self._channel.send("click", self._timeout, locals_to_params(locals()))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0497251Z .venv/lib/python3.11/site-packages/playwright/_impl/_connection.py:69: in send
+> deploy	Build and Deploy	2026-03-05T21:58:08.0497717Z     return await self._connection.wrap_api_call(
+> deploy	Build and Deploy	2026-03-05T21:58:08.0498132Z _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0498363Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0498638Z self = <playwright._impl._connection.Connection object at 0x7f15b7ab0a90>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0499176Z cb = <function Channel.send.<locals>.<lambda> at 0x7f15b6547c40>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0499576Z is_internal = False, title = None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0499747Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0500055Z     async def wrap_api_call(
+> deploy	Build and Deploy	2026-03-05T21:58:08.0500483Z         self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0500861Z     ) -> Any:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0501093Z         if self._api_zone.get():
+> deploy	Build and Deploy	2026-03-05T21:58:08.0501469Z             return await cb()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0501761Z         task = asyncio.current_task(self._loop)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0502161Z         st: List[inspect.FrameInfo] = getattr(
+> deploy	Build and Deploy	2026-03-05T21:58:08.0502480Z             task, "__pw_stack__", None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0502751Z         ) or inspect.stack(0)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0502979Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0503342Z         parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0503778Z         self._api_zone.set(parsed_st)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0504033Z         try:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0504229Z             return await cb()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0504498Z         except Exception as error:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0504959Z >           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0505612Z E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+> deploy	Build and Deploy	2026-03-05T21:58:08.0506054Z E           Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0506683Z E             - waiting for get_by_text("M├│dulo 1: Fundamentos").first
+> deploy	Build and Deploy	2026-03-05T21:58:08.0506945Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0507278Z .venv/lib/python3.11/site-packages/playwright/_impl/_connection.py:559: TimeoutError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0507893Z _________________ TestQuizzes.test_quiz_index_loads[chromium] __________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0508184Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0508398Z self = <test_quizzes.TestQuizzes object at 0x7f15b7a0f050>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0508863Z page_with_base_url = <Page url='http://127.0.0.1:8766/quizzes/'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0509252Z base_url = 'http://127.0.0.1:8766'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0509422Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0509669Z     def test_quiz_index_loads(self, page_with_base_url: Page, base_url: str):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0510245Z         """Verifica se a p├ígina de ├¡ndice de quizzes carrega"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0510598Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0510886Z         page.goto(f"{base_url}/quizzes/")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0511140Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0511381Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0511669Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0512051Z >       expect(page.locator("h1")).to_contain_text("Quiz")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0512484Z E       AssertionError: Locator expected to contain text 'Quiz'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0512860Z E       Actual value: 404 - Not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0513131Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0513438Z E         - Expect "to_contain_text" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0513785Z E         - waiting for locator("h1")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0514209Z E           9 ├ù locator resolved to <h1>404 - Not found</h1>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0514592Z E             - unexpected value "404 - Not found"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0514806Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0514961Z tests/test_quizzes.py:19: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0515440Z ___________ TestQuizzes.test_quiz_has_interactive_elements[chromium] ___________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0515747Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0515962Z self = <test_quizzes.TestQuizzes object at 0x7f15b7a69510>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0516761Z page_with_base_url = <Page url='http://127.0.0.1:8766/quizzes/quiz-01/'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0517189Z base_url = 'http://127.0.0.1:8766'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0517357Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0517646Z     def test_quiz_has_interactive_elements(self, page_with_base_url: Page, base_url: str):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0518159Z         """Verifica se o quiz 01 tem elementos interativos"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0518496Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0518793Z         page.goto(f"{base_url}/quizzes/quiz-01/")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0519065Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0519407Z         # Procura por op├º├Áes de quiz (estrutura customizada)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0519773Z         options = page.locator(".quiz-option")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0520225Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0520498Z         # Deve haver pelo menos uma op├º├úo
+> deploy	Build and Deploy	2026-03-05T21:58:08.0520846Z >       expect(options.first).to_be_visible()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0521352Z E       AssertionError: Locator expected to be visible
+> deploy	Build and Deploy	2026-03-05T21:58:08.0521672Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0521959Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0522221Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0522509Z E         - Expect "to_be_visible" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0522898Z E         - waiting for locator(".quiz-option").first
+> deploy	Build and Deploy	2026-03-05T21:58:08.0523108Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0523263Z tests/test_quizzes.py:41: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0523726Z ______________ TestQuizzes.test_quiz_questions_visible[chromium] _______________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0524020Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0524229Z self = <test_quizzes.TestQuizzes object at 0x7f15b7a14ad0>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0524707Z page_with_base_url = <Page url='http://127.0.0.1:8766/quizzes/quiz-01/'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0525126Z base_url = 'http://127.0.0.1:8766'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0525297Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0525563Z     def test_quiz_questions_visible(self, page_with_base_url: Page, base_url: str):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0526114Z         """Verifica se as perguntas do quiz est├úo vis├¡veis"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0526699Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0527015Z         page.goto(f"{base_url}/quizzes/quiz-01/")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0527283Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0527561Z         # Verifica se h├í texto de pergunta
+> deploy	Build and Deploy	2026-03-05T21:58:08.0527895Z         # Procura pela primeira pergunta conhecida
+> deploy	Build and Deploy	2026-03-05T21:58:08.0528215Z         # Usando seletor CSS mais robusto
+> deploy	Build and Deploy	2026-03-05T21:58:08.0528572Z         question = page.locator(".quiz-question").first
+> deploy	Build and Deploy	2026-03-05T21:58:08.0528938Z >       expect(question).to_be_visible()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0529308Z E       AssertionError: Locator expected to be visible
+> deploy	Build and Deploy	2026-03-05T21:58:08.0529627Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0529909Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0530169Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0530462Z E         - Expect "to_be_visible" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0530864Z E         - waiting for locator(".quiz-question").first
+> deploy	Build and Deploy	2026-03-05T21:58:08.0531079Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0531236Z tests/test_quizzes.py:52: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0531692Z ____________ TestQuizzes.test_quiz_has_multiple_questions[chromium] ____________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0531992Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0532196Z self = <test_quizzes.TestQuizzes object at 0x7f15b7a15fd0>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0532685Z page_with_base_url = <Page url='http://127.0.0.1:8766/quizzes/quiz-01/'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0533094Z base_url = 'http://127.0.0.1:8766'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0533270Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0533550Z     def test_quiz_has_multiple_questions(self, page_with_base_url: Page, base_url: str):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0534168Z         """Verifica se o quiz tem m├║ltiplas perguntas (pelo menos 5)"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0534551Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0534850Z         page.goto(f"{base_url}/quizzes/quiz-01/")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0535130Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0535335Z         # Procura por itens de quiz
+> deploy	Build and Deploy	2026-03-05T21:58:08.0535663Z         questions = page.locator(".quiz-question")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0535941Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0536153Z         # Deve haver pelo menos 5 perguntas
+> deploy	Build and Deploy	2026-03-05T21:58:08.0536655Z         # Deve haver pelo menos 5 perguntas
+> deploy	Build and Deploy	2026-03-05T21:58:08.0536948Z         count = questions.count()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0537358Z >       assert count >= 5, f"Expected at least 5 questions, found {count}"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0537844Z E       AssertionError: Expected at least 5 questions, found 0
+> deploy	Build and Deploy	2026-03-05T21:58:08.0538172Z E       assert 0 >= 5
+> deploy	Build and Deploy	2026-03-05T21:58:08.0538312Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0538463Z tests/test_quizzes.py:92: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0538930Z _________________ TestSlides.test_slides_index_loads[chromium] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0539428Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0539635Z self = <test_slides.TestSlides object at 0x7f15b7a17590>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0540090Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0540620Z base_url = 'http://127.0.0.1:8766'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0540789Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0541034Z     def test_slides_index_loads(self, page_with_base_url: Page, base_url: str):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0541586Z         """Verifica se a p├ígina de ├¡ndice de slides carrega"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0541928Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0542202Z         page.goto(f"{base_url}/slides/")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0542455Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0542698Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0542988Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0543389Z >       expect(page.locator("h1")).to_contain_text("Slides")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0543847Z E       AssertionError: Locator expected to contain text 'Slides'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0544259Z E       Actual value: 404 - Not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0544528Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0544834Z E         - Expect "to_contain_text" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0545187Z E         - waiting for locator("h1")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0545609Z E           9 ├ù locator resolved to <h1>404 - Not found</h1>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0545995Z E             - unexpected value "404 - Not found"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0546196Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0546535Z tests/test_slides.py:18: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0546996Z _________________ TestSlides.test_slide_page_loads[chromium-1] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0547292Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0547488Z self = <test_slides.TestSlides object at 0x7f15b7ae4e10>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0547977Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-01.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0548446Z base_url = 'http://127.0.0.1:8766', lesson_number = 1
+> deploy	Build and Deploy	2026-03-05T21:58:08.0548662Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0548847Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0549409Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0550030Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0550401Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0550784Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0551251Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0551579Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0551838Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0552123Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0552374Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0552660Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0552924Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0553231Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0553671Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0554152Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0554606Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0554929Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0555218Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0555467Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0555771Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0556136Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0556481Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0556707Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0557181Z ____________ TestSlides.test_revealjs_present_on_slide_01[chromium] ____________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0557482Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0557687Z self = <test_slides.TestSlides object at 0x7f15b7ac1210>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0558181Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-01.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0558605Z base_url = 'http://127.0.0.1:8766'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0558930Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0559215Z     def test_revealjs_present_on_slide_01(self, page_with_base_url: Page, base_url: str):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0559783Z         """Verifica se RevealJS est├í presente no slide 01"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0560235Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0560558Z         page.goto(f"{base_url}/slides/slide-01.html")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0560838Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0561080Z         # Verifica se a estrutura RevealJS existe
+> deploy	Build and Deploy	2026-03-05T21:58:08.0561417Z         reveal_container = page.locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0561779Z >       expect(reveal_container).to_be_visible()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0562161Z E       AssertionError: Locator expected to be visible
+> deploy	Build and Deploy	2026-03-05T21:58:08.0562476Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0562751Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0563008Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0563297Z E         - Expect "to_be_visible" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0563655Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0563846Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0563998Z tests/test_slides.py:43: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0564464Z ______________ TestSlides.test_slide_navigation_exists[chromium] _______________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0564765Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0564971Z self = <test_slides.TestSlides object at 0x7f15b7ac3950>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0565459Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-01.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0565878Z base_url = 'http://127.0.0.1:8766'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0566047Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0566533Z     def test_slide_navigation_exists(self, page_with_base_url: Page, base_url: str):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0567186Z         """Verifica se controles de navega├º├úo de slides existem"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0567543Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0567856Z         page.goto(f"{base_url}/slides/slide-01.html")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0568131Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0568423Z         # RevealJS adiciona controles de navega├º├úo
+> deploy	Build and Deploy	2026-03-05T21:58:08.0568882Z         # Check if controls exist in DOM (might be disabled/hidden on first slide)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0569321Z         controls = page.locator(".navigate-right")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0569677Z >       expect(controls).to_be_attached()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0570065Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0570384Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0570661Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0570915Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0571216Z E         - Expect "to_be_attached" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0571596Z E         - waiting for locator(".navigate-right")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0571802Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0571956Z tests/test_slides.py:53: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0572418Z _______________ TestSlides.test_slide_content_visible[chromium] ________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0572710Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0572911Z self = <test_slides.TestSlides object at 0x7f15b7ac2790>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0573421Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-01.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0573842Z base_url = 'http://127.0.0.1:8766'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0574005Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0574270Z     def test_slide_content_visible(self, page_with_base_url: Page, base_url: str):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0574789Z         """Verifica se o conte├║do do slide est├í vis├¡vel"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0575119Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0575430Z         page.goto(f"{base_url}/slides/slide-01.html")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0575730Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0575983Z         # RevealJS usa .slides como container de slides
+> deploy	Build and Deploy	2026-03-05T21:58:08.0576593Z         slides_container = page.locator(".slides")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0576991Z >       expect(slides_container).to_be_visible()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0577386Z E       AssertionError: Locator expected to be visible
+> deploy	Build and Deploy	2026-03-05T21:58:08.0577709Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0577993Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0578594Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0578889Z E         - Expect "to_be_visible" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0579252Z E         - waiting for locator(".slides")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0579522Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0579977Z tests/test_slides.py:62: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0580723Z __________ TestSlides.test_slide_markdown_loads_without_404[chromium] __________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0581095Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0581337Z self = <test_slides.TestSlides object at 0x7f15b7ad9bd0>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0593648Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-01.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0594343Z base_url = 'http://127.0.0.1:8766'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0594626Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0595124Z     def test_slide_markdown_loads_without_404(self, page_with_base_url: Page, base_url: str):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0595877Z         """Verifica que markdown carrega sem erro 404 - TESTE CR├ìTICO"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0596289Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0596813Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0597166Z         # Interceptar requisi├º├Áes de rede para detectar 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0597500Z         errors_404 = []
+> deploy	Build and Deploy	2026-03-05T21:58:08.0597763Z         def handle_response(response):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0598083Z             if response.status == 404:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0598401Z                 errors_404.append(response.url)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0598671Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0598900Z         page.on("response", handle_response)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0599166Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0599343Z         # Acessar slide
+> deploy	Build and Deploy	2026-03-05T21:58:08.0599705Z         page.goto(f"{base_url}/slides/slide-01.html", wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0600070Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0600330Z         # Aguardar RevealJS carregar e processar markdown
+> deploy	Build and Deploy	2026-03-05T21:58:08.0600676Z         page.wait_for_timeout(3000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0600918Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0601168Z         # Verificar que n├úo houve 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0601579Z >       assert len(errors_404) == 0, (
+> deploy	Build and Deploy	2026-03-05T21:58:08.0601969Z             f"Erros 404 encontrados ao carregar slide: {errors_404}. "
+> deploy	Build and Deploy	2026-03-05T21:58:08.0602511Z             f"Verifique se os arquivos .md foram copiados para site/slides/ pelo hook."
+> deploy	Build and Deploy	2026-03-05T21:58:08.0602930Z         )
+> deploy	Build and Deploy	2026-03-05T21:58:08.0604789Z E       AssertionError: Erros 404 encontrados ao carregar slide: ['http://127.0.0.1:8766/slides/slide-01.html', 'http://127.0.0.1:8766/ads_mod_07_backends_e_apis/assets/images/logo.svg', 'http://127.0.0.1:8766/ads_mod_07_backends_e_apis/assets/images/logo.svg', 'https://api.github.com/repos/ricardotecpro/ads_mod_07_backends_e_apis/releases/latest']. Verifique se os arquivos .md foram copiados para site/slides/ pelo hook.
+> deploy	Build and Deploy	2026-03-05T21:58:08.0606308Z E       assert 4 == 0
+> deploy	Build and Deploy	2026-03-05T21:58:08.0607928Z E        +  where 4 = len(['http://127.0.0.1:8766/slides/slide-01.html', 'http://127.0.0.1:8766/ads_mod_07_backends_e_apis/assets/images/logo.svg', 'http://127.0.0.1:8766/ads_mod_07_backends_e_apis/assets/images/logo.svg', 'https://api.github.com/repos/ricardotecpro/ads_mod_07_backends_e_apis/releases/latest'])
+> deploy	Build and Deploy	2026-03-05T21:58:08.0608960Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0609114Z tests/test_slides.py:87: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0609572Z _____________________ test_termynal_copy_button[chromium] ______________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0609865Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0610081Z page = <Page url='http://127.0.0.1:8766/aulas/aula-04/'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0610457Z base_url = 'http://127.0.0.1:8766'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0610628Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0610831Z     def test_termynal_copy_button(page: Page, base_url: str):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0611145Z         """
+> deploy	Build and Deploy	2026-03-05T21:58:08.0611458Z         Test that the Termynal copy button is injected and visible.
+> deploy	Build and Deploy	2026-03-05T21:58:08.0611787Z         """
+> deploy	Build and Deploy	2026-03-05T21:58:08.0612019Z         # Grant clipboard permissions
+> deploy	Build and Deploy	2026-03-05T21:58:08.0612445Z         page.context.grant_permissions(['clipboard-write', 'clipboard-read'])
+> deploy	Build and Deploy	2026-03-05T21:58:08.0612815Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0613128Z         # Navigate to Lesson 04 which contains console blocks (Termynal)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0613792Z         page.goto(f"{base_url}/aulas/aula-04/")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0614066Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0614298Z         # Wait for Termynal to be visible
+> deploy	Build and Deploy	2026-03-05T21:58:08.0614852Z         # Note: custom_termynal.js looks for .termy, but the mkdocs-termynal plugin
+> deploy	Build and Deploy	2026-03-05T21:58:08.0615412Z         # renders a custom structure. We need to match what's actually rendered.
+> deploy	Build and Deploy	2026-03-05T21:58:08.0615912Z         # Usually it's a div with data-termynal attribute or class.
+> deploy	Build and Deploy	2026-03-05T21:58:08.0616451Z         # Let's try a broader selector if .termy isn't found
+> deploy	Build and Deploy	2026-03-05T21:58:08.0616888Z         termynal = page.locator(".termy, [data-termynal]").first
+> deploy	Build and Deploy	2026-03-05T21:58:08.0617287Z >       expect(termynal).to_be_visible()
+> deploy	Build and Deploy	2026-03-05T21:58:08.0617660Z E       AssertionError: Locator expected to be visible
+> deploy	Build and Deploy	2026-03-05T21:58:08.0617987Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0618269Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0618533Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0618835Z E         - Expect "to_be_visible" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0619255Z E         - waiting for locator(".termy, [data-termynal]").first
+> deploy	Build and Deploy	2026-03-05T21:58:08.0619504Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0619686Z tests/test_termynal_copy.py:20: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0620172Z _________________ TestSlides.test_slide_page_loads[chromium-2] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0620462Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0620664Z self = <test_slides.TestSlides object at 0x7f15b7ae5a50>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0621175Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-02.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0621653Z base_url = 'http://127.0.0.1:8766', lesson_number = 2
+> deploy	Build and Deploy	2026-03-05T21:58:08.0621865Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0622053Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0622594Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0623251Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0623625Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0624011Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0624502Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0624825Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0625083Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0625373Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0625614Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0625901Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0626153Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0626758Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0627295Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0627764Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0628221Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0628559Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0628835Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0629100Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0629407Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0629780Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0629967Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0630124Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0630573Z _________________ TestSlides.test_slide_page_loads[chromium-3] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0630872Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0631076Z self = <test_slides.TestSlides object at 0x7f15b7ae5750>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0631590Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-03.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0632065Z base_url = 'http://127.0.0.1:8766', lesson_number = 3
+> deploy	Build and Deploy	2026-03-05T21:58:08.0632283Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0632467Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0633009Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0633801Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0634176Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0634680Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0635149Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0635481Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0635737Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0636020Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0636267Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0636739Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0637006Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0637316Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0637751Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0638226Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0638684Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0639011Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0639287Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0639548Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0639855Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0640220Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0640403Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0640552Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0641011Z _________________ TestSlides.test_slide_page_loads[chromium-4] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0641301Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0641507Z self = <test_slides.TestSlides object at 0x7f15b7ae4c10>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0641995Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-04.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0642467Z base_url = 'http://127.0.0.1:8766', lesson_number = 4
+> deploy	Build and Deploy	2026-03-05T21:58:08.0642681Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0642870Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0643414Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0644028Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0644395Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0644770Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0645233Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0645560Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0645806Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0646096Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0646520Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0646884Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0647157Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0647466Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0647913Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0648396Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0648848Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0649183Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0649451Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0649712Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0650014Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0650366Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0650557Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0650709Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0651160Z _________________ TestSlides.test_slide_page_loads[chromium-5] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0651459Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0651656Z self = <test_slides.TestSlides object at 0x7f15b7ae5810>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0652161Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-05.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0652633Z base_url = 'http://127.0.0.1:8766', lesson_number = 5
+> deploy	Build and Deploy	2026-03-05T21:58:08.0653003Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0653195Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0653745Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0654519Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0654894Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0655274Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0655735Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0656060Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0656310Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0656713Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0656957Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0657249Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0657506Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0657813Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0658256Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0658717Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0659178Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0659495Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0659780Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0660035Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0660340Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0660703Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0660884Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0661034Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0661487Z _________________ TestSlides.test_slide_page_loads[chromium-6] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0661777Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0661977Z self = <test_slides.TestSlides object at 0x7f15b7ae5a10>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0662470Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-06.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0662957Z base_url = 'http://127.0.0.1:8766', lesson_number = 6
+> deploy	Build and Deploy	2026-03-05T21:58:08.0663176Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0663367Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0663911Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0664523Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0664921Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0665290Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0665762Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0666092Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0666635Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0666979Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0667235Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0667529Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0667808Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0668111Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0668550Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0669023Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0669474Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0669787Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0670057Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0670317Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0670616Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0670974Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0671157Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0671314Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0671764Z _________________ TestSlides.test_slide_page_loads[chromium-7] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0672057Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0672254Z self = <test_slides.TestSlides object at 0x7f15b7ae4950>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0672892Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-07.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0673368Z base_url = 'http://127.0.0.1:8766', lesson_number = 7
+> deploy	Build and Deploy	2026-03-05T21:58:08.0673692Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0673880Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0674418Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0675021Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0675383Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0675752Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0676204Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0676679Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0676927Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0677213Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0677466Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0677749Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0678016Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0678319Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0678767Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0679233Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0679675Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0680000Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0680278Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0680531Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0680833Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0681194Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0681382Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0681531Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0681981Z _________________ TestSlides.test_slide_page_loads[chromium-8] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0682277Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0682471Z self = <test_slides.TestSlides object at 0x7f15b7ae4f90>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0682958Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-08.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0683430Z base_url = 'http://127.0.0.1:8766', lesson_number = 8
+> deploy	Build and Deploy	2026-03-05T21:58:08.0683642Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0683823Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0684359Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0684958Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0685310Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0685686Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0686145Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0686746Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0687011Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0687307Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0687560Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0687850Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0688112Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0688418Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0688847Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0689311Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0689763Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0690087Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0690359Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0690620Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0690917Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0691275Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0691459Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0691616Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0692212Z _________________ TestSlides.test_slide_page_loads[chromium-9] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0692508Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0692704Z self = <test_slides.TestSlides object at 0x7f15b7ae4b10>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0693308Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-09.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0693775Z base_url = 'http://127.0.0.1:8766', lesson_number = 9
+> deploy	Build and Deploy	2026-03-05T21:58:08.0693993Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0694178Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0694711Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0695313Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0695671Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0696041Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0696636Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0696974Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0697230Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0697509Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0697746Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0698034Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0698295Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0698600Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0699031Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0699493Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0699932Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0700253Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0700532Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0700783Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0701131Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0701496Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0701685Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0701838Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0702296Z ________________ TestSlides.test_slide_page_loads[chromium-10] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0702591Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0702792Z self = <test_slides.TestSlides object at 0x7f15b7ae5410>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0703283Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-10.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0703761Z base_url = 'http://127.0.0.1:8766', lesson_number = 10
+> deploy	Build and Deploy	2026-03-05T21:58:08.0703975Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0704167Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0704705Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0705317Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0705688Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0706061Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0706781Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0707110Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0707364Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0707662Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0707917Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0708211Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0708470Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0708776Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0709215Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0709677Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0710125Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0710442Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0710707Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0710961Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0711411Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0711766Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0711948Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0712106Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0712672Z ________________ TestSlides.test_slide_page_loads[chromium-11] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0712969Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0713170Z self = <test_slides.TestSlides object at 0x7f15b7ae43d0>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0713677Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-11.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0714154Z base_url = 'http://127.0.0.1:8766', lesson_number = 11
+> deploy	Build and Deploy	2026-03-05T21:58:08.0714381Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0714569Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0715117Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0715740Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0716114Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0716632Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0717111Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0717456Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0717718Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0718007Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0718257Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0718547Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0718811Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0719129Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0719569Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0720044Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0720500Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0720823Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0721108Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0721364Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0721673Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0722029Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0722218Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0722370Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0722830Z ________________ TestSlides.test_slide_page_loads[chromium-12] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0723122Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0723325Z self = <test_slides.TestSlides object at 0x7f15b7ae4250>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0723821Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-12.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0724300Z base_url = 'http://127.0.0.1:8766', lesson_number = 12
+> deploy	Build and Deploy	2026-03-05T21:58:08.0724514Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0724707Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0725246Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0725868Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0726226Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0726855Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0727350Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0727679Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0727924Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0728204Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0728692Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0729146Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0729542Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0730062Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0730820Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0731377Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0731839Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0732362Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0732640Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0732900Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0733207Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0733675Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0733866Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0734016Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0734486Z ________________ TestSlides.test_slide_page_loads[chromium-13] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0734784Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0734989Z self = <test_slides.TestSlides object at 0x7f15b7ae6210>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0735497Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-13.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0735975Z base_url = 'http://127.0.0.1:8766', lesson_number = 13
+> deploy	Build and Deploy	2026-03-05T21:58:08.0736189Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0736514Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0737069Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0737726Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0738095Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0738477Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0738947Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0739275Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0739534Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0739816Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0740056Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0740344Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0740598Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0740899Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0741335Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0741804Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0742256Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0742575Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0742850Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0743108Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0743414Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0743789Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0743979Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0744129Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0744585Z ________________ TestSlides.test_slide_page_loads[chromium-14] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0744878Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0745079Z self = <test_slides.TestSlides object at 0x7f15b7ae5b10>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0745571Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-14.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0746047Z base_url = 'http://127.0.0.1:8766', lesson_number = 14
+> deploy	Build and Deploy	2026-03-05T21:58:08.0746265Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0746717Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0747271Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0747891Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0748262Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0748631Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0749094Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0749419Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0749664Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0749951Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0750184Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0750485Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0750744Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0751041Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0751476Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0752087Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0752539Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0753000Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0753274Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0753538Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0753852Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0754206Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0754392Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0754543Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0754994Z ________________ TestSlides.test_slide_page_loads[chromium-15] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0755290Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0755485Z self = <test_slides.TestSlides object at 0x7f15b7ae5f10>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0755976Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-15.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0756585Z base_url = 'http://127.0.0.1:8766', lesson_number = 15
+> deploy	Build and Deploy	2026-03-05T21:58:08.0756808Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0756992Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0757533Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0758146Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0758497Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0758871Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0759338Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0759653Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0759903Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0760180Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0760420Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0760708Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0760966Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0761267Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0761704Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0762160Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0762611Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0762928Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0763203Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0763462Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0763757Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0764120Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0764301Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0764450Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0764908Z ________________ TestSlides.test_slide_page_loads[chromium-16] _________________
+> deploy	Build and Deploy	2026-03-05T21:58:08.0765195Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0765391Z self = <test_slides.TestSlides object at 0x7f15b7ac3750>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0765885Z page_with_base_url = <Page url='http://127.0.0.1:8766/slides/slide-16.html'>
+> deploy	Build and Deploy	2026-03-05T21:58:08.0766542Z base_url = 'http://127.0.0.1:8766', lesson_number = 16
+> deploy	Build and Deploy	2026-03-05T21:58:08.0766799Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0766996Z     @pytest.mark.parametrize("lesson_number", range(1, 17))
+> deploy	Build and Deploy	2026-03-05T21:58:08.0767542Z     def test_slide_page_loads(self, page_with_base_url: Page, base_url: str, lesson_number: int):
+> deploy	Build and Deploy	2026-03-05T21:58:08.0768160Z         """Verifica se cada p├ígina de slide carrega sem erro 404"""
+> deploy	Build and Deploy	2026-03-05T21:58:08.0768538Z         page = page_with_base_url
+> deploy	Build and Deploy	2026-03-05T21:58:08.0768906Z         # Check for the standalone HTML file generated/copied by the hook
+> deploy	Build and Deploy	2026-03-05T21:58:08.0769375Z         slide_url = f"{base_url}/slides/slide-{lesson_number:02d}.html"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0769698Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0769946Z         page.goto(slide_url, wait_until="networkidle")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0770229Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0770457Z         # Verifica se n├úo ├® 404
+> deploy	Build and Deploy	2026-03-05T21:58:08.0770745Z         expect(page).not_to_have_title("404")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0771169Z     
+> deploy	Build and Deploy	2026-03-05T21:58:08.0771476Z         # Verify it's a RevealJS presentation (with longer timeout for CI)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0771915Z         # RevealJS needs time to load from CDN and initialize
+> deploy	Build and Deploy	2026-03-05T21:58:08.0772495Z >       expect(page.locator(".reveal")).to_be_attached(timeout=20000)
+> deploy	Build and Deploy	2026-03-05T21:58:08.0772944Z E       AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.0773279Z E       Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0773559Z E       Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0773824Z E       Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0774134Z E         - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0774498Z E         - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0774690Z 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0774841Z tests/test_slides.py:34: AssertionError
+> deploy	Build and Deploy	2026-03-05T21:58:08.0775254Z =========================== short test summary info ============================
+> deploy	Build and Deploy	2026-03-05T21:58:08.0776034Z FAILED tests/test_fullscreen.py::test_shortcuts_hidden_in_fullscreen[chromium] - AssertionError: Locator expected to be visible
+> deploy	Build and Deploy	2026-03-05T21:58:08.0776745Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.0776985Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0777223Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0777477Z   - Expect "to_be_visible" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0777816Z   - waiting for locator(".reveal-shortcuts")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0778520Z FAILED tests/test_layout.py::test_lesson_01_page[chromium] - AssertionError: Page title expected to be 're.compile('Aula 01')'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0779182Z Actual value: Engenharia de Backends e APIs Modernas 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0779474Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0779718Z   - Expect "to_have_title" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0780189Z     9 ├ù unexpected value "Engenharia de Backends e APIs Modernas"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0781042Z FAILED tests/test_layout.py::test_slides_structure[chromium] - AssertionError: Expected 'Slides' in title, got: Engenharia de Backends e APIs Modernas
+> deploy	Build and Deploy	2026-03-05T21:58:08.0781811Z assert 'Slides' in 'Engenharia de Backends e APIs Modernas'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0782541Z FAILED tests/test_layout.py::test_lesson_16_page[chromium] - AssertionError: Page title expected to be 're.compile('Aula 16')'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0783191Z Actual value: Engenharia de Backends e APIs Modernas 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0783485Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0783730Z   - Expect "to_have_title" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0784176Z     9 ├ù unexpected value "Engenharia de Backends e APIs Modernas"
+> deploy	Build and Deploy	2026-03-05T21:58:08.0785125Z FAILED tests/test_navigation.py::TestNavigation::test_navigation_to_lesson_01[chromium] - playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+> deploy	Build and Deploy	2026-03-05T21:58:08.0785822Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0786149Z   - waiting for get_by_text("M├│dulo 1: Fundamentos").first
+> deploy	Build and Deploy	2026-03-05T21:58:08.0787146Z FAILED tests/test_quizzes.py::TestQuizzes::test_quiz_index_loads[chromium] - AssertionError: Locator expected to contain text 'Quiz'
+> deploy	Build and Deploy	2026-03-05T21:58:08.0787797Z Actual value: 404 - Not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.0788031Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.0788289Z   - Expect "to_contain_text" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.0788591Z   - waiting for locator("h1")
+> deploy	Build and Deploy	2026-03-05T21:58:08.0788975Z     9 ├ù locator resolved to <h1>404 - Not found</h1>
+> deploy	Build and Deploy	2026-03-05T21:58:08.1101644Z       - unexpected value "404 - Not found"
+> deploy	Build and Deploy	2026-03-05T21:58:08.1102948Z FAILED tests/test_quizzes.py::TestQuizzes::test_quiz_has_interactive_elements[chromium] - AssertionError: Locator expected to be visible
+> deploy	Build and Deploy	2026-03-05T21:58:08.1103626Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1103886Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1104127Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1104405Z   - Expect "to_be_visible" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1104797Z   - waiting for locator(".quiz-option").first
+> deploy	Build and Deploy	2026-03-05T21:58:08.1105594Z FAILED tests/test_quizzes.py::TestQuizzes::test_quiz_questions_visible[chromium] - AssertionError: Locator expected to be visible
+> deploy	Build and Deploy	2026-03-05T21:58:08.1107000Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1107300Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1107539Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1107802Z   - Expect "to_be_visible" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1108369Z   - waiting for locator(".quiz-question").first
+> deploy	Build and Deploy	2026-03-05T21:58:08.1109229Z FAILED tests/test_quizzes.py::TestQuizzes::test_quiz_has_multiple_questions[chromium] - AssertionError: Expected at least 5 questions, found 0
+> deploy	Build and Deploy	2026-03-05T21:58:08.1109883Z assert 0 >= 5
+> deploy	Build and Deploy	2026-03-05T21:58:08.1110587Z FAILED tests/test_slides.py::TestSlides::test_slides_index_loads[chromium] - AssertionError: Locator expected to contain text 'Slides'
+> deploy	Build and Deploy	2026-03-05T21:58:08.1111266Z Actual value: 404 - Not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1111514Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1111775Z   - Expect "to_contain_text" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1112097Z   - waiting for locator("h1")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1112667Z     9 ├ù locator resolved to <h1>404 - Not found</h1>
+> deploy	Build and Deploy	2026-03-05T21:58:08.1113050Z       - unexpected value "404 - Not found"
+> deploy	Build and Deploy	2026-03-05T21:58:08.1113798Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-1] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1114400Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1114647Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1114884Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1115140Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1115489Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1116223Z FAILED tests/test_slides.py::TestSlides::test_revealjs_present_on_slide_01[chromium] - AssertionError: Locator expected to be visible
+> deploy	Build and Deploy	2026-03-05T21:58:08.1117098Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1117343Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1117580Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1117828Z   - Expect "to_be_visible" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1118168Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1118861Z FAILED tests/test_slides.py::TestSlides::test_slide_navigation_exists[chromium] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1119453Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1119686Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1119911Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1120172Z   - Expect "to_be_attached" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1120523Z   - waiting for locator(".navigate-right")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1121234Z FAILED tests/test_slides.py::TestSlides::test_slide_content_visible[chromium] - AssertionError: Locator expected to be visible
+> deploy	Build and Deploy	2026-03-05T21:58:08.1121805Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1122038Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1122264Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1122513Z   - Expect "to_be_visible" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1122828Z   - waiting for locator(".slides")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1125100Z FAILED tests/test_slides.py::TestSlides::test_slide_markdown_loads_without_404[chromium] - AssertionError: Erros 404 encontrados ao carregar slide: ['http://127.0.0.1:8766/slides/slide-01.html', 'http://127.0.0.1:8766/ads_mod_07_backends_e_apis/assets/images/logo.svg', 'http://127.0.0.1:8766/ads_mod_07_backends_e_apis/assets/images/logo.svg', 'https://api.github.com/repos/ricardotecpro/ads_mod_07_backends_e_apis/releases/latest']. Verifique se os arquivos .md foram copiados para site/slides/ pelo hook.
+> deploy	Build and Deploy	2026-03-05T21:58:08.1127024Z assert 4 == 0
+> deploy	Build and Deploy	2026-03-05T21:58:08.1128239Z  +  where 4 = len(['http://127.0.0.1:8766/slides/slide-01.html', 'http://127.0.0.1:8766/ads_mod_07_backends_e_apis/assets/images/logo.svg', 'http://127.0.0.1:8766/ads_mod_07_backends_e_apis/assets/images/logo.svg', 'https://api.github.com/repos/ricardotecpro/ads_mod_07_backends_e_apis/releases/latest'])
+> deploy	Build and Deploy	2026-03-05T21:58:08.1129748Z FAILED tests/test_termynal_copy.py::test_termynal_copy_button[chromium] - AssertionError: Locator expected to be visible
+> deploy	Build and Deploy	2026-03-05T21:58:08.1130289Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1130523Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1130757Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1131024Z   - Expect "to_be_visible" with timeout 5000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1131612Z   - waiting for locator(".termy, [data-termynal]").first
+> deploy	Build and Deploy	2026-03-05T21:58:08.1132336Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-2] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1133093Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1133325Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1133553Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1133875Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1134205Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1134865Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-3] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1135416Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1135649Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1135875Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1136124Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1136558Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1137214Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-4] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1137763Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1137993Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1138216Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1138459Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1138773Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1139413Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-5] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1139954Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1140174Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1140397Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1140640Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1140952Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1141596Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-6] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1142150Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1142372Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1142597Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1142859Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1143177Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1143830Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-7] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1144368Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1144590Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1144813Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1145052Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1145376Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1146021Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-8] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1146842Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1147080Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1147302Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1147556Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1147877Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1148527Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-9] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1149086Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1149311Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1149528Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1149774Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1150090Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1150748Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-10] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1151299Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1151514Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1151738Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1151981Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1152288Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1153103Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-11] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1153658Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1154001Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1154227Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1154466Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1154781Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1155433Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-12] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1155978Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1156201Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1156660Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1156904Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1157219Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1157863Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-13] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1158414Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1158634Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1158852Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1159095Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1159414Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1160052Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-14] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1160594Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1160816Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1161033Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1161276Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1161584Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1162232Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-15] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1162779Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1162997Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1163224Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1163466Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1163774Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1164420Z FAILED tests/test_slides.py::TestSlides::test_slide_page_loads[chromium-16] - AssertionError: Locator expected to be attached
+> deploy	Build and Deploy	2026-03-05T21:58:08.1164959Z Actual value: None
+> deploy	Build and Deploy	2026-03-05T21:58:08.1165175Z Error: element(s) not found 
+> deploy	Build and Deploy	2026-03-05T21:58:08.1165402Z Call log:
+> deploy	Build and Deploy	2026-03-05T21:58:08.1165636Z   - Expect "to_be_attached" with timeout 20000ms
+> deploy	Build and Deploy	2026-03-05T21:58:08.1165942Z   - waiting for locator(".reveal")
+> deploy	Build and Deploy	2026-03-05T21:58:08.1166464Z ================== 31 failed, 101 passed in 453.37s (0:07:33) ==================
+> deploy	Build and Deploy	2026-03-05T21:58:13.1775935Z ##[error]Process completed with exit code 1.
+  deploy	Post Run actions/checkout@v4	´╗┐2026-03-05T21:58:13.1882957Z Post job cleanup.
+  deploy	Post Run actions/checkout@v4	2026-03-05T21:58:13.2888249Z [command]/usr/bin/git version
+  deploy	Post Run actions/checkout@v4	2026-03-05T21:58:13.2927386Z git version 2.53.0
+  deploy	Post Run actions/checkout@v4	2026-03-05T21:58:13.2965753Z Copying '/home/runner/.gitconfig' to '/home/runner/work/_temp/14bca9b2-d435-4c9b-9eed-943a423c443f/.gitconfig'
+  deploy	Post Run actions/checkout@v4	2026-03-05T21:58:13.2977893Z Temporarily overriding HOME='/home/runner/work/_temp/14bca9b2-d435-4c9b-9eed-943a423c443f' before making global git config changes
+  deploy	Post Run actions/checkout@v4	2026-03-05T21:58:13.2979278Z Adding repository directory to the temporary git global config as a safe directory
+  deploy	Post Run actions/checkout@v4	2026-03-05T21:58:13.2993097Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ads_mod_07_backends_e_apis/ads_mod_07_backends_e_apis
+  deploy	Post Run actions/checkout@v4	2026-03-05T21:58:13.3047479Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+  deploy	Post Run actions/checkout@v4	2026-03-05T21:58:13.3089092Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+  deploy	Post Run actions/checkout@v4	2026-03-05T21:58:13.3353932Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+  deploy	Post Run actions/checkout@v4	2026-03-05T21:58:13.3380456Z http.https://github.com/.extraheader
+  deploy	Post Run actions/checkout@v4	2026-03-05T21:58:13.3397943Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+  deploy	Post Run actions/checkout@v4	2026-03-05T21:58:13.3437367Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+  deploy	Post Run actions/checkout@v4	2026-03-05T21:58:13.3714990Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+  deploy	Post Run actions/checkout@v4	2026-03-05T21:58:13.3756659Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+  deploy	Complete job	´╗┐2026-03-05T21:58:13.4267313Z Cleaning up orphan processes
+  deploy	Complete job	2026-03-05T21:58:13.4634606Z Terminate orphan process: pid (4268) (mkdocs)
+
