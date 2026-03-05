@@ -1,7 +1,3 @@
----
-template: home.html
----
-
 # Engenharia de Backends e APIs Modernas 🚀
 
 > "A base invisível que sustenta a era digital."
