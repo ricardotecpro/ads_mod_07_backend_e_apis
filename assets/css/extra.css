@@ -6,6 +6,33 @@
     border-radius: 8px;
 }
 
+/* Tag Pills Styling */
+.md-tag {
+    background-color: var(--md-primary-fg-color--light);
+    color: var(--md-primary-bg-color);
+    border-radius: 12px;
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    display: inline-block;
+    margin-right: 5px;
+    font-weight: bold;
+    border: 1px solid var(--md-primary-fg-color);
+}
+
+/* Enhanced Grid Cards Styling */
+.md-typeset .grid.cards> :is(ul, ol)>li {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.md-typeset .grid.cards> :is(ul, ol)>li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: var(--md-primary-fg-color);
+}
+
 /* Termynal Copy Button */
 .termy {
     position: relative;
