@@ -15,15 +15,9 @@ for filename in os.listdir(directory):
         lesson_num = filename.split('-')[1].split('.')[0]
         tags = "[API, Backend, Módulo 07]" # Default tags for this repo
         
-        # Check if title has icon at the end and move it to the prefix
-        # Pattern: # Title 🌐
-        match = re.search(r'^# (Aula \d+ - .*?) (🌐|💻|🧠|📊|📝|⚡)', content, re.MULTILINE)
-        if match:
-            full_title = match.group(0)
-            title_text = match.group(1)
-            icon = match.group(2)
-            new_title = f"# {icon} {title_text}"
-            content = content.replace(full_title, new_title)
+        # Move emoji from end to front
+        # Pattern: # Aula XX - Title 🌐
+        content = re.sub(r'^# (Aula \d+ - .*?)\s*([🌐💻🧠📊📝⚡])', r'# \2 \1', content, flags=re.MULTILINE)
         
         # Add frontmatter if not present
         if not content.startswith('---'):
