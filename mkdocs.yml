@@ -165,22 +165,22 @@ nav:
     - Plano: plano.md
   - Aulas:
     - aulas/index.md
-    - 'Módulo 1':
+    - Módulo 1 – Fundamentos e Arquitetura:
       - 'Aula 01 - Fundamentos da Web e Sistemas Distribuídos': aulas/aula-01.md
       - 'Aula 02 - Arquitetura de Software Backend': aulas/aula-02.md
       - 'Aula 03 - Design de APIs': aulas/aula-03.md
       - 'Aula 04 - Protocolos de APIs e Comunicação': aulas/aula-04.md
-    - 'Módulo 2':
+    - Módulo 2 – Segurança, Dados e Mensageria:
       - 'Aula 05 - Autenticação, Autorização e Segurança': aulas/aula-05.md
       - 'Aula 06 - Persistência e Camada de Dados': aulas/aula-06.md
       - 'Aula 07 - Cache e Performance': aulas/aula-07.md
       - 'Aula 08 - Mensageria e Arquitetura Orientada a Eventos': aulas/aula-08.md
-    - 'Módulo 3':
+    - Módulo 3 – Cloud, Monitoramento e Testes:
       - 'Aula 09 - Infraestrutura Cloud Native': aulas/aula-09.md
       - 'Aula 10 - Observabilidade e Monitoramento': aulas/aula-10.md
       - 'Aula 11 - Testes de Backend': aulas/aula-11.md
       - 'Aula 12 - Deploy e DevOps': aulas/aula-12.md
-    - 'Módulo 4':
+    - Módulo 4 – Serverless e API Management:
       - 'Aula 13 - Serverless e Edge Computing': aulas/aula-13.md
       - 'Aula 14 - API Management e Gateways': aulas/aula-14.md
       - 'Aula 15 - Ecossistemas de Backend (visão geral)': aulas/aula-15.md
