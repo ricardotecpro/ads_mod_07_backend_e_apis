@@ -24,8 +24,7 @@ dependencies = [
     "mkdocs-jupyter (>=0.25.1,<0.26.0)",
     "mkdocs-rss-plugin (>=1.17.9,<2.0.0)",
     "mkdocs-revealjs (>=0.0.6,<0.0.7)",
-    "PyYAML (>=6.0.1,<7.0.0)",
-    "rich (>=14.1.0,<15.0.0)",
+    "PyYAML (>=6.0.1,<7.0.0)",         # OBRIGATÓRIO para auditoria e scripts unificados
 ]
 
 [dependency-groups]
