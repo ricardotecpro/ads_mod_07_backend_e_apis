@@ -1,4 +1,8 @@
-# Aula 13 - Serverless e Edge Computing 🌐
+---
+tags: [API, Backend, Módulo 07]
+---
+
+# 🌐 Aula 13 - Serverless e Edge Computing
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Serverless e Edge, abordando AWS Lambda, FaaS, Workers e Vercel. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.

@@ -1,4 +1,8 @@
-# Aula 11 - Testes de Backend 🌐
+---
+tags: [API, Backend, Módulo 07]
+---
+
+# 🌐 Aula 11 - Testes de Backend
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Testes de Backend, abordando Testes Unitários, Postman, Pact e K6. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.

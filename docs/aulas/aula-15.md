@@ -1,4 +1,8 @@
-# Aula 15 - Ecossistemas de Backend (visão geral) 🌐
+---
+tags: [API, Backend, Módulo 07]
+---
+
+# 🌐 Aula 15 - Ecossistemas de Backend (visão geral)
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Ecossistemas, abordando Node.js, Spring Boot, .NET e Go. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.

@@ -1,4 +1,8 @@
-# Aula 12 - Deploy e DevOps 🌐
+---
+tags: [API, Backend, Módulo 07]
+---
+
+# 🌐 Aula 12 - Deploy e DevOps
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Deploy e DevOps, abordando CI/CD, Blue/Green, Canary e Feature Flags. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.

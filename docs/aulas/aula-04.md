@@ -1,4 +1,8 @@
-# Aula 04 - Protocolos de APIs e Comunicação 🌐
+---
+tags: [API, Backend, Módulo 07]
+---
+
+# 🌐 Aula 04 - Protocolos de APIs e Comunicação
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Protocolos de Comunicação, abordando gRPC, WebSockets, Streaming e SSE. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.

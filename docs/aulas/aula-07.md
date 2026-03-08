@@ -1,4 +1,8 @@
-# Aula 07 - Cache e Performance 🌐
+---
+tags: [API, Backend, Módulo 07]
+---
+
+# 🌐 Aula 07 - Cache e Performance
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Cache e Performance, abordando Redis, CDN, Cache aside e Pagination. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.

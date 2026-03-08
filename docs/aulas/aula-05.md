@@ -1,4 +1,8 @@
-# Aula 05 - Autenticação, Autorização e Segurança 🌐
+---
+tags: [API, Backend, Módulo 07]
+---
+
+# 🌐 Aula 05 - Autenticação, Autorização e Segurança
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Sec e Autenticação, abordando JWT, OAuth 2.0, OpenID e OWASP API. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.

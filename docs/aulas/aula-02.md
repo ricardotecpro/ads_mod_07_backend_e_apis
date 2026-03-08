@@ -1,4 +1,8 @@
-# Aula 02 - Arquitetura de Software Backend 🌐
+---
+tags: [API, Backend, Módulo 07]
+---
+
+# 🌐 Aula 02 - Arquitetura de Software Backend
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Arquitetura Backend, abordando Clean Architecture, Hexagonal, DDD e CQRS. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.

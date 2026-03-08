@@ -1,4 +1,8 @@
-# Aula 03 - Design de APIs 🌐
+---
+tags: [API, Backend, Módulo 07]
+---
+
+# 🌐 Aula 03 - Design de APIs
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Design de APIs, abordando REST Constraints, HATEOAS, GraphQL e Versionamento. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.

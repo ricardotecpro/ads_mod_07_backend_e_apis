@@ -1,4 +1,8 @@
-# Aula 01 - Fundamentos da Web e Sistemas Distribuídos 🌐
+---
+tags: [Fundamentos, Web, Módulo 01]
+---
+
+# 🌐 Aula 01 - Fundamentos da Web e Sistemas Distribuídos
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Fundamentos da Web, abordando Arquitetura cliente-servidor, Sistemas distribuídos, HTTP/2 e Monólito e Microsserviços. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.

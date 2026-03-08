@@ -1,4 +1,8 @@
-# Aula 08 - Mensageria e Arquitetura Orientada a Eventos 🌐
+---
+tags: [API, Backend, Módulo 07]
+---
+
+# 🌐 Aula 08 - Mensageria e Arquitetura Orientada a Eventos
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Event Driven, abordando Kafka, RabbitMQ, Pub/Sub e Event Streaming. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.

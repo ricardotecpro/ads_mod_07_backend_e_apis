@@ -1,4 +1,8 @@
-# Aula 09 - Infraestrutura Cloud Native 🌐
+---
+tags: [API, Backend, Módulo 07]
+---
+
+# 🌐 Aula 09 - Infraestrutura Cloud Native
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Infra. Cloud Native, abordando Docker, Kubernetes, Service Discovery e Autoscaling. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.

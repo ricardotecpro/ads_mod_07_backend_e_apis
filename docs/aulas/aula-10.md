@@ -1,4 +1,8 @@
-# Aula 10 - Observabilidade e Monitoramento 🌐
+---
+tags: [API, Backend, Módulo 07]
+---
+
+# 🌐 Aula 10 - Observabilidade e Monitoramento
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Observabilidade, abordando Prometheus, Grafana, Tracing e OpenTelemetry. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.

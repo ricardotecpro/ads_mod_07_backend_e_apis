@@ -1,4 +1,8 @@
-# Aula 16 - Tópicos Avançados e Tendências 🌐
+---
+tags: [API, Backend, Módulo 07]
+---
+
+# 🌐 Aula 16 - Tópicos Avançados e Tendências
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Tópicos Avançados, abordando Service Mesh, RAG APIs, AI Backend e Webhooks. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.

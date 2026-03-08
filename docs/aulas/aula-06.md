@@ -1,4 +1,8 @@
-# Aula 06 - Persistência e Camada de Dados 🌐
+---
+tags: [API, Backend, Módulo 07]
+---
+
+# 🌐 Aula 06 - Persistência e Camada de Dados
 
 !!! tip "Objetivo"
     **Objetivo:** Explorar a fundo os conceitos de Persistência e Dados, abordando Relacional, NoSQL, ACID e Eventual Consistency. Construiremos uma base teórica e prática com diagramas, comandos interativos e matemática aplicada à ciência da computação.
